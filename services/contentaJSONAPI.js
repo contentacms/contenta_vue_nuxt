@@ -6,11 +6,11 @@ class contentaJSONAPI {
     this.baseUrl = baseUrl
   }
 
-  async getArticles () {
+  async getRecipes () {
     try {
-      const result = await axios.get(this.baseUrl + '/node/article?sort=-created')
-      const articles = result.data.data
-      return articles
+      const result = await axios.get(this.baseUrl + '/recipes?sort=-created')
+      const nodes = result.data.data
+      return nodes
     } catch (e) {
       console.log(e.message)
     }

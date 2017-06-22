@@ -1,12 +1,12 @@
 module.exports = {
   env: {
-    contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io/api'
+    contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io/api',
+    siteTitle: 'UMAMI'
   },
-
   /*
   ** Build configuration
   */
-  build: {  },
+  build: {},
   /*
   ** Headers
   ** Common headers are already provided by @nuxtjs/pwa preset
@@ -14,8 +14,8 @@ module.exports = {
   head: {
     link: [
       /* @custom */
-      { rel: 'stylesheet', type: 'text/css', href: '/bulma.css' },
-      { rel: 'stylesheet', type: 'text/css', href: '/app.css' }
+      { rel: 'stylesheet', type: 'text/css', href: '/css/bulma.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/css/app.css' }
     ]
   },
   /*
