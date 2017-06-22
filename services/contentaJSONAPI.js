@@ -19,4 +19,4 @@ class contentaJSONAPI {
 
 }
 
-export default new Reservoir(process.env.contentaJSONAPIBaseUrl)
+export default new contentaJSONAPI(process.env.contentaJSONAPIBaseUrl)
