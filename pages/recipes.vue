@@ -14,7 +14,6 @@ export default {
   components: { Recipes },
   async asyncData () {
     const nodes = await api.getRecipes()
-    console.log(nodes)
     return { nodes }
   }
 }

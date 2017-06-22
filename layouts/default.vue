@@ -1,13 +1,15 @@
 <template>
   <div>
-    <navigation />
+    <Navigation />
+    <SiteTitle />
     <nuxt/>
   </div>
 </template>
 
 <script>
 import Navigation from '~/components/Navigation'
+import SiteTitle from '~/components/SiteTitle'
 export default {
-  components:{ Navigation }
+  components:{ Navigation, SiteTitle }
 }
 </script>

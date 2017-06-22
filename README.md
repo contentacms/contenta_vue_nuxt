@@ -20,4 +20,4 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+This application is built upon Nuxt.js [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
