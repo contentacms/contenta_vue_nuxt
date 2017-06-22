@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1 class="title is-1">
+    <h2 class="title is-2">
        RECIPES
-    </h1>
+    </h2>
     <recipes :nodes="nodes"></recipes>
   </div>
 </template>
