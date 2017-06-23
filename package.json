@@ -7,6 +7,8 @@
   "dependencies": {
     "@nuxtjs/pwa": "latest",
     "axios": "^0.16.2",
+    "jsonapi-parse": "^1.2.0",
+    "lodash": "^4.17.4",
     "nuxt": "latest"
   },
   "scripts": {

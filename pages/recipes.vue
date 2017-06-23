@@ -3,18 +3,22 @@
     <h2 class="title is-2">
        RECIPES
     </h2>
-    <recipes :nodes="nodes"></recipes>
+    <recipes-grid blocTitle="Main course" :nodes="recipesMainCourse"></recipes-grid>
   </div>
 </template>
 
 <script>
-import api from '~/services/contentaJSONAPI'
-import Recipes from '~/components/Recipes'
+import Recipes from '~/services/Recipes'
+import RecipesGrid from '~/components/RecipesGrid'
 export default {
-  components: { Recipes },
+  components: { RecipesGrid },
   async asyncData () {
-    const nodes = await api.getRecipes()
-    return { nodes }
+    const recipesMainCourse = await Recipes.findAllByCategoryName("Main course", 4)
+    const recipesLatest = await Recipes.findAllLatest(4)
+    return { 
+       recipesLatest, 
+       recipesMainCourse
+    }
   }
 }
 </script>
