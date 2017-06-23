@@ -4,7 +4,7 @@ Contenta Vue.js is an example of decoupled Drupal with [Vue.JS](https://vuejs.or
 
 # How it works ?
 
-The meat of the is inside "pages", "components" & "layouts" directories, this is where *Vue components* resides. 
+The meat of the code is inside "pages", "components" & "layouts" directories, this is where *Vue components* resides. 
 
 "Components" are classic Vue single-file components.
 
