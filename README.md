@@ -16,8 +16,6 @@ The meat of the code is inside "pages", "components" & "layouts" directories, th
 
 ## Build Setup
 
-
-
 ``` bash
 # install dependencies
 $ yarn install
@@ -25,6 +23,9 @@ $ yarn install
 # serve with hot reload at localhost:3000
 # service worker is disabled in dev
 $ yarn dev
+
+# run unit tests
+$ yarn test
 
 # build for production and launch server
 $ yarn build
