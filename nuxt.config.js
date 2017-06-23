@@ -10,11 +10,7 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {
-    extend(config, { isDev, isClient }) {
-      console.log(util.inspect(config, false, null))
-    }
-  },
+  build: {},
   /*
   ** Headers
   ** Common headers are already provided by @nuxtjs/pwa preset
