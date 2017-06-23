@@ -2,9 +2,9 @@ import DrupalJSONAPI from './DrupalJSONAPI'
 
 class Recipes {
 
-  constructor(baseUrl) {
+  constructor() {
     this.entityUri = '/recipes'
-    this.jsonapi = new DrupalJSONAPI(baseUrl)
+    this.jsonapi = new DrupalJSONAPI(process.env.contentaJSONAPIBaseUrl)
   }
 
   async findAllLatest (limit = 4) {
@@ -58,4 +58,4 @@ class Recipes {
 
 }
 
-export default new Recipes(process.env.contentaJSONAPIBaseUrl)
+export default new Recipes()
