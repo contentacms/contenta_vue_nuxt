@@ -1,6 +1,6 @@
 # contenta Vuejs + Nuxt.js
 
-Contenta Vue.js is an example of decoupled Drupal with [Vue.JS](https://vuejs.org). It uses [Nuxt.js](https://github.com/nuxt/nuxt.js framework to perform automatic server side rendering from Vue components, to create a SEO-friendly JS web application.
+Contenta Vue.js is an example of decoupled Drupal with [Vue.JS](https://vuejs.org). It uses [Nuxt.js](https://github.com/nuxt/nuxt.js) framework to perform automatic server side rendering from Vue components, to create a SEO-friendly JS web application.
 
 # How it works ?
 
