@@ -1,3 +1,7 @@
+const util = require('util')
+
+// alternative shortcut
+
 module.exports = {
   env: {
     contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io/api',
@@ -6,7 +10,11 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {},
+  build: {
+    extend(config, { isDev, isClient }) {
+      console.log(util.inspect(config, false, null))
+    }
+  },
   /*
   ** Headers
   ** Common headers are already provided by @nuxtjs/pwa preset
