@@ -12,6 +12,8 @@ The meat of the code is inside "pages", "components" & "layouts" directories, th
 
 "Layouts" are some Vue components used as template wrappers for pages components, a little bit like "page.tpl.php" in Drupal.
 
+"Services" directory contains cross-components business logic, this is where resides our functions to fetch data from Contenta public API.
+
 ## Build Setup
 
 
