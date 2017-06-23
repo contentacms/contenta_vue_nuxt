@@ -1,10 +1,14 @@
-import DrupalJSONAPI from './DrupalJSONAPI'
+/**
+ * Get recipes from JSON API server
+ */
+
+import JSONAPIClient from './JSONAPIClient'
 
 class Recipes {
 
   constructor() {
-    this.entityUri = '/recipes'
-    this.jsonapi = new DrupalJSONAPI(process.env.contentaJSONAPIBaseUrl)
+    this.resourceUri = '/recipes'
+    this.jsonapi = new JSONAPIClient(process.env.contentaJSONAPIBaseUrl)
   }
 
   async findAllLatest (limit = 4) {
@@ -27,7 +31,7 @@ class Recipes {
       ],
       */
     }
-    const datas = await this.jsonapi.get(this.entityUri, query)
+    const datas = await this.jsonapi.get(this.resourceUri, query)
     return datas
   }
 
@@ -53,7 +57,7 @@ class Recipes {
         limit: limit,
       }
     }
-    return await this.jsonapi.get(this.entityUri, query)
+    return await this.jsonapi.get(this.resourceUri, query)
   }
 
 }
