@@ -3,21 +3,39 @@
     <h2 class="title is-2">
        RECIPES
     </h2>
-    <recipes-grid blocTitle="Main course" :nodes="recipesMainCourse"></recipes-grid>
+    <recipes-flex-grid blocTitle="Latest" :nodes="recipesLatest"></recipes-flex-grid>
+    <recipes-flex-grid blocTitle="Main course" :nodes="recipesMainCourse"></recipes-flex-grid>
+    <recipes-flex-grid blocTitle="Starter" :nodes="recipesStarter"></recipes-flex-grid>
+    <recipes-flex-grid blocTitle="Snack" :nodes="recipesSnack"></recipes-flex-grid>
+    <recipes-flex-grid blocTitle="Salad" :nodes="recipesSalad"></recipes-flex-grid>
   </div>
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesGrid from '~/components/RecipesGrid'
+import RecipesFlexGrid from '~/components/RecipesFlexGrid'
 export default {
-  components: { RecipesGrid },
+  components: { RecipesFlexGrid },
   async asyncData () {
-    const recipesMainCourse = await Recipes.findAllByCategoryName("Main course", 4)
-    const recipesLatest = await Recipes.findAllLatest(4)
+    const [
+      recipesLatest, 
+      recipesMainCourse,
+      recipesStarter,
+      recipesSnack,
+      recipesSalad
+    ] = await Promise.all([
+      Recipes.findAllLatest(4),
+      Recipes.findAllByCategoryName("Main course", 4),
+      Recipes.findAllByCategoryName("Starter", 4),
+      Recipes.findAllByCategoryName("Snack", 4),
+      Recipes.findAllByCategoryName("Salad", 4),
+    ])
     return { 
-       recipesLatest, 
-       recipesMainCourse
+      recipesLatest, 
+      recipesMainCourse,
+      recipesStarter,
+      recipesSnack,
+      recipesSalad
     }
   }
 }

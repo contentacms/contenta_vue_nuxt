@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <h3>{{ node.title }}</h3>
-    <div class="thumbnail">
+    <div v-if="node.image" class="thumbnail">
       <img :src="node.image.thumbnail.filename"/>
     </div>
     <div class="tags">

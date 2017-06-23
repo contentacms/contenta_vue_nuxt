@@ -20,16 +20,9 @@ class Recipes {
         }
       },
       page: {
-        limit: limit
-      }
-      /*
-      include: [
-        'tags',
-        'field_image',
-        'field_image.field_image',
-        'field_image.field_image.file--file'
-      ],
-      */
+        limit
+      },
+      include: ['image', 'image.thumbnail', 'tags'],  
     }
     const datas = await this.jsonapi.get(this.resourceUri, query)
     return datas

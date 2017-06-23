@@ -24,7 +24,7 @@ import axios from 'axios'
 import {buildQueryString} from './JSONAPIQueryBuilder'
 import jsonapiParse from "jsonapi-parse"
 
-class DrupalJSONAPI {
+class JSONAPIClient {
 
   constructor(baseUrl) {
     this.baseUrl = baseUrl
@@ -42,7 +42,7 @@ class DrupalJSONAPI {
     const url = encodeURI(this.baseUrl) + encodeURI(uri) + '?' + queryString
     try {
       const response = await axios.get(url)
-      console.log('DrupalJSONAPI parsed url : ', url)
+      console.log('JSONAPIClient parsed url : ', url)
       const parsedJson = jsonapiParse.parse(response.data)
       result = parsedJson.data
     } catch (e) {
@@ -53,4 +53,4 @@ class DrupalJSONAPI {
 
 }
 
-export default DrupalJSONAPI
+export default JSONAPIClient
