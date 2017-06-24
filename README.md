@@ -21,7 +21,7 @@ Contributions MUST serves project objectives. Objectives can of course be improv
 
 Pull request SHOULD contain related units tests.
 
-## Getting started
+## GETTING STARTED
 
 ```bash
 $ yarn install
@@ -38,7 +38,7 @@ Start looking at the most important part of the code which is inside **pages**, 
 
 **Services** directory contains cross-components business logic, this is where resides our functions and class to fetch data from Contenta public API.
 
-## Build Setup
+## BUILD SETUP
 
 ``` bash
 # install dependencies
