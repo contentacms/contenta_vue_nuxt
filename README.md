@@ -24,7 +24,7 @@ $ yarn test
 ```
 
 
-# OBJECTIVES ( WHAT ARE WE DOING AND WHY ? )
+# OBJECTIVES GUIDELINES ( WHAT ARE WE DOING AND WHY ? )
 
 1) Demonstrate that we can build an awesome moderne JS site on the top of  **contenta CMS** JSON API.
 2) Convince Drupal and Javascript **developpers** that using **Vue.js** with **contenta** is an awesome and easy to start developper experience !
@@ -34,7 +34,7 @@ $ yarn test
 6) This application MUST be REFERENCABLE and SEO-friendly, because this is why **Nuxt.js** is used.
 7) All components and services SHOULD be *unit tested* because it is one of the main advantages of modern JS front-end to be easily unit tested.
 
-# CONTRIBUTING
+# CONTRIBUTING GUIDELINES
 
 Contributions MUST serves project objectives. Objectives can of course be discussed in a dedicated issue !
 
