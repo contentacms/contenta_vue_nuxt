@@ -1,0 +1,1 @@
+webpackJsonp([3],{142:function(e,n,r){var t=r(17)(null,r(195),null,null,null);e.exports=t.exports},195:function(e,n){e.exports={render:function(){var e=this,n=e.$createElement;return(e._self._c||n)("div",[e._v("\n  Detail page for a recipe\n")])},staticRenderFns:[]}}});
