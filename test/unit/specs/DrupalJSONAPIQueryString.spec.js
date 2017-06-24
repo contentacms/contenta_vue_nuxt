@@ -12,12 +12,15 @@ describe('JSONAPIQueryBuilder', () => {
           direction: 'DESC'
         }
       },
+      fields: {
+        recipes: ['title']
+      },
       include: ['tags', 'image'],
       filter: {
         categoryName: {
           condition: {
             path: 'category.name',
-            value: "Vegetarian"
+            value: "Main course"
           }
         },
       },
@@ -26,6 +29,6 @@ describe('JSONAPIQueryBuilder', () => {
         limit: 4
       }
     }
-    expect(buildQueryString(queryParams)).toEqual("sort[sortCreated][path]=created&sort[sortCreated][direction]=DESC&include=tags,image&filter[categoryName][condition][path]=category.name&filter[categoryName][condition][value]=Vegetarian&page[offset]=0&page[limit]=4")
+    expect(buildQueryString(queryParams)).toEqual("sort[sortCreated][path]=created&sort[sortCreated][direction]=DESC&fields[recipes]=title&include=tags,image&filter[categoryName][condition][path]=category.name&filter[categoryName][condition][value]=Main%20course&page[offset]=0&page[limit]=4")
   })
 })

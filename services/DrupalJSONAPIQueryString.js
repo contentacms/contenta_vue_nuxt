@@ -2,9 +2,11 @@
   
   /**
    * Helper to create a JSON API query string from a Object.
+   * @see https://www.drupal.org/docs/8/modules/json-api/json-api
    * does NOT support shorthand syntaxes for now (eg : sort=-created)
    * 
-   * const query = {
+   * example usage :
+   * const queryParams = {
    *  sort: {
    *    sortCreated: {
    *      path: 'created',
@@ -12,20 +14,18 @@
    *    }
    *  },
    * fields: {
-   *   recipes
+   *   recipes: ['title']
    * },
    *  page: {
    *    limit: 4
    *  },
    *  include: [
-   *    'tags',
-   *    'field_image',
-   *    'field_image.field_image',
-   *    'field_image.field_image.file--file'
+   *    'tags', 
+   *    'image'
    *  ],
    * }
    * 
-   * @param {object} query options as an object. do NOT use shorthands notation.
+   * @param {object} queryParams as an object.
    */
 function buildQueryString (queryParams) {
   
