@@ -1,8 +1,3 @@
-/**
- * MOCK WEBPACK CONFIG FILE TO RUN UNIT TEST
- * I need to figure out to fetch webpack config
- * from Nuxt.js to remove this, but hey for now it works
- */
 const resolve = require('path').resolve;
 
 // Minimal Webpack config to supply to units tests.

@@ -1,7 +1,8 @@
   import _ from 'lodash'
   
   /**
-   * Helper to create a JSON API query string from a Object
+   * Helper to create a JSON API query string from a Object.
+   * does NOT support shorthand syntaxes for now (eg : sort=-created)
    * 
    * const query = {
    *  sort: {
