@@ -36,7 +36,7 @@ $ yarn test
 
 # CONTRIBUTING GUIDELINES
 
-Contributions MUST serves project objectives. Objectives can of course be discussed in a dedicated issue !
+Contributions MUST serves project objectives. Objectives can of course be improved in a dedicated issue !
 
 **master** branch will be delivered to github pages.
 **dev** is main dev branch that should be forked to implements a new feature.
