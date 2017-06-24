@@ -40,6 +40,8 @@ Contributions MUST serves project objectives. Objectives can of course be discus
 Master branch will be delivered to github page.
 Dev is main dev branch that should be forked to implements a new feature.
 
+Pull request SHOULD contain related units tests.
+
 # How it works ?
 
 Start looking at the most important part of the code which is inside **pages**, **components** & **layouts** directories, this is where *Vue components* resides.
