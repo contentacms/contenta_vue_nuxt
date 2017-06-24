@@ -24,21 +24,22 @@ $ yarn test
 ```
 
 
-# OBJECTIVES - WHERE ARE WE GOING AND WHY ?
+# OBJECTIVES ( WHAT ARE WE DOING AND WHY ? )
 
 1) Demonstrate that we can build an awesome moderne JS site on the top of  **contenta CMS** JSON API.
 2) Convince Drupal and Javascript **developpers** that using **Vue.js** with **contenta** is an awesome and easy to start developper experience !
-3) That's why we MUST keep a *readable* and *easy to understand* code. NO **Overengineering** to keep a **low barrier to entry**. 
-4) FORK and START : this project SHOULD, as far as is it possible, easily be used as a **starter** for creating a new Decoupled Drupal site with Vue.js. 
-5) This application MUST be REFERENCABLE and SEO-friendly, because this is why **Nuxt.js** is used.
-6) All components and services SHOULD be *unit tested* because it is one of the main advantages of modern JS front-end to be easily unit tested.
+3) Mirror Vue.js values : easy-to-adopt, easy-to-read, light, powerful, documented.
+4) That's why we MUST keep a *readable* and *easy to understand* code. NO **Overengineering** to keep a **low barrier to entry**. 
+5) fork and start ! this project SHOULD, as far as is it possible, easily be used as a **starter** for creating a new Decoupled Drupal site with Vue.js in no-time. 
+6) This application MUST be REFERENCABLE and SEO-friendly, because this is why **Nuxt.js** is used.
+7) All components and services SHOULD be *unit tested* because it is one of the main advantages of modern JS front-end to be easily unit tested.
 
 # CONTRIBUTING
 
 Contributions MUST serves project objectives. Objectives can of course be discussed in a dedicated issue !
 
-Master branch will be delivered to github page.
-Dev is main dev branch that should be forked to implements a new feature.
+**master** branch will be delivered to github pages.
+**dev** is main dev branch that should be forked to implements a new feature.
 
 Pull request SHOULD contain related units tests.
 
