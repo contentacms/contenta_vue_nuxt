@@ -2,13 +2,13 @@
  * Get recipes from JSON API server
  */
 
-import JSONAPIClient from './JSONAPIClient'
+import DrupalJSONAPIClient from './DrupalJSONAPIClient'
 
 class Recipes {
 
   constructor() {
     this.resourceUri = '/recipes'
-    this.jsonapi = new JSONAPIClient(process.env.contentaJSONAPIBaseUrl)
+    this.jsonapi = new DrupalJSONAPIClient(process.env.contentaJSONAPIBaseUrl)
   }
 
   async findAllLatest (limit = 4) {
