@@ -21,7 +21,7 @@
  * 
  */
 import axios from 'axios'
-import {buildQueryString} from './JSONAPIQueryBuilder'
+import {buildQueryString} from './JSONAPIQueryStringBuilder'
 import jsonapiParse from "jsonapi-parse"
 
 class JSONAPIClient {

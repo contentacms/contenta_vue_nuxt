@@ -26,26 +26,26 @@
    * 
    * @param {object} query options as an object. do NOT use shorthands notation.
    */
-function buildQueryString (query) {
+function buildQueryString (queryParams) {
   
-    let queryParts = []
+    let queryStringParts = []
 
-    _.forEach(query, (value, key) => {
+    _.forEach(queryParams, (value, key) => {
 
       if (key === 'include') {
-        queryParts.push(key + '=' + value.join(','))
+        queryStringParts.push(key + '=' + value.join(','))
       }
 
       if (key === 'page' || key === 'fields') {
         _.forEach(value, (subvalue, subkey) => {
-          queryParts.push(`${encodeURI(key)}[${encodeURI(subkey)}]=${encodeURI(subvalue)}`)
+          queryStringParts.push(`${encodeURI(key)}[${encodeURI(subkey)}]=${encodeURI(subvalue)}`)
         })
       }
 
       if (key === 'sort') {
         _.forEach(value, (subvalue, subkey) => {
           _.forEach(subvalue, (subsubvalue, subsubkey) => {
-            queryParts.push(`${encodeURI(key)}[${encodeURI(subkey)}][${encodeURI(subsubkey)}]=${encodeURI(subsubvalue)}`)
+            queryStringParts.push(`${encodeURI(key)}[${encodeURI(subkey)}][${encodeURI(subsubkey)}]=${encodeURI(subsubvalue)}`)
           })
         })
       }
@@ -55,14 +55,14 @@ function buildQueryString (query) {
         _.forEach(value, (subvalue, subkey) => {
           _.forEach(subvalue, (subsubvalue, subsubkey) => {
             _.forEach(subsubvalue, (subsubsubvalue, subsubsubkey) => {
-              queryParts.push(`${encodeURI(key)}[${encodeURI(subkey)}][${encodeURI(subsubkey)}][${encodeURI(subsubsubkey)}]=${encodeURI(subsubsubvalue)}`)
+              queryStringParts.push(`${encodeURI(key)}[${encodeURI(subkey)}][${encodeURI(subsubkey)}][${encodeURI(subsubsubkey)}]=${encodeURI(subsubsubvalue)}`)
             })
           })
         })
       }
     })
 
-    const queryString = queryParts.join('&')
+    const queryString = queryStringParts.join('&')
     return queryString
   }
 
