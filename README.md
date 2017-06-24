@@ -57,4 +57,8 @@ $ yarn generate
 
 # run unit tests. test resides in test/unit directory
 $ yarn test
+
+# helper to deploy our app to github pages :
+# you MUST have a local copy of "contentavuedemo.github.io"
+$ yarn deploy
 ```
