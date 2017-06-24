@@ -21,6 +21,23 @@ Contributions MUST serves project objectives. Objectives can of course be improv
 
 Pull request SHOULD contain related units tests.
 
+## Getting started
+
+```bash
+$ yarn install
+$ yarn dev
+```
+
+Start looking at the most important part of the code which is inside **pages**, **components** & **layouts** directories, this is where *Vue components* resides.
+
+**Components** are classic Vue single-file components.
+
+**Pages** are special components : they are automatically rendered on server side, and accessible via an url. For example "pages/recipes.vue" can be accessed going to  "/recipes" uri. They use a special "asyncData" method which is used for server side rendering.
+
+**Layouts** are some Vue components used as template wrappers for pages components, a little bit like "page.tpl.php" in Drupal.
+
+**Services** directory contains cross-components business logic, this is where resides our functions and class to fetch data from Contenta public API.
+
 ## Build Setup
 
 ``` bash
@@ -41,15 +58,3 @@ $ yarn generate
 # run unit tests. test resides in test/unit directory
 $ yarn test
 ```
-
-### Project structure
-
-Start looking at the most important part of the code which is inside **pages**, **components** & **layouts** directories, this is where *Vue components* resides.
-
-**Components** are classic Vue single-file components.
-
-**Pages** are special components : they are automatically rendered on server side, and accessible via an url. For example "pages/recipes.vue" can be accessed going to  "/recipes" uri. They use a special "asyncData" method which is used for server side rendering.
-
-**Layouts** are some Vue components used as template wrappers for pages components, a little bit like "page.tpl.php" in Drupal.
-
-**Services** directory contains cross-components business logic, this is where resides our functions and class to fetch data from Contenta public API.
