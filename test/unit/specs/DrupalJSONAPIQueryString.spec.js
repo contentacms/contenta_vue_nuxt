@@ -1,10 +1,10 @@
-import {buildQueryString} from '../../../services/JSONAPIQueryStringBuilder'
+import {buildQueryString} from '../../../services/DrupalJSONAPIQueryString'
 
 /**
  * An example unit test
  */
 describe('JSONAPIQueryBuilder', () => {
-  it('should render correct contents', () => {
+  it('should return expected query string from queryParams Object', () => {
     const queryParams = {
       sort: {
         sortCreated: {

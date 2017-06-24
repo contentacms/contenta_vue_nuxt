@@ -21,7 +21,7 @@
  * 
  */
 import axios from 'axios'
-import {buildQueryString} from './JSONAPIQueryStringBuilder'
+import { buildQueryString } from './DrupalJSONAPIQueryString'
 import jsonapiParse from "jsonapi-parse"
 
 class JSONAPIClient {
