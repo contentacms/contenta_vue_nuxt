@@ -18,7 +18,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "karma start test/unit/karma.conf.js",
-    "precommit": "npm run lint",
+    "precommit": "npm run lint && yarn test",
     "deploy": "./deploy-to-github-pages.sh"
   },
   "devDependencies": {
