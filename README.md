@@ -12,7 +12,7 @@
 6) This application MUST be REFERENCABLE and SEO-friendly, because this is why **Nuxt.js** is used.
 7) All components and services SHOULD be *unit tested* because it is one of the main advantages of modern JS front-end to be easily unit tested.
 
-## CONTRIBUTING GUIDELINES
+## CONTRIBUTION GUIDELINES
 
 Contributions MUST serves project objectives. Objectives can of course be improved in a dedicated issue !
 
