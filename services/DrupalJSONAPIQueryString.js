@@ -1,5 +1,3 @@
-const _ = require('lodash')
-
 /**
  * Helper to create a JSON API query string from a nested Object.
  * @see https://www.drupal.org/docs/8/modules/json-api/json-api
@@ -39,13 +37,13 @@ const _ = require('lodash')
  */
 
 function buildQueryString (object, stackedPath = '', stringsParts = []) {
-  _.forEach(object, (value, property) => {
-    const propertySyntax = stackedPath ? `[${encodeURI(property)}]` : property
-    if (_.isPlainObject(value)) {
-      buildQueryString(value, stackedPath + propertySyntax, stringsParts)
+  Object.keys(object).forEach(key => {
+    const propertySyntax = stackedPath ? `[${encodeURI(key)}]` : key
+    if (Object.getPrototypeOf(object[key]) === Object.prototype) {
+      buildQueryString(object[key], stackedPath + propertySyntax, stringsParts)
     }
     else {
-      stringsParts.push(stackedPath + propertySyntax + '=' + encodeURI(value))
+      stringsParts.push(stackedPath + propertySyntax + '=' + encodeURI(object[key]))
     }
   })
   return stringsParts.join("&")
