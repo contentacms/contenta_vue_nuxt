@@ -4,25 +4,36 @@ const _ = require('lodash')
  * Helper to create a JSON API query string from an Object.
  * @see https://www.drupal.org/docs/8/modules/json-api/json-api
  * 
- * example usage :
- * const queryParams = {
- *  sort: {
- *    sortCreated: {
- *      path: 'created',
- *      direction: 'DESC'
+ * USAGE :
+ * To create the following query string :
+ * "sort[sortCreated][path]=created&sort[sortCreated][direction]=DESC&fields[recipes]=title&include=tags,image&filter[categoryName][condition][path]=category.name&filter[categoryName][condition][value]=Main%20course&page[offset]=0&page[limit]=4"
+ *  
+ *  import {buildQueryString} from 'DrupalJSONAPIQueryString'
+ * 
+ *  buildQueryString({
+ *    sort: {
+ *      sortCreated: {
+ *        path: 'created',
+ *        direction: 'DESC'
+ *      }
+ *    },
+ *    fields: {
+ *      recipes: ['title']
+ *    },
+ *    include: ['tags', 'image'],
+ *    filter: {
+ *      categoryName: {
+ *        condition: {
+ *          path: 'category.name',
+ *          value: "Main course"
+ *        }
+ *      },
+ *    },
+ *    page: {
+ *      offset: 0,
+ *      limit: 4
  *    }
- *  },
- * fields: {
- *   recipes: ['title']
- * },
- *  page: {
- *    limit: 4
- *  },
- *  include: [
- *    'tags', 
- *    'image'
- *  ],
- * }
+ *  })
  * 
  * @param {object} queryParams as an object.
  */
