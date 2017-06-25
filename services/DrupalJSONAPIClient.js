@@ -2,7 +2,7 @@
  * Fetch resources from our JSON API server and format
  * result automatically with "jsonapi-parse", to put
  * "included" objects inside "data" objects; so that
- * they are ready to be consumed by our template.
+ * they are ready to be consumed by our template
  * 
  * example usage :
  * 
@@ -16,8 +16,6 @@
  *    include: ['tags'],   
  *  }
  *  const datas = await this.jsonapi.get('/recipes', queryParams)
- * 
- *  datas.tags will contain our full tags objects è
  * 
  */
 import axios from 'axios'

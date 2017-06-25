@@ -1,7 +1,3 @@
-const util = require('util')
-
-// alternative shortcut
-
 module.exports = {
   env: {
     contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io/api',
