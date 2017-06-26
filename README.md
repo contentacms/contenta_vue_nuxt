@@ -21,6 +21,11 @@ Contributions MUST serves project objectives. Objectives can of course be improv
 
 Pull request SHOULD contain related units tests.
 
+## REQUIREMENTS
+
+- node v8.0.0 or >
+- npm 5 or >
+
 ## GETTING STARTED
 
 ```bash
