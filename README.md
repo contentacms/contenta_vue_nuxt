@@ -24,8 +24,8 @@ Pull request SHOULD contain related units tests.
 ## GETTING STARTED
 
 ```bash
-$ yarn install
-$ yarn dev
+$ npm install
+$ npm run dev
 ```
 
 Start looking at the most important part of the code which is inside **pages**, **components** & **layouts** directories, this is where *Vue components* resides.
@@ -42,23 +42,23 @@ Start looking at the most important part of the code which is inside **pages**, 
 
 ``` bash
 # install dependencies
-$ yarn install
+$ npm install
 
 # serve with hot reload at localhost:3000
 # service worker is disabled in dev
-$ yarn dev
+$ npm run dev
 
 # build for production and launch server
-$ yarn build
-$ yarn start
+$ npm run build
+$ npm run start
 
 # generate static project
-$ yarn generate
+$ npm run generate
 
 # run unit tests. test resides in test/unit directory
-$ yarn test
+$ npm test
 
 # helper to deploy our app to github pages :
 # you MUST have a local copy of "contentavuedemo.github.io"
-$ yarn deploy
+$ npm run deploy
 ```

@@ -6,7 +6,12 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {},
+  build: {
+    extend (config) {
+      // disable uglify, does not support ES6 -_-
+      config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
+    }
+  },
   /*
   ** Headers
   ** Common headers are already provided by @nuxtjs/pwa preset
