@@ -1,7 +1,6 @@
 module.exports = {
   env: {
-    contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io/api',
-    siteTitle: 'UMAMI'
+    contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io/api'
   },
   /*
   ** Build configuration

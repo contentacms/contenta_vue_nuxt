@@ -1,24 +1,24 @@
 <template>
-  <div class="container">
-    <h2 class="title is-2">
-       RECIPES
-    </h2>
-    <recipes-flex-grid blocTitle="Latest" :nodes="recipesLatest"></recipes-flex-grid>
-    <recipes-flex-grid blocTitle="Main course" :nodes="recipesMainCourse"></recipes-flex-grid>
-    <recipes-flex-grid blocTitle="Starter" :nodes="recipesStarter"></recipes-flex-grid>
-    <recipes-flex-grid blocTitle="Snack" :nodes="recipesSnack"></recipes-flex-grid>
-    <recipes-flex-grid blocTitle="Salad" :nodes="recipesSalad"></recipes-flex-grid>
+  <div class="page-recipes">
+    <div class="container">
+      <recipes-cards title="Latest Recipes" :nodes="recipesLatest" more-link="/recipes-latest"></recipes-cards>
+      <recipes-cards title="Main course" :nodes="recipesMainCourse" more-link="/recipes-category/Main%20course"></recipes-cards>
+      <recipes-cards title="Starter" :nodes="recipesStarter" more-link="/recipes-category/Starter"></recipes-cards>
+      <recipes-cards title="Snack" :nodes="recipesSnack" more-link="/recipes-category/Snack"></recipes-cards>
+      <recipes-cards title="Salad" :nodes="recipesSalad" more-link="/recipes-category/Salad"></recipes-cards>
+    </div>
   </div>
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesFlexGrid from '~/components/RecipesFlexGrid'
+import RecipesCards from '~/components/RecipesCards'
 export default {
-  components: { RecipesFlexGrid },
+  transition: 'page',
+  components: { RecipesCards },
   async asyncData () {
     const [
-      recipesLatest, 
+      recipesLatest,
       recipesMainCourse,
       recipesStarter,
       recipesSnack,
@@ -30,8 +30,8 @@ export default {
       Recipes.findAllByCategoryName("Snack", 4),
       Recipes.findAllByCategoryName("Salad", 4),
     ])
-    return { 
-      recipesLatest, 
+    return {
+      recipesLatest,
       recipesMainCourse,
       recipesStarter,
       recipesSnack,

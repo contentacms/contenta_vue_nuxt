@@ -1,7 +1,6 @@
 <template>
   <div>
     <Navigation />
-    <SiteTitle />
     <nuxt/>
   </div>
 </template>
