@@ -5,8 +5,16 @@ nav {
 
 /* page transitions */
 .page-enter-active, .page-leave-active {
-  transition: opacity .1s
+  transition: opacity .2s
 }
 .page-enter, .page-leave-active {
   opacity: 0
+}
+
+.columns .card {
+  height: 100%;
+}
+
+.more-link-wrapper {
+  margin-top:5vh;
 }
