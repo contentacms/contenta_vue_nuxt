@@ -1,6 +1,6 @@
 <template>
   <div class="nodes">
-    <h3 class="title is-3">{{ title }}</h3>
+    <h3 class="title is-3 has-text-centered">{{ title }}</h3>
   
     <BulmaGrid :items="nodes" itemsByRow="4">
       <template scope="column">

@@ -17,4 +17,9 @@ nav {
 
 .more-link-wrapper {
   margin-top:5vh;
+  margin-bottom:5vh;
+}
+
+.nodes .title {
+  margin-top:5vh;
 }
