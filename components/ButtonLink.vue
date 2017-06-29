@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="button is-primary" :to="to" @click.native="isLoading = !isLoading" :class="{'is-loading' : isLoading}">
+  <nuxt-link class="button more-link is-primary" :to="to" @click.native="isLoading = !isLoading" :class="{'is-loading' : isLoading}">
     <slot></slot>
   </nuxt-link>
 </template>

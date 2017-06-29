@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <recipes-cards title="Latest recipes" :nodes="recipes"></recipes-cards>
+    <RecipesAsCards title="Latest recipes" :nodes="recipes"></RecipesAsCards>
   </div>
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesCards from '~/components/RecipesCards'
+import RecipesAsCards from '~/components/RecipesAsCards'
 export default {
   transition: 'page',
-  components: { RecipesCards },
+  components: { RecipesAsCards },
   async asyncData ({ params }) {
     const recipes = await Recipes.findAllLatest(params.category, 20)
     return { 

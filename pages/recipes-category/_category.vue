@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <recipes-cards :title="categoryName" :nodes="recipes"></recipes-cards>
+    <RecipesAsCards :title="categoryName" :nodes="recipes"></RecipesAsCards>
   </div>
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesCards from '~/components/RecipesCards'
+import RecipesAsCards from '~/components/RecipesAsCards'
 export default {
   transition: 'page',
-  components: { RecipesCards },
+  components: { RecipesAsCards },
   async asyncData ({ params }) {
     const recipes = await Recipes.findAllByCategoryName(params.category, 20)
     return { 

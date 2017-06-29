@@ -1,7 +1,7 @@
 <template>
   <BulmaCard>
     <div slot="image" v-if="node.image" class="thumbnail">
-      <img :src="node.image.thumbnail.filename" />
+      <img v-if="node.image" :src="node.image.thumbnail.filename" />
     </div>
     <div slot="content">
       <div class="difficulty">

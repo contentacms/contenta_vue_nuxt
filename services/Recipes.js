@@ -11,6 +11,15 @@ class Recipes {
     this.jsonapi = new DrupalJSONAPIClient(process.env.contentaJSONAPIBaseUrl)
   }
 
+  async findAllCategories(limit = 20) {
+    const query = {
+      page: {
+        limit
+      }
+    }
+    return await this.jsonapi.get('/categories', query)
+  }
+
   async findAllLatest (limit = 4) {
     const query = {
       sort: {

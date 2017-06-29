@@ -1,17 +1,10 @@
 <template>
   <div class="nodes">
-    <h3 class="title is-3 has-text-centered">{{ title }}</h3>
-  
     <BulmaGrid :items="nodes" itemsByRow="4">
       <template scope="props">
         <RecipeAsTeaser :node="props.item"></RecipeAsTeaser>
       </template>
     </BulmaGrid>
-  
-    <div class="more-link-wrapper has-text-centered">
-      <ButtonLink v-if="moreLink" :to="{path: moreLink}">View more</ButtonLink>
-    </div>
-  
   </div>
 </template> 
 

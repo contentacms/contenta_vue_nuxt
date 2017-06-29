@@ -1,42 +1,44 @@
 <template>
   <div class="page-recipes">
     <div class="container">
-      <recipes-cards title="Latest Recipes" :nodes="recipesLatest" more-link="/recipes-latest"></recipes-cards>
-      <recipes-cards title="Main course" :nodes="recipesMainCourse" more-link="/recipes-category/Main%20course"></recipes-cards>
-      <recipes-cards title="Starter" :nodes="recipesStarter" more-link="/recipes-category/Starter"></recipes-cards>
-      <recipes-cards title="Snack" :nodes="recipesSnack" more-link="/recipes-category/Snack"></recipes-cards>
-      <recipes-cards title="Salad" :nodes="recipesSalad" more-link="/recipes-category/Salad"></recipes-cards>
+  
+      <RecipesAsCards title="Latest Recipes" :nodes="recipesLatest" more-link="/recipes-latest"></RecipesAsCards>
+      <div class="has-text-centered">
+        <ButtonLink to="/recipes-latest">View more</ButtonLink>
+      </div>
+  
+      <div v-for="(category, categoryIndex) in categories" :key="categoryIndex">
+        <h3 class="title is-3 has-text-centered">{{ category.name }}</h3>
+        <RecipesAsCards title="Recipes" :nodes="category.recipes"></RecipesAsCards>
+        <div class="has-text-centered">
+          <ButtonLink :to="'/recipes-category/' + category.name">View more</ButtonLink>
+        </div>
+      </div>
+  
     </div>
   </div>
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesCards from '~/components/RecipesCards'
+import RecipesAsCards from '~/components/RecipesAsCards'
+import ButtonLink from '~/components/ButtonLink'
 export default {
   transition: 'page',
-  components: { RecipesCards },
+  components: { RecipesAsCards, ButtonLink },
   async asyncData () {
-    const [
-      recipesLatest,
-      recipesMainCourse,
-      recipesStarter,
-      recipesSnack,
-      recipesSalad
-    ] = await Promise.all([
-      Recipes.findAllLatest(4),
-      Recipes.findAllByCategoryName("Main course", 4),
-      Recipes.findAllByCategoryName("Starter", 4),
-      Recipes.findAllByCategoryName("Snack", 4),
-      Recipes.findAllByCategoryName("Salad", 4),
-    ])
-    return {
-      recipesLatest,
-      recipesMainCourse,
-      recipesStarter,
-      recipesSnack,
-      recipesSalad
+    const recipesLatest = await Recipes.findAllLatest()
+    // get all existing categories
+    const categories = await Recipes.findAllCategories()
+    // fetch  4 recipes for each category
+    const recipesByCategory = await Promise.all(categories.map(category => {
+      return Recipes.findAllByCategoryName(category.name, 4)
+    }))
+    // put recipes in their corresponding category object
+    for (const categoryIndex in categories) {
+      categories[categoryIndex].recipes = recipesByCategory[categoryIndex]
     }
+    return { recipesLatest, categories }
   }
 }
 </script>
