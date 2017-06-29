@@ -3,8 +3,8 @@
     <h3 class="title is-3 has-text-centered">{{ title }}</h3>
   
     <BulmaGrid :items="nodes" itemsByRow="4">
-      <template scope="column">
-        <recipeCard :node="column.item"></recipeCard>
+      <template scope="props">
+        <RecipeAsTeaser :node="props.item"></RecipeAsTeaser>
       </template>
     </BulmaGrid>
   
@@ -16,11 +16,11 @@
 </template> 
 
 <script>
-import RecipeCard from '~/components/RecipeCard'
+import RecipeAsTeaser from '~/components/RecipeAsTeaser'
 import BulmaGrid from '~/components/BulmaGrid'
 import ButtonLink from '~/components/ButtonLink'
 export default {
-  components: { RecipeCard, BulmaGrid, ButtonLink },
+  components: { RecipeAsTeaser, BulmaGrid, ButtonLink },
   props: {
     title: { type: String, default: '' },
     moreLink: { type: String, default: '' },
