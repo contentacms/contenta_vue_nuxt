@@ -28,16 +28,13 @@ export default {
   components: { RecipesAsCards, ButtonLink },
   async asyncData () {
     const recipesLatest = await Recipes.findAllLatest()
-    // get all existing categories
     const categories = await Recipes.findAllCategories()
     // fetch  4 recipes for each category
-    const recipesByCategory = await Promise.all(categories.map(category => {
-      return Recipes.findAllByCategoryName(category.name, 4)
-    }))
-    // put recipes in their corresponding category object
-    for (const categoryIndex in categories) {
-      categories[categoryIndex].recipes = recipesByCategory[categoryIndex]
-    }
+    const recipesByCategory = await Promise.all(categories.map(category =>
+      Recipes.findAllByCategoryName(category.name, 4)
+    ))
+    // put returned recipes objects in their corresponding category object
+    categories.map((category, index) => category.recipes = recipesByCategory[index])
     return { recipesLatest, categories }
   }
 }
