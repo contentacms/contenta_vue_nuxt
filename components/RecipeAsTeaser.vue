@@ -1,31 +1,17 @@
 <template>
-  <BulmaCard>
-    <div slot="image" v-if="node.image" class="thumbnail">
-      <img v-if="node.image" :src="node.image.thumbnail.filename" />
-    </div>
-    <div slot="content">
-      <div class="difficulty">
-        difficulty : {{node.difficulty}}
+  <nuxt-link :to="'/recipes/' + node.id">
+    <BulmaCard>
+      <div slot="image" v-if="node.image" class="thumbnail">
+        <img v-if="node.image" :src="node.image.thumbnail.filename" />
       </div>
-      <h3>{{ node.title }}</h3>
-    </div>
-  </BulmaCard>
-  
-  <!--
-    <div class="card">
-      <div class="card-image">
-        <div v-if="node.image" class="thumbnail">
-          <img :src="node.image.thumbnail.filename" />
-        </div>
-      </div>
-      <div class="card-content">
+      <div slot="content">
         <div class="difficulty">
           difficulty : {{node.difficulty}}
         </div>
         <h3>{{ node.title }}</h3>
       </div>
-    </div>
-    -->
+    </BulmaCard>
+  </nuxt-link>
 </template>
 
 <script>

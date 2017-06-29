@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <RecipesAsCards :title="categoryName" :nodes="recipes"></RecipesAsCards>
+    <h3 class="title is-h3 has-text-centered"> {{ categoryName }} </h3>
+    <RecipesAsCards :nodes="recipes"></RecipesAsCards>
   </div>
 </template>
 

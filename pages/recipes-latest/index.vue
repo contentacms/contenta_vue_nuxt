@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h3 class="title is-h3 has-text-centered"> Latest recipes </h3>
     <RecipesAsCards title="Latest recipes" :nodes="recipes"></RecipesAsCards>
   </div>
 </template>

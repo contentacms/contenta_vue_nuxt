@@ -1,7 +1,7 @@
 <template>
-<div>
-  Recipe detail
-</div>
+  <div>
+    Recipe detail
+  </div>
 </template>
 
 <script>
