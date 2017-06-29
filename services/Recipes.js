@@ -11,17 +11,24 @@ class Recipes {
     this.jsonapi = new DrupalJSONAPIClient(process.env.contentaJSONAPIBaseUrl)
   }
 
+  async findOneById(id) {
+    const options = {
+      include:['image']
+    }
+    return await this.jsonapi.get(this.resourceUri + '/' + id, options)
+  }
+
   async findAllCategories(limit = 20) {
-    const query = {
+    const options = {
       page: {
         limit
       }
     }
-    return await this.jsonapi.get('/categories', query)
+    return await this.jsonapi.get('/categories', options)
   }
 
   async findAllLatest (limit = 4) {
-    const query = {
+    const options = {
       sort: {
         sortCreated: {
           path: 'created',
@@ -33,12 +40,12 @@ class Recipes {
       },
       include: ['image', 'image.thumbnail', 'tags'],  
     }
-    const datas = await this.jsonapi.get(this.resourceUri, query)
+    const datas = await this.jsonapi.get(this.resourceUri, options)
     return datas
   }
 
   async findAllByCategoryName (categoryName, limit = 4) {
-    const query = {
+    const options = {
       sortCreated: {
         path: 'created',
         direction: 'DESC'
@@ -59,7 +66,7 @@ class Recipes {
         limit: limit,
       }
     }
-    return await this.jsonapi.get(this.resourceUri, query)
+    return await this.jsonapi.get(this.resourceUri, options)
   }
 
 }
