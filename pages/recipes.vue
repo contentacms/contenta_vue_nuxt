@@ -27,7 +27,7 @@ export default {
   transition: 'page',
   components: { RecipesAsCards, ButtonLink },
   async asyncData () {
-    const recipesLatest = await Recipes.findAllLatest()
+    const recipesLatest = await Recipes.findAllLatest(4)
     const categories = await Recipes.findAllCategories()
     // fetch  4 recipes for each category
     const recipesByCategory = await Promise.all(categories.map(category =>
