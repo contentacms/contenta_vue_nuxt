@@ -3,7 +3,10 @@
     <nav class="nav">
       <div class="nav-left">
         <span class="nav-item">
-          <!-- UMAMI food magazine -->
+          UMAMI food magazine
+        </span>
+        <span class="nav-item">
+          <AppVersion />
         </span>
       </div>
   
@@ -27,7 +30,9 @@
 </template>
 
 <script>
+import AppVersion from '~/components/AppVersion'
 export default {
+  components: { AppVersion },
   data () {
     return {
       displayMobileMenu: false
