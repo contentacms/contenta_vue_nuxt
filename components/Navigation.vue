@@ -21,8 +21,8 @@
       <!-- This "nav-menu" is hidden on mobile -->
       <!-- Add the modifier "is-active" to display it on mobile -->
       <div class="nav-right nav-menu" :class="{'is-active': displayMobileMenu}">
-        <nuxt-link to="/" class="nav-item"> Home </nuxt-link>
-        <nuxt-link to="/recipes" class="nav-item"> Recipes </nuxt-link>
+        <nuxt-link @click.native="displayMobileMenu = false" to="/" class="nav-item"> Home </nuxt-link>
+        <nuxt-link @click.native="displayMobileMenu = false" to="/recipes" class="nav-item"> Recipes </nuxt-link>
       </div>
   
     </nav>
