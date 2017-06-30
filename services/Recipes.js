@@ -49,7 +49,7 @@ class Recipes {
       },
       include: ['image', 'image.thumbnail'],
       fields: {
-        recipes:['difficulty', 'image'],
+        recipes:['title', 'difficulty', 'image'],
         images: ['name', 'thumbnail'],
         files: ['filename']
       }
@@ -94,7 +94,7 @@ class Recipes {
         },
       },
       fields: {
-        recipes:['difficulty', 'image'],
+        recipes:['title', 'difficulty', 'image'],
         images: ['name', 'thumbnail'],
         files:['filename']
       },
