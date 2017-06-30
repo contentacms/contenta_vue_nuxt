@@ -10,7 +10,8 @@
     "d8-jsonapi-querystring": "0.0.4",
     "jsonapi-parse": "^1.2.0",
     "lodash": "^4.17.4",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "vue-lazyload": "^1.0.5"
   },
   "scripts": {
     "dev": "node_modules/.bin/nuxt",

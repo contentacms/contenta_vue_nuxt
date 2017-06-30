@@ -31,10 +31,13 @@ export default {
     const recipesLatest = await Recipes.findAllLatest(4)
     // console.log(recipesLatest)
     const categories = await Recipes.findAllCategories()
+    const recipesByCategory = await Recipes.subRequestsFromCategories(categories)
     // fetch  4 recipes for each category
+    /*
     const recipesByCategory = await Promise.all(categories.map(category =>
       Recipes.findAllByCategoryName(category.name, 4)
     ))
+    */
     // put returned recipes objects in their corresponding category object
     categories.map((category, index) => category.recipes = recipesByCategory[index])
     return { recipesLatest, categories }

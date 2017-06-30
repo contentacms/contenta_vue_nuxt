@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['~plugins/vue-lazyload'],
   env: {
     contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io/api'
   },

@@ -2,7 +2,7 @@
   <nuxt-link :to="'/recipes/' + node.id">
     <BulmaCard>
       <div slot="image" v-if="node.image" class="thumbnail">
-        <img v-if="node.image" :src="node.image.thumbnail.filename" />
+        <img v-if="node.image" v-lazy="node.image.thumbnail.filename" />
       </div>
       <div slot="content">
         <div class="difficulty">

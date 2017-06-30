@@ -3,6 +3,9 @@
  */
 
 import DrupalJSONAPIClient from './DrupalJSONAPIClient'
+import axios from 'axios'
+import {parse} from './subRequestsResponseParser'
+import jsonapiParse from "jsonapi-parse"
 
 class Recipes {
 
@@ -11,14 +14,14 @@ class Recipes {
     this.jsonapi = new DrupalJSONAPIClient(process.env.contentaJSONAPIBaseUrl)
   }
 
-  async findOneById(id) {
+  async findOneById (id) {
     const options = {
-      include:['image']
+      include: ['image']
     }
     return await this.jsonapi.get(this.resourceUri + '/' + id, options)
   }
 
-  async findAllCategories(limit = 20) {
+  async findAllCategories (limit = 20) {
     const options = {
       page: {
         limit
@@ -38,10 +41,28 @@ class Recipes {
       page: {
         limit
       },
-      include: ['image', 'image.thumbnail', 'tags'],  
+      include: ['image', 'image.thumbnail', 'tags'],
     }
     const datas = await this.jsonapi.get(this.resourceUri, options)
     return datas
+  }
+
+  async subRequestsFromCategories (categories) {
+    const requests = []
+    for (const index in categories) {
+      requests.push({
+        "requestId": index,
+        "uri": "/api/recipes?include=category,image,image.thumbnail&filter[category.name][value]=" + encodeURI(categories[index].name) + '&page[limit]=4',
+        "action": "view",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/vnd.api+json",
+        }
+      })
+    }
+    return axios.post("https://dev-contentacms.pantheonsite.io/subrequests?_format=json", requests).then(response => {
+      return parse(response).map(r => jsonapiParse.parse(r).data)
+    })
   }
 
   async findAllByCategoryName (categoryName, limit = 4) {
@@ -50,7 +71,7 @@ class Recipes {
         path: 'created',
         direction: 'DESC'
       },
-      include:[
+      include: [
         'image', 'image.thumbnail', 'tags'
       ],
       filter: {

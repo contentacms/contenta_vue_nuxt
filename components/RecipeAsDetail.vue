@@ -4,7 +4,7 @@
   
     <div class="columns">
       <div class="column">
-        <img :src="recipe.image.name" />
+        <img v-lazy="recipe.image.name" />
       </div>
       <div class="column">
         <div class="columns">
