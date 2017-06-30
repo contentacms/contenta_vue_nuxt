@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="'/recipes/' + node.id">
     <BulmaCard>
-      <div slot="image" v-if="node.image" class="thumbnail">
+      <div slot="image" v-if="node.image.thumbnail" class="thumbnail">
         <img v-if="node.image" v-lazy="node.image.thumbnail.filename" />
       </div>
       <div slot="content">

@@ -42,6 +42,12 @@ class Recipes {
         limit
       },
       include: ['image', 'image.thumbnail', 'tags'],
+      fields: {
+        recipes:['difficulty', 'image'],
+        images: ['name', 'thumbnail'],
+        category:['name'],
+        files:['filename']
+      }
     }
     const datas = await this.jsonapi.get(this.resourceUri, options)
     return datas
@@ -83,6 +89,12 @@ class Recipes {
             value: categoryName
           }
         },
+      },
+      fields: {
+        recipes:['difficulty', 'image'],
+        images: ['name', 'thumbnail'],
+        category:['name'],
+        files:['filename']
       },
       page: {
         offset: 0,

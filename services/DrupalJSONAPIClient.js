@@ -38,6 +38,7 @@ class JSONAPIClient {
     const queryString = buildQueryString(queryParams)
     let result = null
     const url = encodeURI(this.baseUrl) + encodeURI(uri) + '?' + queryString
+    // console.log(url)
     try {
       const response = await axios.get(url)
       const parsedJson = jsonapiParse.parse(response.data)
