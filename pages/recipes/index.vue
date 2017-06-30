@@ -10,6 +10,7 @@ export default {
   components: { RecipesIndex },
   async asyncData () {
 
+
     // get from cache to test how much it speeds up things
     let categories = Recipes.findAllCategoriesFromCache()
     let promises = []

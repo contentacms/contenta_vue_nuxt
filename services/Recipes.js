@@ -5,7 +5,6 @@
 
 import DrupalJSONAPIClient from './DrupalJSONAPIClient'
 import axios from 'axios'
-import {parse} from './subRequestsResponseParser'
 import jsonapiParse from "jsonapi-parse"
 
 class Recipes {
