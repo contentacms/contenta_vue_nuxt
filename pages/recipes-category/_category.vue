@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h3 class="title is-h3 has-text-centered"> {{ categoryName }} </h3>
-    <RecipesAsCards :nodes="recipes"></RecipesAsCards>
+    <RecipesAsCards :recipes="recipes"></RecipesAsCards>
   </div>
 </template>
 

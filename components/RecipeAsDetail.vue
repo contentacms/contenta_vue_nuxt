@@ -1,5 +1,5 @@
   <template>
-  <div>
+  <div class="container">
     <h1 class="title is-1 has-text-centered"> {{ recipe.title }} </h1>
   
     <div class="columns">

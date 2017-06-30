@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
    <RecipeAsDetail :recipe="recipe" />
-  </div>
 </template>
 
 <script>
@@ -12,7 +10,6 @@ export default {
   components: { RecipeAsDetail },
   async asyncData ({ params }) {
     const recipe = await Recipes.findOneById(params.id)
-    console.log(recipe)
     return { recipe }
   }
 }

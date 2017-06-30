@@ -1,33 +1,15 @@
 <template>
-  <div class="page-recipes">
-    <div class="container">
-  
-      <h3 class="title is-3 has-text-centered"> Latest recipes </h3>
-      <RecipesAsCards title="Latest Recipes" :nodes="recipesLatest" more-link="/recipes-latest"></RecipesAsCards>
-      <div class="has-text-centered">
-        <ButtonLink to="/recipes-latest">View more</ButtonLink>
-      </div>
-  
-      <div v-for="(category, categoryIndex) in categories" :key="categoryIndex">
-        <h3 class="title is-3 has-text-centered">{{ category.name }}</h3>
-        <RecipesAsCards title="Recipes" :nodes="category.recipes"></RecipesAsCards>
-        <div class="has-text-centered">
-          <ButtonLink :to="'/recipes-category/' + category.name">View more</ButtonLink>
-        </div>
-      </div>
-  
-    </div>
-  </div>
+  <recipesIndex :recipesLatest="recipesLatest" :recipesByCategories="recipesByCategories" />
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesAsCards from '~/components/RecipesAsCards'
-import ButtonLink from '~/components/ButtonLink'
+import RecipesIndex from '~/components/RecipesIndex'
 export default {
   transition: 'page',
-  components: { RecipesAsCards, ButtonLink },
+  components: { RecipesIndex },
   async asyncData () {
+
     // get from cache to test how much it speeds up things
     let categories = Recipes.findAllCategoriesFromCache()
     let promises = []
@@ -43,7 +25,7 @@ export default {
     return Promise.all(promises).then(promisesResults => {
       return {
         recipesLatest: promisesResults[0],
-        categories: promisesResults[1]
+        recipesByCategories: promisesResults[1]
       }
     })
   }

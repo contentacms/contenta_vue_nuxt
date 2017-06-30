@@ -1,8 +1,8 @@
 <template>
-  <div class="nodes">
-    <BulmaGrid :items="nodes" itemsByRow="4">
+  <div class="recipes">
+    <BulmaGrid :items="recipes" itemsByRow="4">
       <template scope="props">
-        <RecipeAsTeaser :node="props.item"></RecipeAsTeaser>
+        <RecipeAsTeaser :recipe="props.item"></RecipeAsTeaser>
       </template>
     </BulmaGrid>
   </div>
@@ -11,13 +11,12 @@
 <script>
 import RecipeAsTeaser from '~/components/RecipeAsTeaser'
 import BulmaGrid from '~/components/BulmaGrid'
-import ButtonLink from '~/components/ButtonLink'
 export default {
-  components: { RecipeAsTeaser, BulmaGrid, ButtonLink },
+  components: { RecipeAsTeaser, BulmaGrid },
   props: {
     title: { type: String, default: '' },
     moreLink: { type: String, default: '' },
-    nodes: { type: Array, default: [] }
+    recipes: { type: Array, default: () => [] }
   }
 }
 </script>

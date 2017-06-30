@@ -1,14 +1,14 @@
 <template>
-  <nuxt-link :to="'/recipes/' + node.id">
+  <nuxt-link :to="'/recipes/' + recipe.id">
     <BulmaCard>
-      <div slot="image" v-if="node.image.thumbnail" class="thumbnail">
-        <img v-lazy="node.image.thumbnail.filename" />
+      <div slot="image" v-if="recipe.image.thumbnail" class="thumbnail">
+        <img v-lazy="recipe.image.thumbnail.filename" />
       </div>
       <div slot="content">
         <div class="difficulty">
-          difficulty : {{node.difficulty}}
+          difficulty : {{recipe.difficulty}}
         </div>
-        <h3>{{ node.title }}</h3>
+        <h3>{{ recipe.title }}</h3>
       </div>
     </BulmaCard>
   </nuxt-link>
@@ -19,10 +19,7 @@ import BulmaCard from '~/components/BulmaCard'
 export default {
   components: { BulmaCard },
   props: {
-    node: {
-      type: Object,
-      default: {}
-    }
+    recipe: { type: Object, default: () => []}
   }
 }
 </script>
