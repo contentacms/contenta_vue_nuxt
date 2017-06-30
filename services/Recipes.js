@@ -47,7 +47,6 @@ class Recipes {
     return datas
   }
 
-  /*
   async subRequestsFromCategories (categories) {
     const requests = []
     for (const index in categories) {
@@ -65,7 +64,6 @@ class Recipes {
       return parse(response).map(r => jsonapiParse.parse(r).data)
     })
   }
-  */
 
   async findAllByCategoryName (categoryName, limit = 4) {
     const options = {
