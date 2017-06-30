@@ -28,26 +28,18 @@ export default {
   transition: 'page',
   components: { RecipesAsCards, ButtonLink },
   async asyncData () {
-   let promises = []
-    let categories = []
-
-    // get latest recipes
+    // get from cache to test how much it speeds up things
+    let categories = Recipes.findAllCategoriesFromCache()
+    let promises = []
     promises.push(Recipes.findAllLatest(4))
+    promises.push(Promise.all(categories.map(category => Recipes.findAllByCategoryName(category.name, 4)))
+      .then(recipesByCategory => {
+        return categories.map((category, index) => {
+          category.recipes = recipesByCategory[index]
+          return category
+        })
+      }))
 
-    // in paralell, get all categories and the 4 recipes for each category
-    promises.push(Recipes.findAllCategories().then(result => {
-      return categories = result
-    })
-    .then(categories => {
-      return Promise.all(categories.map(category => Recipes.findAllByCategoryName(category.name, 4)))
-    })
-    .then(recipesByCategory => {
-      return categories.map((category, index) => {
-        category.recipes = recipesByCategory[index]
-        return category
-      })
-    }))
-    
     return Promise.all(promises).then(promisesResults => {
       return {
         recipesLatest: promisesResults[0],
