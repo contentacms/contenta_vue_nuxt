@@ -7,7 +7,7 @@
       <div class="has-text-centered">
         <ButtonLink to="/recipes-latest">View more</ButtonLink>
       </div>
-  
+
       <div v-for="(category, categoryIndex) in categories" :key="categoryIndex">
         <h3 class="title is-3 has-text-centered">{{ category.name }}</h3>
         <RecipesAsCards title="Recipes" :nodes="category.recipes"></RecipesAsCards>
@@ -27,15 +27,33 @@ import ButtonLink from '~/components/ButtonLink'
 export default {
   transition: 'page',
   components: { RecipesAsCards, ButtonLink },
-  async asyncData () {
-    const recipesLatest = await Recipes.findAllLatest(4)
-    const categories = await Recipes.findAllCategories()
-    // fetch  4 recipes for each category
-    const recipesByCategory = await Promise.all(categories.map(category =>
-      Recipes.findAllByCategoryName(category.name, 4)
-    ))
-    categories.map((category, index) => category.recipes = recipesByCategory[index])
-    return { recipesLatest, categories }
+  asyncData ({ params }, callback) {
+    let promises = []
+    let categories = []
+   
+    // get latest recipes
+    promises.push(Recipes.findAllLatest(4))
+
+    // in paralell, get all categories and the 4 recipes for each category
+    promises.push(Recipes.findAllCategories().then(result => {
+      return categories = result
+    }) 
+    .then(categories => {
+      return Promise.all(categories.map(category => Recipes.findAllByCategoryName(category.name, 4)))
+    })
+    .then(recipesByCategory => {
+      return categories.map((category, index) => {
+        category.recipes = recipesByCategory[index]
+        return category
+      })
+    }))
+
+    return Promise.all(promises).then(promisesResults => {
+      return {
+        recipesLatest: promisesResults[0],
+        categories: promisesResults[1]
+      }
+    })
   }
 }
 </script>

@@ -17,7 +17,7 @@ export default {
   props: {
     title: { type: String, default: '' },
     moreLink: { type: String, default: '' },
-    nodes: { type: Array, default: [] }
+    nodes: { type: Array, default: () => [] }
   }
 }
 </script>

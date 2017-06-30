@@ -41,12 +41,11 @@ class Recipes {
       page: {
         limit
       },
-      include: ['image', 'image.thumbnail', 'tags'],
+      include: ['image', 'image.thumbnail'],
       fields: {
         recipes:['difficulty', 'image'],
         images: ['name', 'thumbnail'],
-        category:['name'],
-        files:['filename']
+        files: ['filename']
       }
     }
     const datas = await this.jsonapi.get(this.resourceUri, options)
@@ -79,9 +78,7 @@ class Recipes {
         path: 'created',
         direction: 'DESC'
       },
-      include: [
-        'image', 'image.thumbnail', 'tags'
-      ],
+      include: [ 'image', 'image.thumbnail' ],
       filter: {
         categoryName: {
           condition: {
@@ -93,7 +90,6 @@ class Recipes {
       fields: {
         recipes:['difficulty', 'image'],
         images: ['name', 'thumbnail'],
-        category:['name'],
         files:['filename']
       },
       page: {
