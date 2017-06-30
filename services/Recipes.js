@@ -1,3 +1,4 @@
+
 /**
  * Get recipes from JSON API server
  */
@@ -41,12 +42,18 @@ class Recipes {
       page: {
         limit
       },
-      include: ['image', 'image.thumbnail', 'tags'],
+      include: ['image', 'image.thumbnail'],
+      fields: {
+        recipes:['difficulty', 'image'],
+        images: ['name', 'thumbnail'],
+        files: ['filename']
+      }
     }
     const datas = await this.jsonapi.get(this.resourceUri, options)
     return datas
   }
 
+  /*
   async subRequestsFromCategories (categories) {
     const requests = []
     for (const index in categories) {
@@ -64,6 +71,7 @@ class Recipes {
       return parse(response).map(r => jsonapiParse.parse(r).data)
     })
   }
+  */
 
   async findAllByCategoryName (categoryName, limit = 4) {
     const options = {
@@ -71,9 +79,7 @@ class Recipes {
         path: 'created',
         direction: 'DESC'
       },
-      include: [
-        'image', 'image.thumbnail', 'tags'
-      ],
+      include: [ 'image', 'image.thumbnail' ],
       filter: {
         categoryName: {
           condition: {
@@ -81,6 +87,11 @@ class Recipes {
             value: categoryName
           }
         },
+      },
+      fields: {
+        recipes:['difficulty', 'image'],
+        images: ['name', 'thumbnail'],
+        files:['filename']
       },
       page: {
         offset: 0,
@@ -93,3 +104,4 @@ class Recipes {
 }
 
 export default new Recipes()
+

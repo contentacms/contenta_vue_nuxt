@@ -28,19 +28,32 @@ export default {
   transition: 'page',
   components: { RecipesAsCards, ButtonLink },
   async asyncData () {
-    const recipesLatest = await Recipes.findAllLatest(4)
-    // console.log(recipesLatest)
-    const categories = await Recipes.findAllCategories()
-    const recipesByCategory = await Recipes.subRequestsFromCategories(categories)
-    // fetch  4 recipes for each category
-    /*
-    const recipesByCategory = await Promise.all(categories.map(category =>
-      Recipes.findAllByCategoryName(category.name, 4)
-    ))
-    */
-    // put returned recipes objects in their corresponding category object
-    categories.map((category, index) => category.recipes = recipesByCategory[index])
-    return { recipesLatest, categories }
+   let promises = []
+    let categories = []
+
+    // get latest recipes
+    promises.push(Recipes.findAllLatest(4))
+
+    // in paralell, get all categories and the 4 recipes for each category
+    promises.push(Recipes.findAllCategories().then(result => {
+      return categories = result
+    })
+    .then(categories => {
+      return Promise.all(categories.map(category => Recipes.findAllByCategoryName(category.name, 4)))
+    })
+    .then(recipesByCategory => {
+      return categories.map((category, index) => {
+        category.recipes = recipesByCategory[index]
+        return category
+      })
+    }))
+    
+    return Promise.all(promises).then(promisesResults => {
+      return {
+        recipesLatest: promisesResults[0],
+        categories: promisesResults[1]
+      }
+    })
   }
 }
 </script>
