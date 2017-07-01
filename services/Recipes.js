@@ -79,10 +79,7 @@ class Recipes {
 
   async findAllByCategoryName (categoryName, limit = 4) {
     const options = {
-      sortCreated: {
-        path: 'created',
-        direction: 'DESC'
-      },
+      sort:'-created',
       include: [ 'image', 'image.thumbnail' ],
       filter: {
         categoryName: {

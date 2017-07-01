@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {buildQueryString} from 'd8-jsonapi-querystring'
+import { buildQueryString } from 'd8-jsonapi-querystring'
 
 class Pipeline {
 
@@ -22,9 +22,19 @@ class Pipeline {
     if (request.options) {
       request.uri = request.uri + '?' + buildQueryString(request.options)
     }
-    console.log(request.uri)
     const subrequest = Object.assign(defaultOptions, request)
-    this.requests.push(subrequest)
+
+    if (request.multiply !== undefined) {
+      let subrequests = []
+      for (let i = 0; i < request.multiply; i++) {
+        const newSubRequest = Object.assign({}, request)
+        newSubRequest.uri = newSubRequest.uri.replace('--index', i)
+        this.requests.push(newSubRequest)
+      }
+    }
+    else {
+      this.requests.push(subrequest)
+    }
   }
 
   /**
@@ -35,12 +45,12 @@ class Pipeline {
     const responses = response.data.split('--' + boundary).filter(v => v !== "" && v !== '--').map(v => JSON.parse(v.split("\n\r")[1]))
     return responses
   }
-  
-  send() {
+
+  send () {
     return axios.post(this.endpoint, JSON.stringify(this.requests))
-    .then(response => {
-       return this.parseMultipartResponse(response)
-    })
+      .then(response => {
+        return this.parseMultipartResponse(response)
+      })
   }
 
   getRequests () {

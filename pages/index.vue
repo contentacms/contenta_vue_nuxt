@@ -20,20 +20,50 @@ export default {
   transition: 'page',
   asyncData () {
 
+    // all categories
     Pipeline.add({
       requestId: "categories",
-      uri: "/api/categories",
-      options: {
-        page: { limit: 2 }
-      }
+      uri: "/api/categories"
     })
+    // latest 4 recipes
     Pipeline.add({
       requestId: "recipes",
       uri: "/api/recipes",
-      options: {
-        page: { limit: 10 }
+      options: { 
+        sort: {
+          sortCreated: {
+            path: 'created',
+            direction: 'DESC'
+          }
+        },
+        page: {
+          limit: 4
+        },
+        include: ['image', 'image.thumbnail'],
+        fields: {
+          recipes:['title', 'difficulty', 'image'],
+          images: ['name', 'thumbnail'],
+          files: ['filename']
+        }
       }
     })
+    // 4 recipes for each category
+    Pipeline.add({
+      requestId: "recipesByCategory",
+      waitFor: "categories",
+      uri: "/api/recipes",
+      options: {
+        page: { limit: 4 },
+        filter: {
+          categoryName: {
+            path: 'category.name',
+            value: '{{/categories@/data/--index/attributes/name}}'
+          }
+        }
+      },
+      multiply: 4,
+    })
+    
     Pipeline.send().then(r => console.log(r))
     
     return {}
