@@ -48,6 +48,12 @@ class JSONAPIClient {
     return result
   }
 
+  async send (JsonApiQuery) {
+    const result = await axios.get(JsonApiQuery.toString())
+    const datas = jsonapiParse.parse(result.data).data
+    return datas
+  }
+
 }
 
 export default JSONAPIClient

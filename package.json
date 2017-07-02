@@ -8,6 +8,8 @@
     "@nuxtjs/pwa": "latest",
     "axios": "^0.16.2",
     "d8-jsonapi-querystring": "0.0.5",
+    "d8-subrequests": "0.0.2",
+    "dev-debug": "node --debug node_modules/.bin/nuxt",
     "jsonapi-parse": "^1.2.0",
     "lodash": "^4.17.4",
     "nuxt": "latest",
@@ -16,6 +18,7 @@
   "scripts": {
     "dev": "node_modules/.bin/nuxt",
     "build": "node_modules/.bin/nuxt build",
+    "analyse": "node_modules/.bin/nuxt build --analyse",
     "start": "node_modules/.bin/nuxt start",
     "generate": "node_modules/.bin/nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",

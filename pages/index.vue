@@ -14,31 +14,28 @@
 </template>
 
 <script>
-import Pipeline from '~/services/Pipeline'
+import SubRequests from 'd8-subrequests'
 
 export default {
   transition: 'page',
   asyncData () {
-
+    const subrequests = new SubRequests("https://dev-contentacms.pantheonsite.io/subrequests?_format=json")
     // all categories
-    Pipeline.add({
+    subrequests.add({
       requestId: "categories",
       uri: "/api/categories"
     })
+    subrequests.add({
+      requestId: "articles",
+      uri: "/api/tags"
+    })
     // latest 4 recipes
-    Pipeline.add({
+    subrequests.add({
       requestId: "recipes",
       uri: "/api/recipes",
       options: { 
-        sort: {
-          sortCreated: {
-            path: 'created',
-            direction: 'DESC'
-          }
-        },
-        page: {
-          limit: 4
-        },
+        sort:'-created',
+        page: { limit: 10 },
         include: ['image', 'image.thumbnail'],
         fields: {
           recipes:['title', 'difficulty', 'image'],
@@ -47,24 +44,8 @@ export default {
         }
       }
     })
-    // 4 recipes for each category
-    Pipeline.add({
-      requestId: "recipesByCategory",
-      waitFor: "categories",
-      uri: "/api/recipes",
-      options: {
-        page: { limit: 4 },
-        filter: {
-          categoryName: {
-            path: 'category.name',
-            value: '{{/categories@/data/--index/attributes/name}}'
-          }
-        }
-      },
-      multiply: 4,
-    })
-    
-    Pipeline.send().then(r => console.log(r))
+
+    subrequests.send().then(r => console.log(r))
     
     return {}
 

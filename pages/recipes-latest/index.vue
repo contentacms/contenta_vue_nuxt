@@ -12,7 +12,7 @@ export default {
   transition: 'page',
   components: { RecipesAsCards },
   async asyncData ({ params }) {
-    const recipes = await Recipes.findAllLatest(params.category, 20)
+    const recipes = await Recipes.findAllLatest(20)
     return { 
       recipes
     }
