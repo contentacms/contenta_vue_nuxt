@@ -57,10 +57,8 @@ class Recipes {
         images: ['name', 'thumbnail'],
         files: ['filename']
       })
-    
     query.page({ limit: 4 })
-    console.log(query.queryObject)
-    return this.api.send(query)
+    return this.api.send(query.toString())
   }
 
   async findAllLatestOld (limit = 4) {
