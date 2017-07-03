@@ -15,23 +15,24 @@
 
 <script>
 import SubRequests from 'd8-subrequests'
-
+import axios from 'axios'
 export default {
   transition: 'page',
-  asyncData () {
+  async asyncData () {
     const subrequests = new SubRequests("https://dev-contentacms.pantheonsite.io/subrequests?_format=json")
+
     // all categories
     subrequests.add({
-      requestId: "categories",
       uri: "/api/categories"
     })
     subrequests.add({
-      requestId: "articles",
       uri: "/api/tags"
+    }),
+    subrequests.add({
+      uri: "/api/menus"
     })
     // latest 4 recipes
     subrequests.add({
-      requestId: "recipes",
       uri: "/api/recipes",
       options: { 
         sort:'-created',
@@ -45,7 +46,10 @@ export default {
       }
     })
 
-    subrequests.send().then(r => console.log(r))
+    const response = await axios.get(subrequests.getUrl())
+    const datas = subrequests.parseResponse(response.data)
+
+    //  subrequests.send().then(r => console.log(r))
     
     return {}
 

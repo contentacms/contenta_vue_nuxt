@@ -7,7 +7,7 @@
   "dependencies": {
     "@nuxtjs/pwa": "latest",
     "axios": "^0.16.2",
-    "d8-jsonapi-querystring": "0.0.5",
+    "d8-jsonapi-querystring": "0.0.6",
     "d8-subrequests": "0.0.2",
     "dev-debug": "node --debug node_modules/.bin/nuxt",
     "jsonapi-parse": "^1.2.0",
