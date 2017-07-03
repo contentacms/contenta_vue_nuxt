@@ -6,18 +6,6 @@
 import DrupalJSONAPIClient from './D8JSONAPIClient'
 import axios from 'axios'
 import jsonapiParse from "jsonapi-parse"
-import JsonApiQuery from './JSONAPIQuery'
-
-class Test {
-
-  constructor() {
-
-  }
-
-  test() {
-    console.log('test')
-  }
-}
 
 class Recipes {
 
@@ -49,16 +37,17 @@ class Recipes {
   }
 
   async findAllLatest (limit = 4) {
-    const query = new JsonApiQuery(this.baseUri, this.resourceUri)
-    query.sort('-created')
-    query.include(['image', 'image.thumbnail'])
-    query.fields({
+    const options = {
+      sort: '-created',
+      page: { limit },
+      include: ['image', 'image.thumbnail'],
+      fields: {
         recipes: ['title', 'difficulty', 'image'],
         images: ['name', 'thumbnail'],
         files: ['filename']
-      })
-    query.page({ limit: 4 })
-    return this.api.send(query.toString())
+      }
+    }
+    return this.api.get('/recipes', options)
   }
 
   async findAllLatestOld (limit = 4) {
@@ -82,26 +71,6 @@ class Recipes {
     const datas = await this.api.get(this.resourceUri, options)
     return datas
   }
-
-  /*
-  async subRequestsFromCategories (categories) {
-    const requests = []
-    for (const index in categories) {
-      requests.push({
-        "requestId": index,
-        "uri": "/api/recipes?include=category,image,image.thumbnail&filter[category.name][value]=" + encodeURI(categories[index].name) + '&page[limit]=4',
-        "action": "view",
-        "headers": {
-          "Accept": "application/json",
-          "Content-Type": "application/vnd.api+json",
-        }
-      })
-    }
-    return axios.post("https://dev-contentacms.pantheonsite.io/subrequests?_format=json", requests).then(response => {
-      return parse(response).map(r => jsonapiParse.parse(r).data)
-    })
-  }
-  */
 
   async findAllByCategoryName (categoryName, limit = 4) {
     const options = {
