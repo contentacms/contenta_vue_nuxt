@@ -22,7 +22,7 @@ USAGE :
 <script>
 export default {
   props: {
-    itemsByRow: { type: String, default: 4 },
+    itemsByRow: { type: String, default: "4" },
     items: { type: Array, default: [] }
   },
   computed: {

@@ -14,7 +14,7 @@ import BulmaGrid from '~/components/BulmaGrid'
 export default {
   components: { RecipeAsTeaser, BulmaGrid },
   props: {
-    cardsByRow: { type: Number, default: 4},
+    cardsByRow: { type: String, default: "4"},
     title: { type: String, default: '' },
     moreLink: { type: String, default: '' },
     recipes: { type: Array, default: () => [] }

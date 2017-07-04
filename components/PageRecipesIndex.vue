@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-
-      <h3 class="title is-3 has-text-centered"> Latest recipes </h3>
+      <h1 class="title is-1 has-text-centered"> Latest recipes </h1>
       <RecipesAsCards title="Latest Recipes" :recipes="recipesLatest" more-link="/recipes-latest"></RecipesAsCards>
       <div class="has-text-centered">
         <ButtonLink to="/recipes-latest">View more</ButtonLink>
