@@ -17,6 +17,9 @@ module.exports = {
   ** Common headers are already provided by @nuxtjs/pwa preset
   */
   head: {
+    meta: [
+      {name: 'viewport', content : 'width=device-width, user-scalable=no'}
+    ],
     link: [
       /* @custom */
       { rel: 'stylesheet', type: 'text/css', href: '/css/bulma.css' },
