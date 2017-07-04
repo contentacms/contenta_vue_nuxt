@@ -1,8 +1,10 @@
 <template>
-  <div class="container">
-    <h3 class="title is-h3 has-text-centered"> {{ categoryName }} </h3>
-    <RecipesAsCards :recipes="recipes"></RecipesAsCards>
-  </div>
+  <section>
+    <div class="container">
+      <h3 class="title is-h3 has-text-centered"> {{ categoryName }} </h3>
+      <RecipesAsCards :recipes="recipes"></RecipesAsCards>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -13,8 +15,8 @@ export default {
   components: { RecipesAsCards },
   async asyncData ({ params }) {
     const recipes = await Recipes.findAllByCategoryName(params.category, 20)
-    return { 
-      recipes, 
+    return {
+      recipes,
       categoryName: params.category
     }
   }

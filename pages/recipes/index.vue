@@ -1,20 +1,5 @@
 <template>
-  <div>
-    <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="columns">
-          <div class="column">
-            <h2 class="title is-2"> Promoted recipe </h2>
-            <h3 class="title is-3">{{promotedRecipe.title}} </h3>
-          </div>
-          <div class="column">
-              <img v-lazy="promotedRecipe.image.name" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <PageRecipesIndex :recipesLatest="recipesLatest" :recipesByCategories="recipesByCategories" />
-  </div>
+  <PageRecipesIndex v-bind="{recipePromoted, recipesLatest, recipesByCategories}" />
 </template>
 
 <script>
@@ -44,7 +29,7 @@ export default {
       return {
         recipesLatest: promisesResults[0],
         recipesByCategories: promisesResults[1],
-        promotedRecipe: promisesResults[2][0]
+        recipePromoted: promisesResults[2][0]
       }
     })
   }

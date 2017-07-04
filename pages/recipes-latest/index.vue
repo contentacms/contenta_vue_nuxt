@@ -1,8 +1,10 @@
 <template>
-  <div class="container">
-    <h3 class="title is-h3 has-text-centered"> Latest recipes </h3>
-    <RecipesAsCards title="Latest recipes" :recipes="recipes"></RecipesAsCards>
-  </div>
+  <section>
+    <div class="container">
+      <h3 class="title is-h3 has-text-centered"> Latest recipes </h3>
+      <RecipesAsCards title="Latest recipes" :recipes="recipes"></RecipesAsCards>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -13,7 +15,7 @@ export default {
   components: { RecipesAsCards },
   async asyncData ({ params }) {
     const recipes = await Recipes.findAllLatest(20)
-    return { 
+    return {
       recipes
     }
   }
