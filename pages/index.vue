@@ -9,14 +9,17 @@
         </div>
       </div>
     </section>
-   
+  
     <MonthEdition></MonthEdition>
-
-    <div class="container">
-      <h3 class="title is-3 has-text-centered">Recipes</h3>
-      <h4 class="title is-4 has-text-centered">Explore recipes across every type of occasion, ingredient and skill level</h4>
-      <recipesAsCards :recipes="recipes" cardsByRow="2"></recipesAsCards>
-    </div>
+  
+    <section class="home-recipes">
+      <div class="container">
+        <h3 class="title is-3 has-text-centered">Recipes</h3>
+        <h4 class="title is-4 has-text-centered">Explore recipes across every type of occasion, ingredient and skill level</h4>
+        <recipesAsCards :recipes="recipes" cardsByRow="2"></recipesAsCards>
+      </div>
+    </section>
+    
   </div>
 </template>
 

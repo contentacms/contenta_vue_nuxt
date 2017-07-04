@@ -23,6 +23,7 @@
       <div class="nav-right nav-menu" :class="{'is-active': displayMobileMenu}">
         <nuxt-link @click.native="displayMobileMenu = false" to="/" class="nav-item"> Home </nuxt-link>
         <nuxt-link @click.native="displayMobileMenu = false" to="/recipes" class="nav-item"> Recipes </nuxt-link>
+        <nuxt-link @click.native="displayMobileMenu = false" to="/magazine" class="nav-item"> Magazine </nuxt-link>
       </div>
   
     </nav>
