@@ -9,10 +9,13 @@
         </div>
       </div>
     </section>
+   
+    <MonthEdition></MonthEdition>
+
     <div class="container">
-      <br />
-      <h3 class="title is-3">Latest recipes</h3>
-      <recipesAsCards :recipes="recipes"></recipesAsCards>
+      <h3 class="title is-3 has-text-centered">Recipes</h3>
+      <h4 class="title is-4 has-text-centered">Explore recipes across every type of occasion, ingredient and skill level</h4>
+      <recipesAsCards :recipes="recipes" cardsByRow="2"></recipesAsCards>
     </div>
   </div>
 </template>
@@ -21,11 +24,13 @@
 import Recipes from '~/services/Recipes'
 import RecipesAsCards from '~/components/RecipesAsCards'
 import ButtonLink from '~/components/ButtonLink'
+import MonthEdition from '~/components/MonthEdition'
+
 export default {
   transition: 'page',
-  components: { RecipesAsCards },
+  components: { RecipesAsCards, MonthEdition },
   async asyncData ({ params }) {
-    const recipes = await Recipes.findAllLatest(8)
+    const recipes = await Recipes.findAllLatest(4)
     return {
       recipes
     }

@@ -1,13 +1,13 @@
 <template>
-  <recipesIndex :recipesLatest="recipesLatest" :recipesByCategories="recipesByCategories" />
+  <recipesPageIndex :recipesLatest="recipesLatest" :recipesByCategories="recipesByCategories" />
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesIndex from '~/components/RecipesIndex'
+import RecipesPageIndex from '~/components/RecipesPageIndex'
 export default {
   transition: 'page',
-  components: { RecipesIndex },
+  components: { RecipesPageIndex },
   async asyncData () {
 
 
