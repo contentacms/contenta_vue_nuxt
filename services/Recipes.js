@@ -26,7 +26,7 @@ class Recipes {
    * Promoted recipes sorted by created DESC
    * @param {int} limit 
    */
-  findAllPromoted(limit = 4) {
+  async findAllPromoted(limit = 4) {
     const options = {
       page: { limit },
       filter: {
@@ -43,6 +43,7 @@ class Recipes {
       },
       sort: '-created'
     }
+    return await this.api.get('/recipes', options)
   }
 
   findAllCategoriesFromCache () {
