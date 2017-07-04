@@ -1,5 +1,5 @@
 <template>
    <div class="app-version">
-     <small>0.0.5</small>
+     <small>0.0.6</small>
    </div>
 </template>
