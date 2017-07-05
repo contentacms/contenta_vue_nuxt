@@ -43,15 +43,10 @@ class JSONAPIClient {
       const parsedJson = jsonapiParse.parse(response.data)
       result = parsedJson.data
     } catch (e) {
-      console.error(e.message)
+      console.log(e)
+      //console.error(e.message)
     }
     return result
-  }
-
-  async send (url) {
-    const result = await axios.get(url)
-    const datas = jsonapiParse.parse(result.data).data
-    return datas
   }
 
 }
