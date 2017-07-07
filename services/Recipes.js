@@ -34,11 +34,11 @@ class Recipes {
           value: 1
         }
       },
-      include: ['image', 'image.thumbnail'].join(','),
+      include: "image,image.thumbnail",
       fields: {
-        recipes: ['title', 'difficulty', 'image'].join(','),
-        images: ['name', 'thumbnail'].join(','),
-        files: ['filename'].join(',')
+        recipes: "title,difficulty,image",
+        images: "name,thumbnail",
+        files: "filename"
       },
       sort: '-created'
     }
