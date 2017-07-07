@@ -10,16 +10,15 @@ import jsonapiParse from "jsonapi-parse"
 class Recipes {
 
   constructor() {
-    this.baseUri = process.env.contentaJSONAPIBaseUrl,
-      this.resourceUri = '/recipes'
+    this.resourceUri = 'recipes'
     this.api = new DrupalJSONAPIClient(process.env.contentaJSONAPIBaseUrl)
   }
 
   async findOneById (id) {
     const options = {
-      include: ['image']
+      include: ['image'].join(',')
     }
-    return await this.api.get(this.resourceUri + '/' + id, options)
+    return await this.api.get('recipes', options, id)
   }
 
   /**
@@ -35,15 +34,15 @@ class Recipes {
           value: 1
         }
       },
-      include: ['image', 'image.thumbnail'],
+      include: ['image', 'image.thumbnail'].join(','),
       fields: {
-        recipes: ['title', 'difficulty', 'image'],
-        images: ['name', 'thumbnail'],
-        files: ['filename']
+        recipes: ['title', 'difficulty', 'image'].join(','),
+        images: ['name', 'thumbnail'].join(','),
+        files: ['filename'].join(',')
       },
       sort: '-created'
     }
-    return await this.api.get('/recipes', options)
+    return await this.api.get('recipes', options)
   }
 
   findAllCategoriesFromCache () {
@@ -57,21 +56,21 @@ class Recipes {
         limit
       }
     }
-    return await this.api.get('/categories', options)
+    return await this.api.get('categories', options)
   }
 
   async findAllLatest (limit = 4) {
     const options = {
       sort: '-created',
       page: { limit },
-      include: ['image', 'image.thumbnail'],
+      include: ['image', 'image.thumbnail'].join(','),
       fields: {
-        recipes: ['title', 'difficulty', 'image'],
-        images: ['name', 'thumbnail'],
-        files: ['filename']
+        recipes: ['title', 'difficulty', 'image'].join(','),
+        images: ['name', 'thumbnail'].join(','),
+        files: ['filename'].join(',')
       }
     }
-    return this.api.get('/recipes', options)
+    return this.api.get('recipes', options)
   }
 
   async findAllLatestOld (limit = 4) {
@@ -85,11 +84,11 @@ class Recipes {
       page: {
         limit
       },
-      include: ['image', 'image.thumbnail'],
+      include: ['image', 'image.thumbnail'].join(','),
       fields: {
-        recipes: ['title', 'difficulty', 'image'],
-        images: ['name', 'thumbnail'],
-        files: ['filename']
+        recipes: ['title', 'difficulty', 'image'].join(','),
+        images: ['name', 'thumbnail'].join(','),
+        files: ['filename'].join(',')
       }
     }
     const datas = await this.api.get(this.resourceUri, options)
@@ -99,7 +98,7 @@ class Recipes {
   async findAllByCategoryName (categoryName, limit = 4) {
     const options = {
       sort: '-created',
-      include: ['image', 'image.thumbnail'],
+      include: ['image', 'image.thumbnail'].join(','),
       filter: {
         categoryName: {
           condition: {
@@ -109,9 +108,9 @@ class Recipes {
         },
       },
       fields: {
-        recipes: ['title', 'difficulty', 'image'],
-        images: ['name', 'thumbnail'],
-        files: ['filename']
+        recipes: ['title', 'difficulty', 'image'].join(','),
+        images: ['name', 'thumbnail'].join(','),
+        files: ['filename'].join(',')
       },
       page: {
         offset: 0,

@@ -18,37 +18,35 @@
  *  const datas = await this.jsonapi.get('/recipes', queryParams)
  * 
  */
-import axios from 'axios'
-import { buildQueryString } from 'd8-jsonapi-querystring'
+import Waterwheel from 'waterwheel'
 import jsonapiParse from "jsonapi-parse"
 
 class JSONAPIClient {
 
   constructor(baseUrl) {
     this.baseUrl = baseUrl
+    this.waterwheel = new Waterwheel({
+      base: this.baseUrl,
+      jsonapiPrefix: 'api',
+      accessCheck: false
+    }, null, {});
   }
 
   /**
-   * http GET request on JSON-API server
+   * http GET request on JSON-API server with waterwheel
    * 
    * @param {string} entity Uri . eg : "/recipes"
    * @param {object} JSONAPI query parameters as an objct, @see JSONAPIQueryBuilder
    */
-  async get (uri, queryParams = {}) {
-    const queryString = buildQueryString(queryParams)
-    let result = null
-    const url = encodeURI(this.baseUrl) + encodeURI(uri) + '?' + queryString
+  async get (uri, queryParams = {}, id = '') {
     try {
-      const response = await axios.get(url)
-      const parsedJson = jsonapiParse.parse(response.data)
-      result = parsedJson.data
-    } catch (e) {
-      console.log(e)
-      //console.error(e.message)
+      const response = await this.waterwheel.jsonapi.get(uri, queryParams, id)
+      return jsonapiParse.parse(response).data
     }
-    return result
+    catch (e) {
+      console.log(e.message)
+    }
   }
-
 }
 
 export default JSONAPIClient
