@@ -4,7 +4,6 @@
  */
 
 import DrupalJSONAPIClient from './D8JSONAPIClient'
-import axios from 'axios'
 import jsonapiParse from "jsonapi-parse"
 
 class Recipes {
