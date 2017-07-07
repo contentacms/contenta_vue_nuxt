@@ -15,7 +15,7 @@ class Recipes {
 
   async findOneById (id) {
     const options = {
-      include: ['image'].join(',')
+      include: 'image'
     }
     return await this.api.get('recipes', options, id)
   }
@@ -33,11 +33,11 @@ class Recipes {
           value: 1
         }
       },
-      include: "image,image.thumbnail",
+      include: 'image,image.thumbnail',
       fields: {
-        recipes: "title,difficulty,image",
-        images: "name,thumbnail",
-        files: "filename"
+        recipes: 'title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename'
       },
       sort: '-created'
     }
@@ -62,11 +62,11 @@ class Recipes {
     const options = {
       sort: '-created',
       page: { limit },
-      include: ['image', 'image.thumbnail'].join(','),
+      include: 'image,image.thumbnail',
       fields: {
-        recipes: ['title', 'difficulty', 'image'].join(','),
-        images: ['name', 'thumbnail'].join(','),
-        files: ['filename'].join(',')
+        recipes: 'title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename'
       }
     }
     return this.api.get('recipes', options)
@@ -83,15 +83,14 @@ class Recipes {
       page: {
         limit
       },
-      include: ['image', 'image.thumbnail'].join(','),
+      include: 'image, image.thumbnail',
       fields: {
-        recipes: ['title', 'difficulty', 'image'].join(','),
-        images: ['name', 'thumbnail'].join(','),
-        files: ['filename'].join(',')
+        recipes: 'title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename'
       }
     }
-    const datas = await this.api.get(this.resourceUri, options)
-    return datas
+    return await this.api.get(this.resourceUri, options)
   }
 
   async findAllByCategoryName (categoryName, limit = 4) {
@@ -107,9 +106,9 @@ class Recipes {
         },
       },
       fields: {
-        recipes: ['title', 'difficulty', 'image'].join(','),
-        images: ['name', 'thumbnail'].join(','),
-        files: ['filename'].join(',')
+        recipes: 'title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename'
       },
       page: {
         offset: 0,

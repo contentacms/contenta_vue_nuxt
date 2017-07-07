@@ -1,5 +1,5 @@
 <template>
    <div class="app-version">
-     <small>0.0.8 - waterwheel</small>
+     <small>0.0.9 - waterwheel</small>
    </div>
 </template>

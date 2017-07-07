@@ -13,9 +13,14 @@
  *        path: 'created',
  *      }
  *    },
- *    include: ['tags'],   
+ *    include: 'tags,image',
+ *    fields: {
+ *       images:title,filename,
+ *       recipes:title, description
+ *    }
  *  }
- *  const datas = await this.jsonapi.get('/recipes', queryParams)
+ *  const jsonapi = new JSONAPIClient(http://mydomain)
+ *  const datas = await jsonapi.get('recipes', queryParams)
  * 
  */
 import Waterwheel from 'waterwheel'
