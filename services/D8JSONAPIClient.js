@@ -33,6 +33,7 @@ class JSONAPIClient {
     this.waterwheel = new Waterwheel({
       base: this.baseUrl,
       jsonapiPrefix: 'api',
+      timeout: 2000,
       accessCheck: false
     }, null, {});
   }
