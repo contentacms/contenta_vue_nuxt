@@ -1,5 +1,14 @@
 <template>
    <div class="app-version">
-     <small>0.0.9 - waterwheel</small>
+     <small> {{packageJson.version}} </small>
    </div>
 </template>
+
+<script>
+  const packageJson = require('../package.json')
+  export default {
+    data() {
+      return { packageJson }
+    }
+  }
+</script>

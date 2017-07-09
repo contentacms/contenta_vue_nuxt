@@ -3,9 +3,7 @@
     <nav class="nav">
       <div class="nav-left">
         <span class="nav-item">
-          UMAMI food magazine
-        </span>
-        <span class="nav-item">
+          UMAMI food magazine <br />
           <AppVersion />
         </span>
       </div>
