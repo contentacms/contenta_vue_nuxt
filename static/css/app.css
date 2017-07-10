@@ -14,3 +14,21 @@ nav {
 section {
   margin-bottom:10vh;
 }
+
+.recipes .card .thumbnail {
+   max-height:150px;
+   overflow:hidden;
+}
+
+.recipes .card {
+   height:100%;
+   position:relative;
+   transition: all 0.3s ease-in-out;
+   top:0 
+}
+
+.recipes .card:hover {
+  transition: all 0.2s ease-in-out;
+  top:-10px;
+  box-shadow:  0 2px 30px;
+}
