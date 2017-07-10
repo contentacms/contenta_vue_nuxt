@@ -44,11 +44,6 @@ class Recipes {
     return await this.api.get('recipes', options)
   }
 
-  findAllCategoriesFromCache () {
-    var cache = `{"data":[{"type":"categories","id":"893ac8d7-ce93-472a-8641-5122e8b01586","attributes":{"internalId":1,"name":"Main course","description":null,"weight":0,"updatedAt":"2017-06-30T14:59:28+0200","path":null},"relationships":{"parent":{"data":[]}},"links":{"self":"https:\/\/dev-contentacms.pantheonsite.io\/api\/categories\/893ac8d7-ce93-472a-8641-5122e8b01586"}},{"type":"categories","id":"b2103ccf-4866-45f1-809d-870be192771f","attributes":{"internalId":2,"name":"Starter","description":null,"weight":0,"updatedAt":"2017-06-30T14:59:28+0200","path":null},"relationships":{"parent":{"data":[]}},"links":{"self":"https:\/\/dev-contentacms.pantheonsite.io\/api\/categories\/b2103ccf-4866-45f1-809d-870be192771f"}},{"type":"categories","id":"d4391f2f-861e-4e00-bf0b-343da766113a","attributes":{"internalId":3,"name":"Snack","description":null,"weight":0,"updatedAt":"2017-06-30T14:59:28+0200","path":null},"relationships":{"parent":{"data":[]}},"links":{"self":"https:\/\/dev-contentacms.pantheonsite.io\/api\/categories\/d4391f2f-861e-4e00-bf0b-343da766113a"}},{"type":"categories","id":"2306ef55-1562-45f3-8232-3b820a632aca","attributes":{"internalId":4,"name":"Salad","description":null,"weight":0,"updatedAt":"2017-06-30T14:59:28+0200","path":null},"relationships":{"parent":{"data":[]}},"links":{"self":"https:\/\/dev-contentacms.pantheonsite.io\/api\/categories\/2306ef55-1562-45f3-8232-3b820a632aca"}}],"links":{"self":"https:\/\/dev-contentacms.pantheonsite.io\/api\/categories?page%5Blimit%5D=20"}}`
-    return jsonapiParse.parse(JSON.parse(cache)).data
-  }
-
   async findAllCategories (limit = 20) {
     const options = {
       page: {

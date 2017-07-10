@@ -10,26 +10,29 @@ export default {
   components: { PageRecipesIndex },
   async asyncData () {
 
-    // get categories from local cache to test how much it speeds up things
-    let categories = Recipes.findAllCategoriesFromCache()
-
     let promises = []
+
+    // get 4 latest recipes
     promises.push(Recipes.findAllLatest(4))
 
-    promises.push(Promise.all(categories.map(category => Recipes.findAllByCategoryName(category.name, 4)))
-      .then(recipesByCategory => {
+    // get 4 recipes for each category
+    promises.push(Recipes.findAllCategories().then((categories) => {
+      return Promise.all(categories.map(category => Recipes.findAllByCategoryName(category.name, 4))).then(recipesByCategory => {
         return categories.map((category, index) => {
           category.recipes = recipesByCategory[index]
           return category
         })
-      }))
-    promises.push(Recipes.findAllPromoted(1))
+      })
+    }))
+    
+    // get a single promoted recipe
+    promises.push(Recipes.findAllPromoted(1).then(r => r[0]))
 
     return Promise.all(promises).then(promisesResults => {
       return {
         recipesLatest: promisesResults[0],
         recipesByCategories: promisesResults[1],
-        recipePromoted: promisesResults[2][0]
+        recipePromoted: promisesResults[2]
       }
     })
   }
