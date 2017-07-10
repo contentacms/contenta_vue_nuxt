@@ -4,11 +4,15 @@
       <div slot="image" v-if="recipe.image" class="thumbnail">
         <img v-lazy="recipe.image.thumbnail.filename" />
       </div>
-      <div slot="content">
+      <div slot="content" class="has-text-centered">
         <div class="difficulty">
-          difficulty : {{recipe.difficulty}}
+          <small>
+            <span :class="classes(recipe.difficulty)">  {{recipe.difficulty}}</span>
+          </small>
         </div>
-        <h3>{{ recipe.title }}</h3>
+        <div class="description">
+          <h3 class="title is-6">{{ recipe.title }}</h3>
+        </div>
       </div>
     </BulmaCard>
   </nuxt-link>
@@ -19,7 +23,17 @@ import BulmaCard from '~/components/BulmaCard'
 export default {
   components: { BulmaCard },
   props: {
-    recipe: { type: Object, default: () => []}
+    recipe: { type: Object, default: () => [] }
+  },
+  methods: {
+    classes (difficulty) {
+      return {
+        'tag is-primary': difficulty == 'easy',
+        'tag is-warning': difficulty == 'middle',
+        'tag is-danger': difficulty == 'hard'
+      }
+    }
   }
 }
 </script>
+

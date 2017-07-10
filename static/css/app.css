@@ -32,3 +32,11 @@ section {
   top:-10px;
   box-shadow:  0 2px 30px;
 }
+
+.recipes .card .description {
+   font-style: italic
+}
+
+.recipes .card .difficulty {
+   margin-bottom:10px;
+}
