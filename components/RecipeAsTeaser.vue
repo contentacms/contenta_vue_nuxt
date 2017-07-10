@@ -6,12 +6,10 @@
       </div>
       <div slot="content" class="has-text-centered">
         <div class="difficulty">
-          <small>
-            <span :class="classes(recipe.difficulty)">  {{recipe.difficulty}}</span>
-          </small>
+            <span :class="classes(recipe.difficulty)"> {{recipe.difficulty}}</span>
         </div>
         <div class="description">
-          <h3 class="title is-6">{{ recipe.title }}</h3>
+          <h3 class="title is-5">{{ recipe.title }}</h3>
         </div>
       </div>
     </BulmaCard>
