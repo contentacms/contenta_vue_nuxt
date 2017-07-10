@@ -15,7 +15,7 @@ class Recipes {
 
   async findOneById (id) {
     const options = {
-      include: 'image'
+      include: 'image,category'
     }
     return await this.api.get('recipes', options, id)
   }
