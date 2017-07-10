@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="button is-primary" :to="to" @click.native="isLoading = !isLoading" :class="{'is-loading' : isLoading}">
+  <nuxt-link class="button" :to="to" @click.native="isLoading = !isLoading" :class="[buttonClass, {'is-loading' : isLoading }]">
     <slot></slot>
   </nuxt-link>
 </template>
@@ -7,10 +7,8 @@
 <script>
 export default {
   props: {
-    to: {
-      type: String | Array,
-      default: '/'
-    }
+    buttonClass: { type:String, default: 'is-primary' },
+    to: { type: String | Array, default: '/' }
   },
   data () {
     return {
