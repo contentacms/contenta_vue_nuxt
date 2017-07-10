@@ -1,10 +1,14 @@
 <template>
   <div>
     <RecipeAsDetail :recipe="recipe" />
-    <h3 class="title is-3 has-text-centered">More recipes from category <strong>{{recipe.category.name}}</strong></h3>
-    <section class="container">
-      <RecipesAsCards :recipes="recipesByCategory"></RecipesAsCards>
-    </section>
+    <h3 class="title is-3 has-text-centered">More recipes from category
+      <strong>{{recipe.category.name}}</strong>
+    </h3>
+    <div class="container">
+      <section>
+        <RecipesAsCards :recipes="recipesByCategory"></RecipesAsCards>
+      </section>
+    </div>
   </div>
 </template>
 
