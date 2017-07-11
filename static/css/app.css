@@ -20,6 +20,11 @@ section {
    overflow:hidden;
 }
 
+.home .recipes .card .thumbnail {
+   max-height:360px;
+   overflow:hidden;
+}
+
 .recipes .card {
    height:100%;
    position:relative;

@@ -22,28 +22,32 @@
                 <div>
                   <img class="icons" src="~assets/icons/clock.svg" />
                 </div>
-                Preparation Time : {{recipe.preparationTime }}
+                Preparation Time :
+                <strong>{{recipe.preparationTime }} min </strong>
               </div>
               <div class="column has-text-centered">
-                                <div>
+                <div>
                   <img class="icons" src="~assets/icons/clock.svg" />
                 </div>
-                Cooking time : {{recipe.totalTime }}
+                Cooking time :
+                <strong> {{recipe.totalTime }} min</strong>
               </div>
             </div>
   
             <div class="columns">
               <div class="column has-text-centered">
-                                <div>
+                <div>
                   <img class="icons" src="~assets/icons/serves.svg" />
                 </div>
-                Serves : {{recipe.numberOfServices}}
+                Serves :
+                <strong>{{recipe.numberOfServices}} persons </strong>
               </div>
               <div class="column has-text-centered">
-                                <div>
+                <div>
                   <img class="icons" src="~assets/icons/difficulty.svg" />
                 </div>
-                Difficulty : {{ recipe.Difficulty }}
+                Difficulty :
+                <strong>{{ recipe.Difficulty }}</strong>
               </div>
             </div>
           </div>
@@ -51,23 +55,31 @@
       </section>
   
       <section>
-        <h2 class="title is-2"> What you'll need and how to make this dish</h2>
+        <h2 class="title is-2 has-text-centered what-you-need"> What you'll need and how to make this dish</h2>
+      </section>
+      <section class="instructions">
         <div class="columns">
           <div class="column">
-            <div>
+  
+            <div class="content notification">
+              <h3 class="has-text-centered"> Ingredients </h3>
+              <ul class="ingredients">
+                <li v-for="(ingredient, index) in recipe.ingredients" :key="index">
+                  {{ingredient}}
+                </li>
+              </ul>
             </div>
-            <h2 class="title is-2"> Ingredients </h2>
-            <ul class="ingredients">
-              <li v-for="(ingredient, index) in recipe.ingredients" :key="index">
-                {{ingredient}}
-              </li>
-            </ul>
+  
           </div>
           <div class="column">
-            <h2 class="title is-2"> Method </h2>
-            <p>
-            {{recipe.instructions}}
-            </p>
+  
+            <div class="content method">
+              <h3 class="title has-text-centered"> Method </h3>
+              <p>
+                {{recipe.instructions}}
+              </p>
+            </div>
+  
           </div>
         </div>
       </section>
@@ -87,7 +99,15 @@ export default {
 
 <style scoped>
 .icons {
-  width: 40px;
+  width: 50px;
 }
+.what-you-need {
+  margin-bottom:10vh;
+}
+
+.method {
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+}
+
 </style>
 
