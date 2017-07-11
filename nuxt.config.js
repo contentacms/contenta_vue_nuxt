@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['~plugins/vue-lazyload'],
+  plugins: ['~plugins/vue-lazyload', '~plugins/app'],
   env: {
     contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io'
   },
@@ -7,6 +7,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    // include thoses packages only once to make code lighter
+    vendor: ['axios', 'waterwheel', 'jsonapi-parse'],
     extend (config) {
       // disable uglify, does not support ES6 -_-
       config.plugins = config.plugins.filter((plugin) => plugin.constructor.name !== 'UglifyJsPlugin')
@@ -40,6 +42,6 @@ module.exports = {
   ** Modules
   */
   modules: [
-  //  '@nuxtjs/pwa'
+    '@nuxtjs/pwa'
   ]
 }
