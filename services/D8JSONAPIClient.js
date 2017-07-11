@@ -1,26 +1,9 @@
 /**
- * Fetch resources from our JSON API server and format
- * result automatically with "jsonapi-parse", to put
- * "included" objects inside "data" objects; so that
- * they are ready to be consumed by our template
- * 
- * example usage :
- * 
- * const queryParams = {
- *    sort: {
- *      sortCreated: {
- *        direction: 'DESC'
- *        path: 'created',
- *      }
- *    },
- *    include: 'tags,image',
- *    fields: {
- *       images:title,filename,
- *       recipes:title, description
- *    }
- *  }
- *  const jsonapi = new JSONAPIClient(http://mydomain)
- *  const datas = await jsonapi.get('recipes', queryParams)
+ * A simple wrapper around waterwheel, mostly to take
+ * advantages of jsonapi-parse formatter.
+ *  
+ * const jsonapi = new JSONAPIClient(http://mydomain)
+ * const datas = await jsonapi.get('recipes', queryParams)
  * 
  */
 import Waterwheel from 'waterwheel'

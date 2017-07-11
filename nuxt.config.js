@@ -42,6 +42,6 @@ module.exports = {
   ** Modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    //  '@nuxtjs/pwa'
   ]
 }
