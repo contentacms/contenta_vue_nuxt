@@ -7,11 +7,13 @@
           <div class="column">
             <h2 class="title is-2"> PROMOTED RECIPE </h2>
             <h3 class="title is-3">{{recipe.title}} </h3>
-            <ButtonLink button-class="is-light" :to="'/recipes/' + recipe.id">More</ButtonLink>
+            <ButtonLink button-class="is-light" :to="'/recipes/' + recipe.id">View recipe</ButtonLink>
           </div>
           <div class="column">
             <nuxt-link :to="'/recipes/' + recipe.id">
-              <img v-if="recipe.image" v-lazy="recipe.image.name" />
+              <figure class="image is-3by2">
+                <img v-if="recipe.image" v-lazy="recipe.image.name" />
+              </figure>
             </nuxt-link>
           </div>
         </div>
@@ -25,7 +27,7 @@
 import AppSection from '~/components/AppSection'
 import ButtonLink from '~/components/ButtonLink'
 export default {
-  components: { ButtonLink },
+  components: { ButtonLink, AppSection },
   props: {
     recipe: { type: Object, default: {} }
   }

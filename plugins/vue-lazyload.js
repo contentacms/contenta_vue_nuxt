@@ -1,7 +1,8 @@
+
 import Vue from 'vue'
 import VueLazyload from 'vue-lazyload'
 
 Vue.use(VueLazyload, {
-  loading: '/images/loading.gif',
-  attempt: 1
+  attempt: 1,
+  loading:'/images/loading.gif'
 })

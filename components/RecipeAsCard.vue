@@ -1,8 +1,11 @@
 <template>
   <nuxt-link :to="'/recipes/' + recipe.id">
     <BulmaCard>
-      <div slot="image" v-if="recipe.image" class="thumbnail">
-        <img v-lazy="recipe.image.thumbnail.filename" />
+  
+      <div slot="image" v-if="recipe.image" class="">
+        <figure class="image is-3by2">
+          <img class="lazy-img-fadein" v-lazy="recipe.image.thumbnail.filename" />
+        </figure>
       </div>
       <div slot="content" class="has-text-centered">
         <Difficulty class="difficulty" :difficulty="recipe.difficulty" />
@@ -26,9 +29,14 @@ export default {
 </script>
 
 <style scoped>
+
 .thumbnail {
   max-height: 220px;
   overflow: hidden;
+}
+
+.image.is-square {
+  background-color:whitesmoke
 }
 
 .card:hover {
@@ -38,18 +46,18 @@ export default {
 }
 
 .card {
-   height:100%;
-   position:relative;
-   transition: all 0.3s ease-in-out;
-   top:0 
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  top: 0
 }
 
 .card .description {
-   font-style: italic
+  font-style: italic
 }
 
 .recipes .card .difficulty {
-   margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 </style>

@@ -14,7 +14,9 @@
       <AppSection>
         <div class="columns">
           <div class="column">
-            <img v-lazy="recipe.image.name" />
+            <figure class="image is-3by2">
+              <img v-lazy="recipe.image.name" />
+            </figure>
           </div>
           <div class="column">
             <div class="columns">

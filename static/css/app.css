@@ -1,3 +1,12 @@
 /**
- * This file is CSS that is not specific to a component
+ * v-lazy components image fade in
  */
+
+img[lazy=loading] {
+  opacity: 0;
+}
+
+img[lazy=loaded] {
+    transition: opacity 1s;
+    opacity: 1;
+}
