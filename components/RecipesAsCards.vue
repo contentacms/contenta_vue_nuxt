@@ -2,17 +2,17 @@
   <div class="recipes">
     <BulmaGrid :items="recipes" :itemsByRow="cardsByRow">
       <template scope="props">
-        <RecipeAsTeaser :recipe="props.item"></RecipeAsTeaser>
+        <RecipeAsCard :recipe="props.item"></RecipeAsCard>
       </template>
     </BulmaGrid>
   </div>
 </template> 
 
 <script>
-import RecipeAsTeaser from '~/components/RecipeAsTeaser'
+import RecipeAsCard from '~/components/RecipeAsCard'
 import BulmaGrid from '~/components/BulmaGrid'
 export default {
-  components: { RecipeAsTeaser, BulmaGrid },
+  components: { RecipeAsCard, BulmaGrid },
   props: {
     cardsByRow: { type: String, default: "4"},
     title: { type: String, default: '' },
