@@ -5,9 +5,7 @@
         <img v-lazy="recipe.image.thumbnail.filename" />
       </div>
       <div slot="content" class="has-text-centered">
-        <div class="difficulty">
-          <span :class="classes(recipe.difficulty)"> {{recipe.difficulty}}</span>
-        </div>
+        <Difficulty class="difficulty" :difficulty="recipe.difficulty" />
         <div class="description">
           <h3 class="title is-5">{{ recipe.title }}</h3>
         </div>
@@ -18,19 +16,11 @@
 
 <script>
 import BulmaCard from '~/components/BulmaCard'
+import Difficulty from '~/components/Difficulty'
 export default {
-  components: { BulmaCard },
+  components: { BulmaCard, Difficulty },
   props: {
     recipe: { type: Object, default: () => [] }
-  },
-  methods: {
-    classes (difficulty) {
-      return {
-        'tag is-primary': difficulty == 'easy',
-        'tag is-warning': difficulty == 'middle',
-        'tag is-danger': difficulty == 'hard'
-      }
-    }
   }
 }
 </script>

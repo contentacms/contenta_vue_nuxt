@@ -5,9 +5,9 @@
       <strong>{{recipe.category.name}}</strong>
     </h3>
     <div class="container">
-      <section>
+      <AppSection>
         <RecipesAsCards :recipes="recipesByCategory"></RecipesAsCards>
-      </section>
+      </AppSection>
     </div>
   </div>
 </template>
@@ -16,9 +16,10 @@
 import Recipes from '~/services/Recipes'
 import RecipeAsDetail from '~/components/RecipeAsDetail'
 import RecipesAsCards from '~/components/RecipesAsCards'
+import AppSection from '~/components/AppSection'
 export default {
   transition: 'page',
-  components: { RecipeAsDetail, RecipesAsCards },
+  components: { RecipeAsDetail, RecipesAsCards, AppSection },
   async asyncData ({ params }) {
     const recipe = await Recipes.findOneById(params.id)
     const recipesByCategory = await Recipes.findAllByCategoryName(recipe.category.name, 4)
