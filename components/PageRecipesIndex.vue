@@ -5,21 +5,21 @@
     
     <div class="container">
   
-      <section>
+      <AppSection>
         <h3 class="title is-3 has-text-centered"> Latest recipes </h3>
         <RecipesAsCards :recipes="recipesLatest" more-link="/recipes-latest"></RecipesAsCards>
         <div class="has-text-centered">
           <ButtonLink to="/recipes-latest">View more</ButtonLink>
         </div>
-      </section>
+      </AppSection>
   
-      <section v-for="(category, categoryIndex) in recipesByCategories" :key="categoryIndex">
+      <AppSection v-for="(category, categoryIndex) in recipesByCategories" :key="categoryIndex">
         <h3 class="title is-3 has-text-centered">{{ category.name }}</h3>
         <RecipesAsCards title="Recipes" :recipes="category.recipes"></RecipesAsCards>
         <div class="has-text-centered">
           <ButtonLink :to="'/recipes-category/' + category.name">View more</ButtonLink>
         </div>
-      </section>
+      </AppSection>
     </div>
     
   </div>
@@ -29,8 +29,9 @@
 import RecipesAsCards from '~/components/RecipesAsCards'
 import RecipeAsPromotedBanner from '~/components/RecipeAsPromotedBanner'
 import ButtonLink from '~/components/ButtonLink'
+import AppSection from '~/components/AppSection'
 export default {
-  components: { RecipesAsCards, ButtonLink, RecipeAsPromotedBanner },
+  components: { RecipesAsCards, ButtonLink, RecipeAsPromotedBanner, AppSection },
   props: {
     recipePromoted: { type: Object, default: {} },
     recipesLatest: { type: Array, default: () => [] },

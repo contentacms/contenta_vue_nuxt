@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-
-    <section class="hero is-primary">
+  
+    <AppSection class="hero is-primary">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -9,18 +9,20 @@
           </h1>
         </div>
       </div>
-    </section>
+    </AppSection>
   
-    <MonthEdition></MonthEdition>
+    <AppSection>
+      <MonthEdition></MonthEdition>
+    </AppSection>
   
-    <section class="home-recipes">
+    <AppSection class="home-recipes">
       <div class="container">
         <h3 class="title is-3 has-text-centered">Recipes</h3>
         <h4 class="title is-4 has-text-centered">Explore recipes across every type of occasion, ingredient and skill level</h4>
         <recipesAsCards :recipes="latestRecipes" cardsByRow="2"></recipesAsCards>
       </div>
-    </section>
-    
+    </AppSection>
+  
   </div>
 </template>
 
@@ -28,11 +30,19 @@
 import RecipesAsCards from '~/components/RecipesAsCards'
 import ButtonLink from '~/components/ButtonLink'
 import MonthEdition from '~/components/MonthEdition'
+import AppSection from '~/components/AppSection'
 
 export default {
   props: {
-    latestRecipes: {type: Array, default : []}
+    latestRecipes: { type: Array, default: [] }
   },
-  components: { RecipesAsCards, MonthEdition, ButtonLink }
+  components: { RecipesAsCards, MonthEdition, ButtonLink, AppSection }
 }
 </script>
+
+<style scoped>
+.home .recipes .card .thumbnail {
+  max-height: 360px;
+  overflow: hidden;
+}
+</style>

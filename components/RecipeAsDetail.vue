@@ -1,17 +1,17 @@
 <template>
   <div>
   
-    <section class="hero is-primary">
+    <AppSection class="hero is-primary">
       <div class="hero-body">
         <div class="container">
           <h1 class="title is-1"> {{ recipe.title }} </h1>
         </div>
       </div>
-    </section>
+    </AppSection>
   
     <div class="container">
   
-      <section>
+      <AppSection>
         <div class="columns">
           <div class="column">
             <img v-lazy="recipe.image.name" />
@@ -52,12 +52,13 @@
             </div>
           </div>
         </div>
-      </section>
+      </AppSection>
   
-      <section>
+      <AppSection>
         <h2 class="title is-2 has-text-centered what-you-need"> What you'll need and how to make this dish</h2>
-      </section>
-      <section class="instructions">
+      </AppSection>
+
+      <AppSection class="instructions">
         <div class="columns">
           <div class="column">
   
@@ -82,7 +83,7 @@
   
           </div>
         </div>
-      </section>
+      </AppSection>
   
     </div>
   
@@ -90,7 +91,9 @@
 </template>
 
 <script>
+import AppSection from '~/components/AppSection'
 export default {
+  components: { AppSection },
   props: {
     recipe: { type: Object, default: {} }
   }

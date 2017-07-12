@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-primary">
+  <AppSection class="hero is-primary">
   
     <div class="hero-body">
       <div class="container">
@@ -18,10 +18,11 @@
       </div>
     </div>
   
-  </section>
+  </AppSection>
 </template>
 
 <script>
+import AppSection from '~/components/AppSection'
 import ButtonLink from '~/components/ButtonLink'
 export default {
   components: { ButtonLink },

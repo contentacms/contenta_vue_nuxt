@@ -6,7 +6,7 @@
       </div>
       <div slot="content" class="has-text-centered">
         <div class="difficulty">
-            <span :class="classes(recipe.difficulty)"> {{recipe.difficulty}}</span>
+          <span :class="classes(recipe.difficulty)"> {{recipe.difficulty}}</span>
         </div>
         <div class="description">
           <h3 class="title is-5">{{ recipe.title }}</h3>
@@ -34,4 +34,33 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.thumbnail {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transition: all 0.2s ease-in-out;
+  top: -10px;
+  box-shadow: 0 2px 30px;
+}
+
+.card {
+   height:100%;
+   position:relative;
+   transition: all 0.3s ease-in-out;
+   top:0 
+}
+
+.card .description {
+   font-style: italic
+}
+
+.recipes .card .difficulty {
+   margin-bottom:10px;
+}
+
+</style>
 

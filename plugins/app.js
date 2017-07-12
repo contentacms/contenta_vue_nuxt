@@ -3,9 +3,8 @@
  */
 export default (context) => {
 
-  console.log(context)
-
   if (context.isClient) {
+    
     // we want menu mobile to close when changing page.
     window.onNuxtReady((app) => {
       app.$nuxt.$on('routeChanged', (to, from) => {
