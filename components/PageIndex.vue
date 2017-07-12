@@ -39,10 +39,3 @@ export default {
   components: { RecipesAsCards, MonthEdition, ButtonLink, AppSection }
 }
 </script>
-
-<style scoped>
-.home .recipes .card .thumbnail {
-  max-height: 360px;
-  overflow: hidden;
-}
-</style>
