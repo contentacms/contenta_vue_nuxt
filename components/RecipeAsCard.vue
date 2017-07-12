@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .thumbnail {
-  max-height: 180px;
+  max-height: 220px;
   overflow: hidden;
 }
 
