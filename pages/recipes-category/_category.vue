@@ -1,24 +1,19 @@
 <template>
-  <AppSection>
-    <div class="container">
-      <h3 class="title is-h3 has-text-centered"> {{ categoryName }} </h3>
-      <RecipesAsCards :recipes="recipes"></RecipesAsCards>
-    </div>
-  </AppSection>
+  <PageRecipesCategory v-bind="{recipes, category}" />
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesAsCards from '~/components/RecipesAsCards'
-import AppSection from '~/components/AppSection'
+import PageRecipesCategory from '~/components/PageRecipesCategory'
+
 export default {
   transition: 'page',
-  components: { RecipesAsCards, AppSection },
+  components: { PageRecipesCategory },
   async asyncData ({ params }) {
     const recipes = await Recipes.findAllByCategoryName(params.category, 20)
     return {
       recipes,
-      categoryName: params.category
+      category: params.category
     }
   }
 }
