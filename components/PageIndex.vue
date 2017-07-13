@@ -12,6 +12,13 @@
     </AppSection>
   
     <AppSection>
+      <div class="container">
+        <h3 class="title is-3 has-text-centered">Latest promoted recipes and articles</h3>
+        <NodesAsPromotedHome :nodes="latestPromoted"></NodesAsPromotedHome>
+      </div>
+    </AppSection>
+  
+    <AppSection>
       <MonthEdition></MonthEdition>
     </AppSection>
   
@@ -31,11 +38,13 @@ import RecipesAsCards from '~/components/RecipesAsCards'
 import ButtonLink from '~/components/ButtonLink'
 import MonthEdition from '~/components/MonthEdition'
 import AppSection from '~/components/AppSection'
+import NodesAsPromotedHome from '~/components/NodesAsPromotedHome'
 
 export default {
   props: {
-    latestRecipes: { type: Array, default: [] }
+    latestRecipes: { type: Array, default: [] },
+    latestPromoted: { type: Array, default: [] },
   },
-  components: { RecipesAsCards, MonthEdition, ButtonLink, AppSection }
+  components: { RecipesAsCards, MonthEdition, ButtonLink, AppSection, NodesAsPromotedHome }
 }
 </script>

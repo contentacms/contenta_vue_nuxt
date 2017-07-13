@@ -1,5 +1,5 @@
 <template>
-  <PageIndex :latest-recipes="latestRecipes" />
+  <PageIndex v-bind="{latestRecipes, latestPromoted}" />
 </template>
 
 <script>
@@ -10,10 +10,14 @@ export default {
   transition: 'page',
   components: { PageIndex },
   async asyncData ({ params }) {
-    const latestRecipes = await Recipes.findAllLatest(4)
-    return {
-      latestRecipes
-    }
+    return Promise.all([
+      Recipes.findAllLatest(4),
+      Recipes.findHomePromotedArticlesAndRecipes()]).then(values => {
+        return {
+          latestRecipes: values[0],
+          latestPromoted: values[1],
+        }
+      })
   }
 }
 </script>

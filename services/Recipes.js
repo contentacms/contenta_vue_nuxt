@@ -3,32 +3,72 @@
  * Get recipes from JSON API server
  */
 
-import DrupalJSONAPIClient from './D8JSONAPIClient'
+import ContentaClient from './ContentaClient'
+import SubRequests from 'd8-subrequests'
 
 class Recipes {
 
   constructor() {
     this.resourceUri = 'recipes'
-    this.api = new DrupalJSONAPIClient(process.env.contentaJSONAPIBaseUrl)
+    this.contenta = new ContentaClient(process.env.contentaJSONAPIBaseUrl)
+    this.subrequestsUri = process.env.contentaJSONAPIBaseUrl + '/subrequests?_format=json'
   }
 
   async findOneById (id) {
     const options = {
       include: 'image,category'
     }
-    return await this.api.get('recipes', options, id)
+    return await this.contenta.get('recipes', options, id)
+  }
+
+  async findHomePromotedArticlesAndRecipes () {
+    const promotedRecipes = this.contenta.get('recipes', {
+      page: { limit: 3 },
+      filter: {
+        isPromoted: {
+          path: 'isPromoted',
+          value: 1
+        }
+      },
+      include: 'image,image.thumbnail',
+      fields: {
+        recipes: 'title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename'
+      },
+      sort: '-created'
+    })
+    const promotedArticles = this.contenta.get('articles', {
+      page: { limit: 3 },
+      filter: {
+        isPromoted: {
+          path: 'isPromoted',
+          value: 1
+        }
+      },
+      include: 'image,image.thumbnail',
+      fields: {
+        recipes: 'title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename'
+      },
+      sort: '-created'
+    })
+    return Promise.all([promotedRecipes, promotedArticles]).then(promisesValues => {
+      return [...promisesValues[0], ...promisesValues[1]].sort((item1, item2) => item1.createdAt > item2.createdAt).slice(0, 3)
+    })
   }
 
   /**
    * Promoted recipes sorted by created DESC
    * @param {int} limit 
    */
-  async findAllPromoted(limit = 4) {
+  async findAllPromoted (limit = 4) {
     const options = {
       page: { limit },
       filter: {
         isPromoted: {
-          path:'isPromoted',
+          path: 'isPromoted',
           value: 1
         }
       },
@@ -40,7 +80,7 @@ class Recipes {
       },
       sort: '-created'
     }
-    return await this.api.get('recipes', options)
+    return await this.contenta.get('recipes', options)
   }
 
   async findAllCategories (limit = 20) {
@@ -49,7 +89,7 @@ class Recipes {
         limit
       }
     }
-    return await this.api.get('categories', options)
+    return await this.contenta.get('categories', options)
   }
 
   async findAllLatest (limit = 4) {
@@ -63,34 +103,13 @@ class Recipes {
         files: 'filename'
       }
     }
-    return this.api.get('recipes', options)
-  }
-
-  async findAllLatestOld (limit = 4) {
-    const options = {
-      sort: {
-        sortCreated: {
-          path: 'created',
-          direction: 'DESC'
-        }
-      },
-      page: {
-        limit
-      },
-      include: 'image, image.thumbnail',
-      fields: {
-        recipes: 'title,difficulty,image',
-        images: 'name,thumbnail',
-        files: 'filename'
-      }
-    }
-    return await this.api.get(this.resourceUri, options)
+    return this.contenta.get('recipes', options)
   }
 
   async findAllByCategoryName (categoryName, limit = 4) {
     const options = {
       sort: '-created',
-      include: ['image', 'image.thumbnail'].join(','),
+      include: 'image,image.thumbnail',
       filter: {
         categoryName: {
           condition: {
@@ -109,7 +128,7 @@ class Recipes {
         limit: limit,
       }
     }
-    return await this.api.get(this.resourceUri, options)
+    return await this.contenta.get(this.resourceUri, options)
   }
 
 }

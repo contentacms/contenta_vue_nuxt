@@ -8,8 +8,9 @@
  */
 import Waterwheel from 'waterwheel'
 import jsonapiParse from "jsonapi-parse"
+import axios from 'axios'
 
-class JSONAPIClient {
+class ContentaClient {
 
   constructor(baseUrl) {
     this.baseUrl = baseUrl
@@ -36,6 +37,17 @@ class JSONAPIClient {
       console.log(e.message)
     }
   }
+
+  /**
+   * return jsonapiParsed result of a d8 subrequests
+   * @param {SubRequests} a SubRequests object from "d8-subrequests module"
+   */
+  async subrequests(subrequests) {
+    const response = await axios.get(subrequests.getUrl())
+    let data = subrequests.parseResponse(response.data)
+    data = data.map(object => jsonapiParse.parse(object).data)
+    return data
+  }
 }
 
-export default JSONAPIClient
+export default ContentaClient

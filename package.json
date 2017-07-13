@@ -7,6 +7,7 @@
   "dependencies": {
     "@nuxtjs/pwa": "latest",
     "axios": "^0.16.2",
+    "d8-subrequests": "0.0.5",
     "jsonapi-parse": "^1.2.0",
     "nuxt": "latest",
     "vue-lazyload": "^1.0.5",
