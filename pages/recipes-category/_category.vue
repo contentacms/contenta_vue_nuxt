@@ -1,5 +1,5 @@
 <template>
-  <PageRecipesCategory v-bind="{recipes, category}" />
+  <PageRecipesCategory v-bind="{recipes, categoryName}" />
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
     const recipes = await Recipes.findAllByCategoryName(params.category, 20)
     return {
       recipes,
-      category: params.category
+      categoryName: params.category
     }
   }
 }

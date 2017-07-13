@@ -13,8 +13,8 @@ import AppSection from '~/components/AppSection'
 export default {
   components: { RecipesAsCards, AppSection },
   props: {
-    recipes: { type: Array, default: [] },
-    category: { type: Object, default: {} },
+    recipes: { type: Array, default: () => [] },
+    category: { type: Object, default: () => {} },
   }
 }
 </script>
