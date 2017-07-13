@@ -1,19 +1,13 @@
 <template>
-  <AppSection>
-    <div class="container">
-      <h3 class="title is-h3 has-text-centered"> Latest recipes </h3>
-      <RecipesAsCards title="Latest recipes" :recipes="recipes"></RecipesAsCards>
-    </div>
-  </AppSection>
+  <PageRecipesLatest v-bind="{recipes}" />
 </template>
 
 <script>
 import Recipes from '~/services/Recipes'
-import RecipesAsCards from '~/components/RecipesAsCards'
-import AppSection from '~/components/AppSection'
+import PageRecipesLatest from '~/components/PageRecipesLatest'
 export default {
   transition: 'page',
-  components: { RecipesAsCards, AppSection },
+  components: { PageRecipesLatest },
   async asyncData ({ params }) {
     const recipes = await Recipes.findAllLatest(20)
     return {
