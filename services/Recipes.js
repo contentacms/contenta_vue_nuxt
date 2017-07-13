@@ -4,7 +4,6 @@
  */
 
 import ContentaClient from './ContentaClient'
-import SubRequests from 'd8-subrequests'
 
 class Recipes {
 
@@ -30,11 +29,12 @@ class Recipes {
           value: 1
         }
       },
-      include: 'image,image.thumbnail',
+      include: 'contentType,image,image.thumbnail',
       fields: {
-        recipes: 'title,difficulty,image',
+        recipes: 'contentType,title,difficulty,image',
         images: 'name,thumbnail',
-        files: 'filename'
+        files: 'filename',
+        contentTypes: 'type'
       },
       sort: '-created'
     })
@@ -46,16 +46,19 @@ class Recipes {
           value: 1
         }
       },
-      include: 'image,image.thumbnail',
+      include: 'contentType,image,image.thumbnail',
       fields: {
         recipes: 'title,difficulty,image',
         images: 'name,thumbnail',
-        files: 'filename'
+        files: 'filename',
+        contentTypes: 'type'
       },
       sort: '-created'
     })
     return Promise.all([promotedRecipes, promotedArticles]).then(promisesValues => {
-      return [...promisesValues[0], ...promisesValues[1]].sort((item1, item2) => item1.createdAt > item2.createdAt).slice(0, 3)
+      const data = [...promisesValues[0], ...promisesValues[1]].sort((item1, item2) => item1.createdAt > item2.createdAt).slice(0, 3)
+      console.log(data)
+      return data
     })
   }
 
