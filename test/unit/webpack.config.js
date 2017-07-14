@@ -3,22 +3,23 @@ const resolve = require('path').resolve;
 // Minimal Webpack config to supply to units tests.
 // This is not actually used by Nuxt but instead mirrors
 // the resolve and loader rules.
+const root = resolve('.')
 module.exports = {
   resolve: {
     modules: [resolve(__dirname, 'lib'), 'node_modules'],
     extensions: ['.js', '.vue'],
     alias: {
-      '~': __dirname,
-      'static': resolve(__dirname, 'static'), // use in template with <img src="~static/nuxt.png" />
-      '~static': resolve(__dirname, 'static'),
-      'assets': resolve(__dirname, 'assets'), // use in template with <img src="~static/nuxt.png" />
-      '~assets': resolve(__dirname, 'assets'),
-      '~plugins': resolve(__dirname, 'plugins'),
-      '~store': resolve(__dirname, '.nuxt/store'),
-      '~router': resolve(__dirname, '.nuxt/router'),
-      '~pages': resolve(__dirname, 'pages'),
-      '~components': resolve(__dirname, 'components'),
-      '~lib': resolve(__dirname, 'lib'),
+      '~': root,
+      'static': root + '/static', // use in template with <img src="~static/nuxt.png" />
+      '~static': root + '/static',
+      'assets': root + '/assets', // use in template with <img src="~static/nuxt.png" />
+      '~assets': root + '/assets',
+      '~plugins': root + '/plugins',
+      '~store': root + '/.nuxt/store',
+      '~router': root + '/.nuxt/router',
+      '~pages': root + '/pages',
+      '~components': root + '/components',
+      '~lib': root + '/lib',
     }
   },
   module: {
