@@ -15,7 +15,7 @@ describe('Difficulty.vue', () => {
     expect(element.textContent.trim()).toBe('easy')
   })
 
-  it('Should have class "tag is-warning" when receiving "easy" middle', () => {
+  it('Should have class "tag is-warning" when receiving "middle" difficulty', () => {
     const Ctor = Vue.extend(Difficulty)
     let props = { difficulty: 'middle' }
     let vm = new Ctor({ propsData: props }).$mount()
@@ -24,7 +24,7 @@ describe('Difficulty.vue', () => {
     expect(element.textContent.trim()).toBe('middle')
   })
 
-  it('Should have class "tag is-danger" when receiving "hard" middle', () => {
+  it('Should have class "tag is-danger" when receiving "hard" difficulty', () => {
     const Ctor = Vue.extend(Difficulty)
     let props = { difficulty: 'hard' }
     let vm = new Ctor({ propsData: props }).$mount()
