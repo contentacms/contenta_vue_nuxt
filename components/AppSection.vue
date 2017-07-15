@@ -1,11 +1,11 @@
 <template>
-  <section>
+  <section class="section">
     <slot></slot>
   </section>
 </template>
 
 <style scoped>
-section {
+.section {
   margin-bottom: 10vh;
 }
 </style>
