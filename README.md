@@ -11,14 +11,13 @@
 
 ## OBJECTIVES  ( WHAT ARE WE DOING AND WHY ? )
 
-1) Helping JavaScript Developers to start easily a Vue.js / Nuxt.js with Contenta CMS JSON API as a back-end
-2) Mirror Vue.js values : easy to read, easy to learn, light, powerful
-3) That's why we should avoid **Over-engineering** to keep a **low barrier to entry**
-4) This application MUST be REFERENCABLE and SEO-friendly, because this is why **Nuxt.js** is used.
-5) this project should, as far as is it possible, be used as a **starter** (by forking it) for creating a new Decoupled Drupal site with Vue.js and Nuxt.js in no-time. 
+1) Helping developers to start quickly a Vue.js + Nuxt.js application with Contenta CMS as a back-office
+2) Mirror Vue.js values : un-opinionated, easy to read and learn
+3) That's why we should avoid **over-engineering** to focus on keeping a **low barrier to entry** to Vue.js + Nuxt.js stack. 
+4) This application MUST be SEO-friendly, because this is why **Nuxt.js** is used.
+5) Let's try to keep the project, as far as is it possible, easy to be used as a **starter** (by simply forking it) for creating a new Decoupled Drupal site with Vue.js, Nuxt.js and contenta in no-time. 
 
 ## GETTING STARTED
-
 
 ### REQUIREMENTS
 
@@ -52,15 +51,15 @@ $ npm run deploy
 
 ## How does it work ?
 
-Start looking at the most important part of the code which is inside **pages**, **components** & **layouts** directories, this is where our *Vue components* resides.
+Most important parts of the code resides inside **pages**, **components** & **layouts** directories, this is where our *Vue components* resides.
 
-**Components** are classic Vue single-file components.
+**Components** are classic Vue.js single-file components.
 
-**Pages** are special components : they are automatically rendered on server side, and accessible via an url. For example "pages/recipes.vue" can be accessed going to  "/recipes" uri. They use a special "asyncData" method which is used for server side rendering.
+**Pages** are special Nuxt.js components : they are automatically rendered on server side and are accessible automatically via an url. For example "pages/recipes.vue" can be accessed going to  "/recipes" uri. They use a special "asyncData" method which is used for server side rendering.
 
-**Layouts** are some Vue components used as template wrappers for pages components, a little bit like "page.tpl.php" in Drupal.
+**Layouts** are some Vue components used as template wrappers for pages components, somehow like "page.tpl.php" in Drupal.
 
-**Services** directory contains cross-components business logic, this is where resides our functions and class to fetch data from Contenta public API.
+**Services** directory contains cross-components business logic, this is where resides our functions and class to fetch data from Contenta CMS public API.
 
 ## DEV CONTRIBUTION GUIDELINES
 
