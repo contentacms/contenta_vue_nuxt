@@ -12,6 +12,7 @@ const mockRouter = new VueRouter({
     { path: '/' }
   ]
 })
+const store = storeCreator()
 import NuxtLink from '~/.nuxt/components/nuxt-link'
 
 /**
@@ -19,15 +20,22 @@ import NuxtLink from '~/.nuxt/components/nuxt-link'
  */
 describe('AppNavigation.vue', () => {
 
-  it('store', () => {
-    
-    // mock NuxtLink
+  it('Mobile menu should have a is-active class when $store.state.menuMobileIsOpened == true', () => {
+
+    // Inject Nuxt-link to avoid an error message
     AppNavigation.components.NuxtLink = NuxtLink
 
     const Constructor = Vue.extend(AppNavigation)
     const vm = new Constructor({ router: mockRouter })
-    vm.$store = storeCreator()
+    vm.$store = store
     vm.$mount()
+    expect(vm.$el.querySelector('.nav-right').className.trim()).toBe('nav-right nav-menu')
+    vm.setMenuMobileIsOpened()
+    // we should now have an active class on next DOM update
+    vm.$nextTick(() => {
+      expect(vm.$el.querySelector('.nav-right').className.trim()).toBe('nav-right nav-menu is-active')
+    }) 
+    
   })
 
 })
