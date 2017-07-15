@@ -1,6 +1,6 @@
 <template>
-  <div v-if="difficulty">
-    <span :class="classes(difficulty)"> {{difficulty}}</span>
+  <div class="difficulty">
+    <span :class="classes(difficulty)">{{difficulty}}</span>
   </div>
 </template>
 

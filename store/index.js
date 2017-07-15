@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 /**
  * This our global state for our app.
  */
-const store = () => new Vuex.Store({
+const createStore = () => new Vuex.Store({
   state: {
     menuMobileIsOpened: false
   },
@@ -14,4 +14,4 @@ const store = () => new Vuex.Store({
   }
 })
 
-export default store
+export default createStore
