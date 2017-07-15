@@ -4,6 +4,11 @@
 
 *Contenta Vue.js* is an example of decoupled Drupal with [Vue.JS](https://vuejs.org) and *Contenta* JSON API. It uses [Nuxt.js](https://nuxtjs.org/) framework to create a SEO-friendly web application thanks to server side rendering.
 
+![vue image](/static/images/icon-vue.jpg?raw=true)
+![nuxt image](/static/images/icon-nuxt.png?raw=true)
+
+*(vue drawing by https://twitter.com/hashedrock )*
+
 ## OBJECTIVES  ( WHAT ARE WE DOING AND WHY ? )
 
 1) Helping JavaScript Developers to start easily a Vue.js / Nuxt.js with Contenta CMS JSON API as a back-end
