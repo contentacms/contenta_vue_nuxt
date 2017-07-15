@@ -24,6 +24,7 @@ before_install:
 
 before_script:
   - npm install
+  - npm install -g npx
 
 script:
   - npx nuxt build
