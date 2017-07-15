@@ -57,7 +57,6 @@ class Recipes {
     })
     return Promise.all([promotedRecipes, promotedArticles]).then(promisesValues => {
       const data = [...promisesValues[0], ...promisesValues[1]].sort((item1, item2) => item1.createdAt > item2.createdAt).slice(0, 3)
-      console.log(data)
       return data
     })
   }
