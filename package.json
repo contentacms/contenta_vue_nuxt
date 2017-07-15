@@ -5,12 +5,12 @@
   "author": "yann <yann.boisselier@gmail.com>",
   "private": true,
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "0.16.2",
     "d8-subrequests": "0.0.5",
-    "jsonapi-parse": "^1.2.0",
-    "nuxt": "^1.0.0-alpha.5",
-    "vue-lazyload": "^1.0.5",
-    "waterwheel": "^1.3.3"
+    "jsonapi-parse": "1.2.0",
+    "nuxt": "1.0.0-alpha.5",
+    "vue-lazyload": "1.0.6",
+    "waterwheel": "1.3.5"
   },
   "scripts": {
     "dev": "node_modules/.bin/nuxt",
@@ -35,7 +35,7 @@
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
-    "karma-webpack": "^2.0.3",
+    "karma-webpack": "^2.0.4",
     "push-dir": "^0.4.1"
   }
 }
