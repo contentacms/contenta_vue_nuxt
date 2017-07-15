@@ -8,6 +8,7 @@ node_js:
 branches:
   only:
     - dev
+    - master
 
 addons:
   apt:
