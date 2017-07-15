@@ -19,8 +19,8 @@ addons:
 before_script:
   - npm install
 script:
-  - npm run test
   - npm build
+  - npm run test
 
 notifications:
   email:
