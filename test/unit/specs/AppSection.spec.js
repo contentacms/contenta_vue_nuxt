@@ -6,10 +6,10 @@ import AppSection from '~/components/AppSection'
  */
 describe('AppSection.vue', () => {
 
-  it('must have a section class', () => {
+  it('must be a SECTION html tag', () => {
     const Constructor = Vue.extend(AppSection)
     let vm = new Constructor().$mount()
-    expect(vm.$el.className).toBe('section')
+    expect(vm.$el.tagName).toBe('SECTION')
   })
 
 })
