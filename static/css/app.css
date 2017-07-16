@@ -10,3 +10,18 @@ img[lazy=loaded] {
     transition: opacity 1s;
     opacity: 1;
 }
+
+/* page transitions */
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
+
+/* leave some room for the progress bar */
+nav {
+  /*margin-top: 2px;*/
+}

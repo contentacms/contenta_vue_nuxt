@@ -1,17 +1,23 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="container">
-      <div>
-        <p>
-          <strong>Umami magazine & Umami publications</strong> is a fictionnal magazine and publisher for illustrative purposes only.
-        </p>
-      </div>
-      <div>
-        Icons made by
-        <a href="http://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from
-        <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by
-        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+      <div class="columns">
+        <div class="column">
+          Umami publication example footer content
+        </div>
+        <div class="column">
+          <ul>
+            <li><nuxt-link to="/contact">Get in touch</nuxt-link></li>
+            <li>About the Umami Drupal Theme</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
+
+<style scoped>
+.footer {
+  background: #EEE
+}
+</style>
