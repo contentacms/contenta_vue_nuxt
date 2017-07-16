@@ -102,7 +102,7 @@ class Recipes {
       fields: {
         recipes: 'title,difficulty,image',
         images: 'name,thumbnail',
-        files: 'filename'
+        files: 'filename,url'
       }
     }
     return this.contenta.get('recipes', options)
