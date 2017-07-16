@@ -33,7 +33,7 @@ class Recipes {
       fields: {
         recipes: 'contentType,title,difficulty,image',
         images: 'name,thumbnail',
-        files: 'filename',
+        files: 'filename,url',
         contentTypes: 'type'
       },
       sort: '-created'
@@ -50,7 +50,7 @@ class Recipes {
       fields: {
         recipes: 'title,difficulty,image',
         images: 'name,thumbnail',
-        files: 'filename',
+        files: 'filename,url',
         contentTypes: 'type'
       },
       sort: '-created'
@@ -78,7 +78,7 @@ class Recipes {
       fields: {
         recipes: 'title,difficulty,image',
         images: 'name,thumbnail',
-        files: 'filename'
+        files: 'filename,url'
       },
       sort: '-created'
     }
@@ -123,7 +123,7 @@ class Recipes {
       fields: {
         recipes: 'title,difficulty,image',
         images: 'name,thumbnail',
-        files: 'filename'
+        files: 'filename,url'
       },
       page: {
         offset: 0,

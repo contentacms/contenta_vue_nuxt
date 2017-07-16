@@ -13,6 +13,7 @@ export default {
     return Promise.all([
       Recipes.findAllLatest(4),
       Recipes.findHomePromotedArticlesAndRecipes()]).then(values => {
+        console.log(values)
         return {
           latestRecipes: values[0],
           latestPromoted: values[1],
