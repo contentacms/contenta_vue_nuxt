@@ -24,7 +24,7 @@ module.exports = {
     ],
     link: [
       /* @custom */
-      { rel: 'stylesheet', type: 'text/css', href: '/css/bulma.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/css/bulma-4.3.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/css/app.css' }
     ]
   },
