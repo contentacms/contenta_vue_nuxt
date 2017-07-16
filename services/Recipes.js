@@ -15,7 +15,7 @@ class Recipes {
 
   async findOneById (id) {
     const options = {
-      include: 'image,category'
+      include: 'image,category,image.thumbnail'
     }
     return await this.contenta.get('recipes', options, id)
   }
