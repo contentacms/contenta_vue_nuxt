@@ -1,7 +1,12 @@
 <template>
   <div class="footer">
     <div class="container">
-      <div class="has-text-centered">
+      <div>
+        <p>
+          <strong>Umami magazine & Umami publications</strong> is a fictionnal magazine and publisher for illustrative purposes only.
+        </p>
+      </div>
+      <div>
         Icons made by
         <a href="http://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from
         <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by
