@@ -1,12 +1,14 @@
-const resolve = require('path').resolve;
-
 // Minimal Webpack config to supply to units tests.
 // This is not actually used by Nuxt but instead mirrors
 // the resolve and loader rules.
+
+const resolve = require('path').resolve;
+// resolve to absolute path where "npm test" is running from
 const root = resolve('.')
+
 module.exports = {
   resolve: {
-    modules: [resolve(__dirname, 'lib'), 'node_modules'],
+    modules: [root + '/node_modules'],
     extensions: ['.js', '.vue'],
     alias: {
       '~': root,

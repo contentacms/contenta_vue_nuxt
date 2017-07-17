@@ -3,6 +3,10 @@ module.exports = {
   env: {
     contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io'
   },
+  router: {
+    // Run the middleware/user-agent.js on every pages
+    middleware: 'server-api-available'
+  },
   /*
   ** Build configuration
   */
