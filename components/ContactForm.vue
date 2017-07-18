@@ -35,8 +35,10 @@
       </div>
     </div>
   
-    <div class="button is-primary">
-      Envoyer
+    <div class="has-text-centered">
+      <div class="button is-primary">
+        Envoyer
+      </div>
     </div>
   
   </form>
