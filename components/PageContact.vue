@@ -1,15 +1,19 @@
 <template>
-  <div class="container">
-    <AppSection>
-      <ContactForm />
+  <AppSection>
+    <div class="container">
       <div class="content">
         <h1>Get in touch</h1>
-        <p>
-          Hello there *_* ! Our contact page is coming soon !
-        </p>
+        <div class="columns">
+          <div class="column is-half">
+            <ContactForm />
+          </div>
+          <div class="column">
+  
+          </div>
+        </div>
       </div>
-    </AppSection>
-  </div>
+    </div>
+  </AppSection>
 </template>
 
 <script>
