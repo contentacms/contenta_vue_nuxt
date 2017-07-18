@@ -21,6 +21,8 @@
       <div class="nav-right nav-menu" :class="{'is-active': this.$store.state.menuMobileIsOpened}">
         <nuxt-link to="/" class="nav-item"> Home </nuxt-link>
         <nuxt-link to="/recipes" class="nav-item"> Recipes </nuxt-link>
+        <a href="https://github.com/contentacms/contenta_vue_nuxt" class="nav-item"> Github </a>
+        <a href="http://www.contentacms.org/" class="nav-item"> ContentaCMS website </a>
         <!--<nuxt-link @click.native="displayMobileMenu = false" to="/magazine" class="nav-item"> Magazine </nuxt-link>-->
       </div>
   

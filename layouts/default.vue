@@ -1,9 +1,9 @@
 <template>
   <div>
-    <AppTopBar />
+    <!--<AppTopBar />-->
     <AppNavigation />
     <nuxt/>
-    <AppFooter />
+    <!--<AppFooter />-->
     <AppFooterSocket />
   </div>
 </template>
