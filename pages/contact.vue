@@ -1,19 +1,10 @@
 <template>
-  <div class="container">
-    <AppSection>
-      <div class="content">
-        <h1>Get in touch</h1>
-        <p>
-          Hello there *_* ! Our contact page is coming soon !
-        </p>
-      </div>
-    </AppSection>
-  </div>
+  <PageContact />
 </template>
 
 <script>
-import AppSection from '~/components/AppSection'
+import PageContact from "~/components/PageContact"
 export default {
-  components: { AppSection }
+  components: { PageContact }
 }
 </script>

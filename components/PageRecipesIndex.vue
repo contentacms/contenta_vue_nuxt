@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <RecipeAsPromotedBanner v-if "recipePromoted" :recipe="recipePromoted"></RecipeAsPromotedBanner>
+    <RecipeAsPromotedBanner v-if="recipePromoted" :recipe="recipePromoted"></RecipeAsPromotedBanner>
     
     <div class="container">
   
