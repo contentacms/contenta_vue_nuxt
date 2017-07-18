@@ -11,7 +11,7 @@
       </div>
     </AppSection>
   
-    <AppSection>
+    <AppSection v-if="latestPromoted">
       <div class="container">
         <h3 class="title is-3 has-text-centered">Latest promoted recipes and articles</h3>
         <HomePromotedNodes :nodes="latestPromoted"></HomePromotedNodes>
@@ -28,7 +28,7 @@
       </div>
     </AppSection>
   
-    <AppSection class="home-recipes">
+    <AppSection v-if="latestRecipes" class="home-recipes">
       <div class="container">
         <h3 class="title is-3 has-text-centered">Recipes</h3>
         <h4 class="title is-4 has-text-centered">Explore recipes across every type of occasion, ingredient and skill level</h4>
