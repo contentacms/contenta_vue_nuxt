@@ -8,7 +8,7 @@
           <AppVersion />
         </span>
   
-        <div @click="setMenuMobileIsOpened" :class="{'is-active': this.$store.state.menuMobileIsOpened}" class="navbar-burger burger" data-target="app-menu">
+        <div @click="setMenuMobileIsOpened" :class="{'is-active': this.$store.state.menuMobileIsOpened}" class="navbar-burger" data-target="app-menu">
           <span></span>
           <span></span>
           <span></span>
