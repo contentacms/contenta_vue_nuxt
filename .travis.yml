@@ -4,6 +4,11 @@ language: node_js
 node_js:
   - "8.1.4"
 
+branches:
+  only:
+    - dev
+    - master
+
 addons:
   apt:
     sources:
@@ -24,14 +29,6 @@ before_script:
 script:
   - npx nuxt build
   - npx karma start test/unit/karma.conf.js
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: GITHUB_TOKEN 
-  on:
-    repo: contentavuenuxt/contentavuenuxt.github.io
-    all_branches: true
 
 notifications:
   email:
