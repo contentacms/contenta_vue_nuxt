@@ -35,8 +35,9 @@ deploy:
   skip_cleanup: true
   repo: contentavuenuxt/contentavuenuxt.github.io
   github_token: GITHUB_TOKEN # Set in travis-ci.org dashboard
+  target_branch: gh-pages
   on:
-    branch: gh-pages
+    branch: master
 
 notifications:
   email:
