@@ -33,9 +33,9 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  repo: contentavuenuxt/contentavuenuxt.github.io
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  github_token: GITHUB_TOKEN 
   on:
+    repo: contentavuenuxt/contentavuenuxt.github.io
     branch: master
 
 notifications:
