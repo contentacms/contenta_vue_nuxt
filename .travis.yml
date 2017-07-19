@@ -37,7 +37,7 @@ deploy:
   github_token: GITHUB_TOKEN # Set in travis-ci.org dashboard
   target_branch: gh-pages
   on:
-    branch: master
+    branch: gh-pages
 
 notifications:
   email:
