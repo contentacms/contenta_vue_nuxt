@@ -30,6 +30,14 @@ script:
   - npx nuxt build
   - npx karma start test/unit/karma.conf.js
 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  repo: "contentavuenuxt/contentavuenuxt.github.io"
+  github_token: GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+
 notifications:
   email:
     on_failure: change
