@@ -1,7 +1,7 @@
 module.exports = {
   plugins: ['~plugins/vue-lazyload', '~plugins/app'],
   env: {
-    contentaJSONAPIBaseUrl: 'https://dev-contentacms.pantheonsite.io'
+    contentaJSONAPIBaseUrl: 'http://live-contentacms.pantheonsite.io'
   },
   router: {
      // check API server is up to avoid ugly errors pages
