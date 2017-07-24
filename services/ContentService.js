@@ -1,5 +1,5 @@
 /**
- * Functions to get content from Contenta public API
+ * Functions to get content from Contenta JSON API
  */
 import ContentaJsonApi from './ContentaJsonApi'
 const api = new ContentaJsonApi(process.env.contentaJSONAPIBaseUrl)
@@ -7,7 +7,7 @@ const api = new ContentaJsonApi(process.env.contentaJSONAPIBaseUrl)
 /**
  * @param {String} uuid
  */
-async function findOneRecipeByUuid(uuid) {
+async function findOneRecipeByUuid (uuid) {
   const query = {
     include: 'image,category,image.thumbnail',
     filter: {
@@ -20,7 +20,7 @@ async function findOneRecipeByUuid(uuid) {
   return await api.get('recipes', query, uuid)
 }
 
-async function findAllPromotedRecipes(limit = 4) {
+async function findAllPromotedRecipes (limit = 4) {
   const query = {
     page: {
       limit
@@ -46,7 +46,7 @@ async function findAllPromotedRecipes(limit = 4) {
   return await api.get('recipes', query)
 }
 
-async function findAllRecipesCategories(limit = 20) {
+async function findAllRecipesCategories (limit = 20) {
   const query = {
     page: {
       limit
@@ -55,7 +55,7 @@ async function findAllRecipesCategories(limit = 20) {
   return await api.get('categories', query)
 }
 
-async function findAllLatestRecipes(limit = 4) {
+async function findAllLatestRecipes (limit = 4) {
   const query = {
     sort: '-created',
     page: {
@@ -71,53 +71,53 @@ async function findAllLatestRecipes(limit = 4) {
   return api.get('recipes', query)
 }
 
-async function findHomePromotedArticlesAndRecipes(limit) {
+async function findHomePromotedArticlesAndRecipes (limit) {
   const promotedRecipes = api.get('recipes', {
-      page: {
-        limit: 3
+    page: {
+      limit: 3
+    },
+    filter: {
+      isPromoted: {
+        path: 'isPromoted',
+        value: 1
       },
-      filter: {
-        isPromoted: {
-          path: 'isPromoted',
-          value: 1
-        },
-        isPublished: {
-          path: 'isPublished',
-          value: 1
-        }
-      },
-      include: 'contentType,image,image.thumbnail',
-      fields: {
-        recipes: 'contentType,title,difficulty,image',
-        images: 'name,thumbnail',
-        files: 'filename,url',
-        contentTypes: 'type'
-      },
-      sort: '-created'
-    })
+      isPublished: {
+        path: 'isPublished',
+        value: 1
+      }
+    },
+    include: 'contentType,image,image.thumbnail',
+    fields: {
+      recipes: 'contentType,title,difficulty,image',
+      images: 'name,thumbnail',
+      files: 'filename,url',
+      contentTypes: 'type'
+    },
+    sort: '-created'
+  })
   const promotedArticles = api.get('articles', {
-      page: {
-        limit: 3
+    page: {
+      limit: 3
+    },
+    filter: {
+      isPromoted: {
+        path: 'isPromoted',
+        value: 1
       },
-      filter: {
-        isPromoted: {
-          path: 'isPromoted',
-          value: 1
-        },
-        isPublished: {
-          path: 'isPublished',
-          value: 1
-        }
-      },
-      include: 'contentType,image,image.thumbnail',
-      fields: {
-        recipes: 'title,difficulty,image',
-        images: 'name,thumbnail',
-        files: 'filename,url',
-        contentTypes: 'type'
-      },
-      sort: '-created'
-    })
+      isPublished: {
+        path: 'isPublished',
+        value: 1
+      }
+    },
+    include: 'contentType,image,image.thumbnail',
+    fields: {
+      recipes: 'title,difficulty,image',
+      images: 'name,thumbnail',
+      files: 'filename,url',
+      contentTypes: 'type'
+    },
+    sort: '-created'
+  })
   return Promise
     .all([promotedRecipes, promotedArticles])
     .then(promisesValues => {
@@ -129,7 +129,7 @@ async function findHomePromotedArticlesAndRecipes(limit) {
     })
 }
 
-async function findAllRecipesByCategoryName(categoryName, limit = 4) {
+async function findAllRecipesByCategoryName (categoryName, limit = 4) {
   const query = {
     sort: '-created',
     include: 'image,image.thumbnail',
@@ -154,7 +154,6 @@ async function findAllRecipesByCategoryName(categoryName, limit = 4) {
   return await api.get('recipes', query)
 }
 
-// when using named imports, webpack will only import function actually used
 export {
   findOneRecipeByUuid,
   findAllPromotedRecipes,
