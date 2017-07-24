@@ -1,58 +1,49 @@
 /**
  * Functions to get content from Contenta public API
  */
-import ContentaClient from './ContentaClient'
-const contenta = new ContentaClient(process.env.contentaJSONAPIBaseUrl)
+import ContentaJsonApi from './ContentaJsonApi'
+const api = new ContentaJsonApi(process.env.contentaJSONAPIBaseUrl)
 
 /**
- * Default options to query recipes
- * 
- * @param {Number} number number of results
- * @param {Boolean} allFields include ALL fields 
+ * @param {String} uuid
  */
-function getRecipeBaseQuery(limit = 10, allFields = false) {
-  let query = {
-    page: {
-      limit,
-      offset: 0
-    },
-    sort: '-created',
+async function findOneRecipeByUuid(uuid) {
+  const query = {
+    include: 'image,category,image.thumbnail',
     filter: {
       isPublished: {
         path: 'isPublished',
         value: 1
       }
-    },
-    include: 'contentType,image,image.thumbnail'
-  }
-  if (allFields === false) {
-    query.fields = {
-      recipes: 'contentType,title,difficulty,image',
-      images: 'name,thumbnail',
-      files: 'filename,url',
-      contentTypes: 'type'
     }
   }
-  return Object.assign({}, query)
-}
-
-/**
- * @param {String} uuid 
- */
-async function findOneRecipeByUuid(uuid) {
-  return await contenta.get('recipes', getRecipeBaseQuery(true), uuid)
+  return await api.get('recipes', query, uuid)
 }
 
 async function findAllPromotedRecipes(limit = 4) {
-  let query = Object.assign(getRecipeBaseQuery(4), {
+  const query = {
+    page: {
+      limit
+    },
     filter: {
       isPromoted: {
         path: 'isPromoted',
         value: 1
+      },
+      isPublished: {
+        path: 'isPublished',
+        value: 1
       }
-    }
-  })
-  return await contenta.get('recipes', query)
+    },
+    include: 'image,image.thumbnail',
+    fields: {
+      recipes: 'title,difficulty,image',
+      images: 'name,thumbnail',
+      files: 'filename,url'
+    },
+    sort: '-created'
+  }
+  return await api.get('recipes', query)
 }
 
 async function findAllRecipesCategories(limit = 20) {
@@ -61,24 +52,72 @@ async function findAllRecipesCategories(limit = 20) {
       limit
     }
   }
-  return await contenta.get('categories', query)
+  return await api.get('categories', query)
 }
 
 async function findAllLatestRecipes(limit = 4) {
-  return contenta.get('recipes', getRecipeBaseQuery(limit))
+  const query = {
+    sort: '-created',
+    page: {
+      limit
+    },
+    include: 'image,image.thumbnail',
+    fields: {
+      recipes: 'title,difficulty,image',
+      images: 'name,thumbnail',
+      files: 'filename,url'
+    }
+  }
+  return api.get('recipes', query)
 }
 
 async function findHomePromotedArticlesAndRecipes(limit) {
-  const recipesQuery = Object.assign(getRecipeBaseQuery(limit), {
-    filter: {
-      isPromoted: {
-        path: 'isPromoted',
-        value: 1
-      }
-    }
-  })
-  const promotedRecipes = contenta.get('recipes', recipesQuery)
-  const promotedArticles = contenta.get('articles', recipesQuery)
+  const promotedRecipes = api.get('recipes', {
+      page: {
+        limit: 3
+      },
+      filter: {
+        isPromoted: {
+          path: 'isPromoted',
+          value: 1
+        },
+        isPublished: {
+          path: 'isPublished',
+          value: 1
+        }
+      },
+      include: 'contentType,image,image.thumbnail',
+      fields: {
+        recipes: 'contentType,title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename,url',
+        contentTypes: 'type'
+      },
+      sort: '-created'
+    })
+  const promotedArticles = api.get('articles', {
+      page: {
+        limit: 3
+      },
+      filter: {
+        isPromoted: {
+          path: 'isPromoted',
+          value: 1
+        },
+        isPublished: {
+          path: 'isPublished',
+          value: 1
+        }
+      },
+      include: 'contentType,image,image.thumbnail',
+      fields: {
+        recipes: 'title,difficulty,image',
+        images: 'name,thumbnail',
+        files: 'filename,url',
+        contentTypes: 'type'
+      },
+      sort: '-created'
+    })
   return Promise
     .all([promotedRecipes, promotedArticles])
     .then(promisesValues => {
@@ -91,7 +130,9 @@ async function findHomePromotedArticlesAndRecipes(limit) {
 }
 
 async function findAllRecipesByCategoryName(categoryName, limit = 4) {
-  const query = Object.assign(getRecipeBaseQuery(limit), {
+  const query = {
+    sort: '-created',
+    include: 'image,image.thumbnail',
     filter: {
       categoryName: {
         condition: {
@@ -99,15 +140,23 @@ async function findAllRecipesByCategoryName(categoryName, limit = 4) {
           value: categoryName
         }
       }
+    },
+    fields: {
+      recipes: 'title,difficulty,image',
+      images: 'name,thumbnail',
+      files: 'filename,url'
+    },
+    page: {
+      offset: 0,
+      limit: limit
     }
-  })
-  return await contenta.get('recipes', query)
+  }
+  return await api.get('recipes', query)
 }
 
-// using named imports, webpack will only import 
-// used functions and not all the file
+// when using named imports, webpack will only import function actually used
 export {
-  findOneRecipeById, 
+  findOneRecipeByUuid,
   findAllPromotedRecipes,
   findAllRecipesCategories,
   findAllLatestRecipes,

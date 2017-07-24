@@ -3,16 +3,16 @@
 </template>
 
 <script>
-import Recipes from '~/services/Recipes'
 import PageIndex from '~/components/PageIndex'
+import { findAllLatestRecipes, findHomePromotedArticlesAndRecipes  } from '~/services/ContentService'
 
 export default {
   transition: 'page',
   components: { PageIndex },
   async asyncData ({ params }) {
     return Promise.all([
-      Recipes.findAllLatest(4),
-      Recipes.findHomePromotedArticlesAndRecipes()]).then(values => {
+      findAllLatestRecipes(4),
+      findHomePromotedArticlesAndRecipes(3)]).then(values => {
         return {
           latestRecipes: values[0],
           latestPromoted: values[1],

@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import Recipes from '~/services/Recipes'
 import PageRecipesIndex from '~/components/PageRecipesIndex'
+import { findAllPromotedRecipes, findAllLatestRecipes, findAllRecipesCategories, findAllRecipesByCategoryName } from '~/services/ContentService'
 export default {
   transition: 'page',
   components: { PageRecipesIndex },
@@ -13,11 +13,11 @@ export default {
     let promises = []
 
     // get 4 latest recipes
-    promises.push(Recipes.findAllLatest(4))
+    promises.push(findAllLatestRecipes(4))
 
     // get 4 recipes for each category
-    promises.push(Recipes.findAllCategories().then((categories) => {
-      return Promise.all(categories.map(category => Recipes.findAllByCategoryName(category.name, 4))).then(recipesByCategory => {
+    promises.push(findAllRecipesCategories().then((categories) => {
+      return Promise.all(categories.map(category => findAllRecipesByCategoryName(category.name, 4))).then(recipesByCategory => {
         return categories.map((category, index) => {
           category.recipes = recipesByCategory[index]
           return category
@@ -26,7 +26,7 @@ export default {
     }))
     
     // get a single promoted recipe
-    promises.push(Recipes.findAllPromoted(1).then(r => r[0]))
+    promises.push(findAllPromotedRecipes(1).then(r => r[0]))
 
     return Promise.all(promises).then(promisesResults => {
       return {

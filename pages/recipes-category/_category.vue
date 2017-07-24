@@ -3,14 +3,14 @@
 </template>
 
 <script>
-import Recipes from '~/services/Recipes'
 import PageRecipesCategory from '~/components/PageRecipesCategory'
+import { findAllRecipesByCategoryName } from '~/services/ContentService'
 
 export default {
   transition: 'page',
   components: { PageRecipesCategory },
   async asyncData ({ params }) {
-    const recipes = await Recipes.findAllByCategoryName(params.category, 20)
+    const recipes = await findAllRecipesByCategoryName(params.category, 20)
     return {
       recipes,
       categoryName: params.category

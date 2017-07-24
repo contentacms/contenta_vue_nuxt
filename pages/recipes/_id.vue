@@ -3,14 +3,14 @@
 </template>
 
 <script>
-import Recipes from '~/services/Recipes'
+import { findOneRecipeByUuid, findAllRecipesByCategoryName } from '~/services/ContentService'
 import PageRecipesId from '~/components/PageRecipesId'
 export default {
   transition: 'page',
   components: { PageRecipesId },
   async asyncData ({ params }) {
-    const recipe = await Recipes.findOneById(params.id)
-    const recipesByCategory = await Recipes.findAllByCategoryName(recipe.category.name, 4)
+    const recipe = await findOneRecipeByUuid(params.id)
+    const recipesByCategory = await findAllRecipesByCategoryName(recipe.category.name, 4)
     return { recipe, recipesByCategory }
   }
 }

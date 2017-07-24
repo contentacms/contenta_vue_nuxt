@@ -1,0 +1,32 @@
+/**
+ * Client for content JSON API
+ * This is actually just a thin wrapper around waterwheel.js.
+ * We additionnaly use "jsonapi-parse" package to format
+ * reponses : it resolves relationships and included objects nicely.
+ * 
+ * Example usage : 
+ *   const api = new ContentaJsonApi(https://mydomain.fr)
+ *   const datas = await api.get('recipes', queryParams)
+ */
+import Waterwheel from "waterwheel";
+import jsonapiParse from "jsonapi-parse";
+
+export default function (ServerBaseUrl) {
+
+  const waterwheel = new Waterwheel(
+    {
+      base: ServerBaseUrl,
+      jsonapiPrefix: "api",
+      timeout: 2000,
+      accessCheck: false
+    }
+  );
+
+  return {
+    get: async function get (uri, queryParams = {}, id = "") {
+      const response = await waterwheel.jsonapi.get(uri, queryParams, id);
+      return jsonapiParse.parse(response).data;
+    }
+  }
+
+}

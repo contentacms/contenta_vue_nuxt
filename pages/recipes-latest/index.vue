@@ -3,13 +3,13 @@
 </template>
 
 <script>
-import Recipes from '~/services/Recipes'
+import { findAllLatestRecipes } from '~/services/ContentService'
 import PageRecipesLatest from '~/components/PageRecipesLatest'
 export default {
   transition: 'page',
   components: { PageRecipesLatest },
   async asyncData ({ params }) {
-    const recipes = await Recipes.findAllLatest(20)
+    const recipes = await findAllLatestRecipes(20)
     return {
       recipes
     }
