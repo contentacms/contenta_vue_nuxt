@@ -1,13 +1,13 @@
 /**
  * Functions to get content from Contenta JSON API
  */
-import ContentaJsonApi from './ContentaJsonApi'
-const api = new ContentaJsonApi(process.env.contentaJSONAPIBaseUrl)
+import contentaJsonApi from './contentaJsonApi'
+const api = contentaJsonApi(process.env.contentaJSONAPIBaseUrl)
 
 /**
  * @param {String} uuid
  */
-async function findOneRecipeByUuid (uuid) {
+export async function findOneRecipeByUuid (uuid) {
   const query = {
     include: 'image,category,image.thumbnail',
     filter: {
@@ -20,7 +20,7 @@ async function findOneRecipeByUuid (uuid) {
   return await api.get('recipes', query, uuid)
 }
 
-async function findAllPromotedRecipes (limit = 4) {
+export async function findAllPromotedRecipes (limit = 4) {
   const query = {
     page: {
       limit
@@ -46,7 +46,7 @@ async function findAllPromotedRecipes (limit = 4) {
   return await api.get('recipes', query)
 }
 
-async function findAllRecipesCategories (limit = 20) {
+export async function findAllRecipesCategories (limit = 20) {
   const query = {
     page: {
       limit
@@ -55,7 +55,7 @@ async function findAllRecipesCategories (limit = 20) {
   return await api.get('categories', query)
 }
 
-async function findAllLatestRecipes (limit = 4) {
+export async function findAllLatestRecipes (limit = 4) {
   const query = {
     sort: '-created',
     page: {
@@ -71,7 +71,7 @@ async function findAllLatestRecipes (limit = 4) {
   return api.get('recipes', query)
 }
 
-async function findHomePromotedArticlesAndRecipes (limit) {
+export async function findHomePromotedArticlesAndRecipes (limit) {
   const promotedRecipes = api.get('recipes', {
     page: {
       limit: 3
@@ -129,7 +129,7 @@ async function findHomePromotedArticlesAndRecipes (limit) {
     })
 }
 
-async function findAllRecipesByCategoryName (categoryName, limit = 4) {
+export async function findAllRecipesByCategoryName (categoryName, limit = 4) {
   const query = {
     sort: '-created',
     include: 'image,image.thumbnail',
@@ -152,13 +152,4 @@ async function findAllRecipesByCategoryName (categoryName, limit = 4) {
     }
   }
   return await api.get('recipes', query)
-}
-
-export {
-  findOneRecipeByUuid,
-  findAllPromotedRecipes,
-  findAllRecipesCategories,
-  findAllLatestRecipes,
-  findHomePromotedArticlesAndRecipes,
-  findAllRecipesByCategoryName
 }
