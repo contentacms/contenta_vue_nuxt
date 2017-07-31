@@ -11,19 +11,19 @@
 import Waterwheel from "waterwheel";
 import jsonapiParse from "jsonapi-parse";
 
-export default function (ServerBaseUrl) {
+export default (ServerBaseUrl) => {
 
   const waterwheel = new Waterwheel(
     {
       base: ServerBaseUrl,
       jsonapiPrefix: "api",
-      timeout: 2000,
+      timeout: 3000,
       accessCheck: false
     }
   );
 
   return {
-    get: async function get (uri, queryParams = {}, id = "") {
+    get: async function (uri, queryParams = {}, id = "") {
       const response = await waterwheel.jsonapi.get(uri, queryParams, id);
       return jsonapiParse.parse(response).data;
     }

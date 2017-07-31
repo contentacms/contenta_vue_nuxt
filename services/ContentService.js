@@ -1,8 +1,8 @@
 /**
  * Functions to get content from Contenta JSON API
  */
-import ContentaJsonApi from './ContentaJsonApi'
-const api = new ContentaJsonApi(process.env.contentaJSONAPIBaseUrl)
+import contentaJsonApi from './contentaJsonApi'
+const api = contentaJsonApi(process.env.contentaJSONAPIBaseUrl)
 
 /**
  * @param {String} uuid
