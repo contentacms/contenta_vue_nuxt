@@ -5,7 +5,7 @@
  * reponses : it resolves relationships and included objects nicely.
  * 
  * Example usage : 
- *   const api = new ContentaJsonApi(https://mydomain.fr)
+ *   const api = contentaJsonApi(https://mydomain.fr)
  *   const datas = await api.get('recipes', queryParams)
  */
 import Waterwheel from "waterwheel";
