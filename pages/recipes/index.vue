@@ -4,7 +4,7 @@
 
 <script>
 import PageRecipesIndex from '~/components/PageRecipesIndex'
-import { findAllPromotedRecipes, findAllLatestRecipes, findAllRecipesCategories, findAllRecipesByCategoryName } from '~/services/ContentService'
+import { findAllPromotedRecipes, findAllLatestRecipes, findAllRecipesCategories, findAllRecipesByCategoryName } from '~/services/contentService'
 export default {
   transition: 'page',
   components: { PageRecipesIndex },

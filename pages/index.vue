@@ -4,7 +4,7 @@
 
 <script>
 import PageIndex from '~/components/PageIndex'
-import { findAllLatestRecipes, findHomePromotedArticlesAndRecipes  } from '~/services/ContentService'
+import { findAllLatestRecipes, findHomePromotedArticlesAndRecipes  } from '~/services/contentService'
 
 export default {
   transition: 'page',

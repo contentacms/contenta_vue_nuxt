@@ -4,7 +4,7 @@
 
 <script>
 import PageRecipesCategory from '~/components/PageRecipesCategory'
-import { findAllRecipesByCategoryName } from '~/services/ContentService'
+import { findAllRecipesByCategoryName } from '~/services/contentService'
 
 export default {
   transition: 'page',
