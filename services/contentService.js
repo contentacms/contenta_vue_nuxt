@@ -55,7 +55,7 @@ export async function findAllRecipesCategories (limit = 20) {
   return await api.get('categories', query)
 }
 
-export async function findAllLatestRecipes (limit = 4) {
+export async function findAllLatestRecipes (limit = 4, offset = 0) {
   const query = {
     sort: '-created',
     page: {
@@ -129,7 +129,7 @@ export async function findHomePromotedArticlesAndRecipes (limit) {
     })
 }
 
-export async function findAllRecipesByCategoryName (categoryName, limit = 4) {
+export async function findAllRecipesByCategoryName (categoryName, limit = 4, offset = 0) {
   const query = {
     sort: '-created',
     include: 'image,image.thumbnail',
@@ -138,6 +138,55 @@ export async function findAllRecipesByCategoryName (categoryName, limit = 4) {
         condition: {
           path: 'category.name',
           value: categoryName
+        }
+      }
+    },
+    fields: {
+      recipes: 'title,difficulty,image',
+      images: 'name,thumbnail',
+      files: 'filename,url'
+    },
+    page: {
+      offset: 0,
+      limit: limit
+    }
+  }
+  return await api.get('recipes', query)
+}
+
+export async function findAllRecipesByDifficultyName (difficultyName, limit = 4, offset = 0) {
+  const query = {
+    sort: '-created',
+    include: 'image,image.thumbnail',
+    filter: {
+      difficulty: {
+        path: 'difficulty',
+        value: difficultyName
+      }
+    },
+    fields: {
+      recipes: 'title,difficulty,image',
+      images: 'name,thumbnail',
+      files: 'filename,url'
+    },
+    page: {
+      offset: 0,
+      limit: limit
+    }
+  }
+  return await api.get('recipes', query)
+}
+
+export async function findAllRecipesByMaxTotalTime (maxTotalTime, limit = 4, offset = 0) {
+  const query = {
+    sort: '-created',
+    include: 'image,image.thumbnail',
+    filter: {
+      totalTime: {
+        condition: {
+          path: 'totalTime',
+          value: maxTotalTime,
+          operator: '<'
         }
       }
     },
