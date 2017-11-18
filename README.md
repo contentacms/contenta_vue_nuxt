@@ -4,7 +4,7 @@
 
 This project is here to helps you getting started quickly with a decoupled Drupal 8 website with JSON API and Vue.js. 
 
-**We strongly believe than a good headless Drupal has to be SEO-friendly and fast**; so we are using the awesome [Nuxt.js](https://nuxtjs.org/) : Nuxt.js is just the fantastic [Vue.JS](https://vuejs.org) with automatic Server Side Rendering and Code Splitting, so you don't have to deal yourself with all that stuff; and just enjoy your SEO-friendly site built with Vue.js.
+**We strongly believe than a good headless Drupal has to be SEO-friendly and fast**. That's why we are using the awesome [Nuxt.js](https://nuxtjs.org/) : Nuxt.js is just the fantastic [Vue.JS](https://vuejs.org) with automatic Server Side Rendering and Code Splitting, so you don't have to deal yourself with all that stuff; and just enjoy your SEO-friendly site built with Vue.js.
 
 ![vue image](/static/images/icon-vue.jpg?raw=true)
 ![nuxt image](/static/images/icon-nuxt.png?raw=true)
