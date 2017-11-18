@@ -1,6 +1,6 @@
 {
   "name": "contenta_vue_nuxt",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-beta1",
   "description": "Nuxt.js client for Contenta CMS",
   "author": "yann <yann@yineo.fr>",
   "private": true,
