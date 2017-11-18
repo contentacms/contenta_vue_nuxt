@@ -1,4 +1,4 @@
-# Start your own decoupled site in minutes with Contenta CMS & Vue.js + Nuxt.js
+# Start your own Drupal 8 Headless site in minutes with JSON API & Vue.js + Nuxt.js
 
 [![Build Status](https://travis-ci.org/contentacms/contenta_vue_nuxt.svg?branch=master)](https://travis-ci.org/contentacms/contenta_vue_nuxt)
 
