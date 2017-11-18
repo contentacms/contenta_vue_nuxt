@@ -1,7 +1,7 @@
 import Vuex from 'vuex'
 
 /**
- * This our global state for our app.
+ * This our global store state for our app.
  */
 const createStore = () => new Vuex.Store({
   state: {

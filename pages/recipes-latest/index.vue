@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { findAllLatestRecipes } from '~/lib/contentService'
+import { findAllLatestRecipes } from '~/lib/api'
 import PageRecipesLatest from '~/components/PageRecipesLatest'
 export default {
   transition: 'page',
