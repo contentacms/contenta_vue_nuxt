@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { findOneRecipeByUuid, findAllRecipesByCategoryName } from '~/services/contentService'
+import { findOneRecipeByUuid, findAllRecipesByCategoryName } from '~/lib/contentService'
 import PageRecipesId from '~/components/PageRecipesId'
 export default {
   transition: 'page',
