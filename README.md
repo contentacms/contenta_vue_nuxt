@@ -1,21 +1,22 @@
-# contenta Vuejs + Nuxt.js
+# Start your own decoupled site in minutes with Contenta CMS & Vue.js + Nuxt.js
 
 [![Build Status](https://travis-ci.org/contentacms/contenta_vue_nuxt.svg?branch=master)](https://travis-ci.org/contentacms/contenta_vue_nuxt)
 
-A headless Drupal has to be SEO-friendly. *Contenta Vue.js* is an example of decoupled Drupal with [Vue.JS](https://vuejs.org) and *Contenta* JSON API. It uses [Nuxt.js](https://nuxtjs.org/) framework to create a SEO-friendly web application thanks to automatic server side rendering.
+This project is here to helps you getting started quickly with a decoupled Drupal 8 website with JSON API and Vue.js. 
+
+**We strongly believe than a good headless Drupal has to be SEO-friendly and fast**; so we are using the awesome [Nuxt.js](https://nuxtjs.org/) : Nuxt.js is just the fantastic [Vue.JS](https://vuejs.org) with automatic Server Side Rendering and Code Splitting, so you don't have to deal yourself with all that stuff; and just enjoy your SEO-friendly site built with Vue.js.
 
 ![vue image](/static/images/icon-vue.jpg?raw=true)
 ![nuxt image](/static/images/icon-nuxt.png?raw=true)
 
 *(vue drawing by https://twitter.com/hashedrock )*
 
-## OBJECTIVES  ( WHAT ARE WE DOING AND WHY ? )
+## CONTRIBUTORS : WHAT OUR OBJECTIVES, WHY ARE WE DOING THIS ?
 
-1) Helping developers to start quickly a Vue.js + Nuxt.js application with Contenta CMS as a back-office
-2) Mirror Vue.js values : un-opinionated, easy to read and learn
-3) That's why we should avoid **over-engineering** to focus on keeping a **low barrier to entry** to Vue.js + Nuxt.js stack. 
+1) Helping developers to start quickly a Drupal 8 headless with JSON API module or Contenta CMS.
+2) Mirror Vue.js values : un-opinionated, easy to read and learn. That's why we should avoid **over-engineering** to focus on keeping a **low barrier to entry** to Vue.js + Nuxt.js stack. 
 4) This application MUST be SEO-friendly, because this is why **Nuxt.js** is used.
-5) Let's try to keep the project, as far as is it possible, easy to be used as a **starter** (by simply forking it) for creating a new Decoupled Drupal site with Vue.js, Nuxt.js and contenta in no-time. 
+5) Let's try to do something than can be easily forked to start your own D8 headless site.
 
 ## GETTING STARTED
 
@@ -57,9 +58,9 @@ Most important parts of the code resides inside **pages**, **components** & **la
 
 **Pages** are special Nuxt.js components : they are automatically rendered on server side and are accessible automatically via an url. For example "pages/recipes.vue" can be accessed going to  "/recipes" uri. They use a special "asyncData" method which is used for server side rendering.
 
-**Layouts** are some Vue components used as template wrappers for pages components, somehow like "page.tpl.php" in Drupal.
+**Layouts** are some Vue components used as template wrappers for pages components, somehow like the "page.tpl.php" from Drupal.
 
-**Services** directory contains cross-components business logic, this is where resides our functions and class to fetch data from Contenta CMS public API.
+**lib** directory contains cross-components library or business logic, this is where resides our functions and class to fetch data from Contenta CMS public API.
 
 ## DEV CONTRIBUTION GUIDELINES
 
