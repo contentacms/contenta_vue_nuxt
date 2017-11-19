@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/contentacms/contenta_vue_nuxt.svg?branch=master)](https://travis-ci.org/contentacms/contenta_vue_nuxt)
 
-*Contenta Vue* is a [Vue.JS](https://vuejs.org) front-end consumer example for [Contenta CMS](http://www.contentacms.org/), pulling data from its [Contenta public API example](https://live-contentacms.pantheonsite.io/api) to build a fictive recipes site.
+*Contenta Vue Nuxt* is a [Vue.JS](https://vuejs.org) front-end consumer example for [Contenta CMS](http://www.contentacms.org/), pulling data from its [Contenta public API example](https://live-contentacms.pantheonsite.io/api) to build a fictive recipes site. You can see it live here : https://contentanuxt.now.sh/
 
 This project is here to help you learn how to build a decoupled Drupal 8 website with JSON API and Vue.js. 
 
