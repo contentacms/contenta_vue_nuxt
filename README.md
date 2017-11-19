@@ -1,11 +1,10 @@
-# Drupal 8 headless example with Vue.js and JSON API.
+# Drupal 8 headless example with Vue.js and Contenta CMS / JSON API.
 
 [![Build Status](https://travis-ci.org/contentacms/contenta_vue_nuxt.svg?branch=master)](https://travis-ci.org/contentacms/contenta_vue_nuxt)
 
-This project helps you to start a decoupled Drupal 8 website with JSON API and Vue.js, with a concrete and simple example. It shows you how to structure your code, request & parse JSON API and build a SEO-friendly Vue.js site.
+This project helps you to start a decoupled Drupal 8 website with JSON API and Vue.js, with a concrete and simple example. 
 
 *Contenta Vue Nuxt* is a [Vue.JS](https://vuejs.org) front-end consumer example for [Contenta CMS](http://www.contentacms.org/), pulling data from its [Contenta public API example](https://live-contentacms.pantheonsite.io/api) to build a fictive recipes site. You can see it live here : https://contentanuxt.now.sh/
-
 
 **We strongly believe than a good headless Drupal has to be SEO-friendly and fast**. That's why we are using the awesome [Nuxt.js](https://nuxtjs.org/) : Nuxt.js is just Vue.js with automatic Server Side Rendering and Code Splitting, so you don't have to deal yourself with all that stuff; and just enjoy your SEO-friendly site built with your Vue.js components.
 
