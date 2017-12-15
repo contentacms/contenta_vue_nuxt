@@ -5,8 +5,11 @@ import AppNavigation from '~/components/AppNavigation'
 import Vuex from 'vuex'
 import storeCreate from '~/store'
 import NuxtLink from '../NuxtLinkMock'
-Vue.use(Vuex)
+// import bootstrap vue  css
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
 
+Vue.use(Vuex)
+Vue.use(BootstrapVue)
 /**
  * An example unit test
  */
