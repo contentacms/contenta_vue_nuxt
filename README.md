@@ -1,6 +1,6 @@
 # Drupal 8 headless example with Contenta CMS / JSON API and Vue.js
 
-!!! LOOKING FOR A NEW MAINTENER !!! Please contact me or post an issue if you wish to contribute.
+!!! LOOKING FOR A NEW MAINTAINER !!! Please contact me or post an issue if you wish to contribute.
 
 [![Build Status](https://travis-ci.org/contentacms/contenta_vue_nuxt.svg?branch=master)](https://travis-ci.org/contentacms/contenta_vue_nuxt)
 
