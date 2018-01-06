@@ -35,6 +35,11 @@ module.exports = {
         test: /\.vue$/,
         exclude: /node_modules/,
         loader: 'vue-loader',
+      },
+      //for css loader (like BootstrapVue)
+      {
+        test: /\.css$/,
+        loaders: 'css-loader',
       }
     ]
   }
