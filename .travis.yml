@@ -30,8 +30,7 @@ before_script:
   - npm install -g npx
 
 script:
-  #- npx nuxt build
-  - node_modules/.bin/nuxt build
+  - npx nuxt build
   - npx karma start test/unit/karma.conf.js
 
 notifications:
