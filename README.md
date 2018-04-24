@@ -39,6 +39,10 @@ $ npm install
 # service worker is disabled in dev
 $ npm run dev
 
+# If port 3000 is already taken, you can specify a port, e.g. port 3001.
+# Assumes you installed Nuxt in the project folder.
+node_modules/.bin/nuxt -p 3001
+
 # build for production and launch server
 $ npm run build
 $ npm run start
