@@ -29,29 +29,39 @@ This project helps you to start a decoupled Drupal 8 website with JSON API and V
 - node v8.0.0 or >
 - npm 5 or >
 
-### BUILD SETUP
+### INSTALL
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
 # serve with hot reload at localhost:3000
 # service worker is disabled in dev
 $ npm run dev
+```
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+To listen on another port, edit your package.json and change dev script:
+```bash
+  # ...
+  "scripts": {
+    "dev": "PORT=5000 node_modules/.bin/nuxt"
+  # ...
+```
 
-# generate static project
-$ npm run generate
-
+```bash
+units tests
+```
 # run unit tests. test resides in test/unit directory
 $ npm test
+```
 
-# helper to deploy our app to github pages :
-# you MUST have a local copy of "contentavuedemo.github.io"
-$ npm run deploy
+### BUILD
+
+``` bash
+# build for production
+$ npm run build
+# and launch production server
+$ npm run start
 ```
 
 ## How does it work ?
