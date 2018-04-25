@@ -54,7 +54,7 @@ Run units tests
 $ npm test
 ```
 
-### BUILD
+### BUILD FOR PRODUCTION
 
 ``` bash
 # build for production
