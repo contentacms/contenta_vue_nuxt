@@ -48,9 +48,8 @@ To listen on another port, edit your package.json and change dev script:
   # ...
 ```
 
+Run units tests
 ```bash
-units tests
-```
 # run unit tests. test resides in test/unit directory
 $ npm test
 ```
