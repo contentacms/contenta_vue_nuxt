@@ -4,11 +4,11 @@
 
 const resolve = require('path').resolve;
 // resolve to absolute path where "npm test" is running from
-const root = resolve('.');
+const root = resolve('./frontend');
 
 module.exports = {
   resolve: {
-    modules: [`${root}/node_modules`],
+    modules: [`${root}/../node_modules`],
     extensions: ['.js', '.vue'],
     alias: {
       '~': root,

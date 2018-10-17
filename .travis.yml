@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - 'lts/carbon'
+- 'lts/carbon'
 
 addons:
   apt:
@@ -12,38 +12,36 @@ addons:
     - google-chrome-stable
 cache:
   directories:
-    - node_modules
-    - .tmp
+  - node_modules
+  - .tmp
 notifications:
   email:
     on_failure: change
     on_success: change
 before_install:
-  - git fetch --tags
-  - export CHROME_BIN=chromium-browser
-  - sudo chown root /opt/google/chrome/chrome-sandbox
-  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+- git fetch --tags
+- export CHROME_BIN=chromium-browser
+- sudo chown root /opt/google/chrome/chrome-sandbox
+- sudo chmod 4755 /opt/google/chrome/chrome-sandbox
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 stages:
-  - name: test
-    # require the event type to not be a semantic release tag.
-    if: NOT tag =~ ^v\d+\.\d+\.\d+$
+- name: test
+  # require the event type to not be a semantic release tag.
+  if: NOT tag =~ ^v\d+\.\d+\.\d+$
 
 jobs:
   include:
-    -
-      stage: test
-      script:
-        - npm run lint
-        - npm run test-ci
-        - npm install --no-save coveralls
-        # Report coverage to coveralls.io
-        - cat ./__coverage__/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-        - rm -fr ./__coverage__
+  - stage: test
+    script:
+    - npm run lint
+    - npm run test-ci
+    - npm install --no-save coveralls
+    # Report coverage to coveralls.io
+    - cat ./__coverage__/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    - rm -fr ./__coverage__
 
-    -
-      stage: deploy
-      if: branch = master
-      # Semantic release will fail if it's not using node 8.
-      script: npm run semantic-release
+  - stage: deploy
+    if: branch = master
+    # Semantic release will fail if it's not using node 8.
+    script: npm run semantic-release
