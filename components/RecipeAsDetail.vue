@@ -93,13 +93,13 @@
 </template>
 
 <script>
-import AppSection from '~/components/AppSection'
+import AppSection from "~/components/AppSection";
 export default {
   components: { AppSection },
   props: {
     recipe: { type: Object, default: {} }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -107,12 +107,11 @@ export default {
   width: 50px;
 }
 .what-you-need {
-  margin-bottom:10vh;
+  margin-bottom: 10vh;
 }
 
 .method {
   padding: 1.25rem 2.5rem 1.25rem 1.5rem;
 }
-
 </style>
 

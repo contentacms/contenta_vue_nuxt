@@ -18,6 +18,6 @@
 
 <style scoped>
 .footer {
-  background: #EEE
+  background: #eee;
 }
 </style>

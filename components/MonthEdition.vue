@@ -14,14 +14,14 @@
 </template>
 
 <script>
-import ButtonLink from '~/components/ButtonLink'
+import ButtonLink from "~/components/ButtonLink";
 export default {
   components: { ButtonLink }
-}
+};
 </script>
 
 <style scoped>
 #book {
-  max-height: 40vh
+  max-height: 40vh;
 }
 </style>

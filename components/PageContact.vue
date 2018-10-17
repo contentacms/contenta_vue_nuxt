@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import ContactForm from "~/components/ContactForm"
-import AppSection from "~/components/AppSection"
+import ContactForm from "~/components/ContactForm";
+import AppSection from "~/components/AppSection";
 export default {
   components: { ContactForm, AppSection }
-}
+};
 </script>

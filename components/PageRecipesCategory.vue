@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import RecipesAsCards from '~/components/RecipesAsCards'
-import AppSection from '~/components/AppSection'
+import RecipesAsCards from "~/components/RecipesAsCards";
+import AppSection from "~/components/AppSection";
 export default {
   components: { RecipesAsCards, AppSection },
   props: {
     recipes: { type: Array, default: [] },
-    categoryName: { type: String, default: '' },
+    categoryName: { type: String, default: "" }
   }
-}
+};
 </script>
