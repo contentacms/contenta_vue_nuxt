@@ -1,7 +1,5 @@
 # Drupal 8 headless example with Contenta CMS / JSON API and Vue.js
 
-!!! LOOKING FOR A NEW MAINTAINER !!! Please contact me or post an issue if you wish to contribute.
-
 [![Build Status](https://travis-ci.org/contentacms/contenta_vue_nuxt.svg?branch=master)](https://travis-ci.org/contentacms/contenta_vue_nuxt)
 
 *Contenta Vue Nuxt* is a [Vue.JS](https://vuejs.org) front-end consumer example for [Contenta CMS](http://www.contentacms.org/), pulling data from its [Contenta public API example](https://live-contentacms.pantheonsite.io/api) to build a fictive recipes site. You can see it live here : https://contentanuxt.now.sh/
@@ -26,8 +24,8 @@ This project helps you to start a decoupled Drupal 8 website with JSON API and V
 
 ### REQUIREMENTS
 
-- node v8.0.0 or >
-- npm 5 or >
+- Node 10.x
+- NPM >= 5
 
 ### INSTALL
 
@@ -41,6 +39,7 @@ $ npm run dev
 ```
 
 To listen on another port, edit your package.json and change dev script:
+
 ```bash
   # ...
   "scripts": {
@@ -48,7 +47,8 @@ To listen on another port, edit your package.json and change dev script:
   # ...
 ```
 
-Run units tests
+Run units tests:
+
 ```bash
 # run unit tests. test resides in test/unit directory
 $ npm test
