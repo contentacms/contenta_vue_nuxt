@@ -1,39 +1,49 @@
-#.travis.yml
-sudo: required 
+sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "node"
-
-branches:
-  only:
-    - dev
-    - master
+  - 'lts/carbon'
 
 addons:
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
-
-# to run components unit tests with chrome
+    - google-chrome-stable
+cache:
+  directories:
+    - node_modules
+    - .tmp
+notifications:
+  email:
+    on_failure: change
+    on_success: change
 before_install:
+  - git fetch --tags
   - export CHROME_BIN=chromium-browser
   - sudo chown root /opt/google/chrome/chrome-sandbox
   - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+stages:
+  - name: test
+    # require the event type to not be a semantic release tag.
+    if: NOT tag =~ ^v\d+\.\d+\.\d+$
 
-before_script:
-  - npm install
-  - npm install -g npx
+jobs:
+  include:
+    -
+      stage: test
+      script:
+        - npm run lint
+        - npm run test-ci
+        - npm install --no-save coveralls
+        # Report coverage to coveralls.io
+        - cat ./__coverage__/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+        - rm -fr ./__coverage__
 
-script:
-  - npx nuxt build
-  - npx karma start test/unit/karma.conf.js
-
-notifications:
-  email:
-    on_failure: change
-    on_success: change
+    -
+      stage: deploy
+      if: branch = master
+      # Semantic release will fail if it's not using node 8.
+      script: npm run semantic-release
