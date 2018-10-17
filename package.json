@@ -39,7 +39,7 @@
     "test": "npm run build && karma start frontend/test/unit/karma.conf.js",
     "test-ci": "karma start frontend/test/unit/karma.conf.js",
     "documentation": "emdaer --yes && git add *.md",
-    "prettier": "prettier --write './**/*.js' && eslint './**/*.js' --fix"
+    "prettier": "prettier --write './**/*.{js,vue}' && eslint './**/*.{js,vue}Difficulty.vue' --fix"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

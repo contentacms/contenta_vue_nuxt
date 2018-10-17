@@ -8,8 +8,7 @@
 </template>
 
 <script>
-  import AppSection from '~/components/AppSection'
-  export default {
-    components: { AppSection }
-  }
-</script>
+import AppSection from '~/components/AppSection';
+export default {
+  components: { AppSection },
+};</script>

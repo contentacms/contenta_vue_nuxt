@@ -24,12 +24,11 @@
 </template>
 
 <script>
-import AppSection from '~/components/AppSection'
-import ButtonLink from '~/components/ButtonLink'
+import AppSection from '~/components/AppSection';
+import ButtonLink from '~/components/ButtonLink';
 export default {
   components: { ButtonLink, AppSection },
   props: {
-    recipe: { type: Object, default: {} }
-  }
-}
-</script>
+    recipe: { type: Object, default: {} },
+  },
+};</script>

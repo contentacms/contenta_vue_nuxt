@@ -5,10 +5,9 @@
 </template>
 
 <script>
-  import packageJson from '~/../package.json'
-  export default {
-    data() {
-      return { packageJson }
-    }
-  }
-</script>
+import packageJson from '~/../package.json';
+export default {
+  data() {
+    return { packageJson };
+  },
+};</script>

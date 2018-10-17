@@ -7,19 +7,18 @@
 <script>
 export default {
   props: {
-    buttonClass: { type:String, default: 'is-primary' },
-    to: { type: String | Array, default: '/' }
+    buttonClass: { type: String, default: 'is-primary' },
+    to: { type: String | Array, default: '/' },
   },
-  data () {
+  data() {
     return {
-      isLoading: false
-    }
-  }
-}
-</script>
+      isLoading: false,
+    };
+  },
+};</script>
 
 <style scoped>
 .button {
-   margin-top:4vh;
+  margin-top: 4vh;
 }
 </style>

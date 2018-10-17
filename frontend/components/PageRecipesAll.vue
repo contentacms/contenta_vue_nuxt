@@ -13,13 +13,12 @@
 </template>
 
 <script>
-import RecipesAsCards from '~/components/RecipesAsCards'
-import AppSection from '~/components/AppSection'
+import RecipesAsCards from '~/components/RecipesAsCards';
+import AppSection from '~/components/AppSection';
 export default {
   components: { RecipesAsCards, AppSection },
   props: {
     recipes: { type: Array, default: () => [] },
     category: { type: Object, default: () => {} },
-  }
-}
-</script>
+  },
+};</script>

@@ -3,8 +3,7 @@
 </template>
 
 <script>
-import PageServerUnreachable from "~/components/PageServerUnreachable"
+import PageServerUnreachable from '~/components/PageServerUnreachable';
 export default {
-  components : { PageServerUnreachable }
-}
-</script>
+  components: { PageServerUnreachable },
+};</script>

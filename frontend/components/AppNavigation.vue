@@ -33,24 +33,24 @@
 </template>
 
 <script>
-import AppVersion from '~/components/AppVersion'
+import AppVersion from '~/components/AppVersion';
 export default {
   components: { AppVersion },
   methods: {
-    setMenuMobileIsOpened () {
-      this.$store.commit('setMenuMobileIsOpened', !this.$store.state.menuMobileIsOpened)
-    }
-  }
-}
-</script>
+    setMenuMobileIsOpened() {
+      this.$store.commit(
+        'setMenuMobileIsOpened',
+        !this.$store.state.menuMobileIsOpened
+      );
+    },
+  },
+};</script>
 
 <style scoped>
-
 /* Create slide animation on mobile */
 @media screen and (max-width: 999px) {
-
   .navbar-end {
-    padding:0.5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .navbar-menu {

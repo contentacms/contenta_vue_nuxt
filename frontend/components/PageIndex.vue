@@ -40,18 +40,24 @@
 </template>
 
 <script>
-import RecipesAsCards from '~/components/RecipesAsCards'
-import ButtonLink from '~/components/ButtonLink'
-import MonthEdition from '~/components/MonthEdition'
-import AppSection from '~/components/AppSection'
-import HomePromotedNodes from '~/components/HomePromotedNodes'
-import HomeWidgets from '~/components/HomeWidgets'
+import RecipesAsCards from '~/components/RecipesAsCards';
+import ButtonLink from '~/components/ButtonLink';
+import MonthEdition from '~/components/MonthEdition';
+import AppSection from '~/components/AppSection';
+import HomePromotedNodes from '~/components/HomePromotedNodes';
+import HomeWidgets from '~/components/HomeWidgets';
 
 export default {
-  components: { RecipesAsCards, MonthEdition, ButtonLink, AppSection, HomePromotedNodes, HomeWidgets },
+  components: {
+    RecipesAsCards,
+    MonthEdition,
+    ButtonLink,
+    AppSection,
+    HomePromotedNodes,
+    HomeWidgets,
+  },
   props: {
     latestRecipes: { type: Array, default: [] },
     latestPromoted: { type: Array, default: [] },
-  }
-}
-</script>
+  },
+};</script>

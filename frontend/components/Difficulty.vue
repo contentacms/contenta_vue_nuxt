@@ -6,17 +6,16 @@
 
 <script>
 export default {
-  props : {
-     difficulty: { type: String, default: ''}
+  props: {
+    difficulty: { type: String, default: '' },
   },
   methods: {
-    classes (difficulty) {
+    classes(difficulty) {
       return {
-        'tag is-primary': difficulty == 'easy',
-        'tag is-warning': difficulty == 'middle',
-        'tag is-danger': difficulty == 'hard'
-      }
-    }
-  }
-}
-</script>
+        'tag is-primary': difficulty === 'easy',
+        'tag is-warning': difficulty === 'middle',
+        'tag is-danger': difficulty === 'hard',
+      };
+    },
+  },
+};</script>

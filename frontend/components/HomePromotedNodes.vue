@@ -11,12 +11,11 @@
 </template>
 
 <script>
-import RecipeAsCard from '~/components/RecipeAsCard'
+import RecipeAsCard from '~/components/RecipeAsCard';
 
 export default {
   components: { RecipeAsCard },
   props: {
-    nodes: { type: Array, default: [] }
-  }
-}
-</script>
+    nodes: { type: Array, default: [] },
+  },
+};</script>

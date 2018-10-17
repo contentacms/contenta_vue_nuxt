@@ -27,16 +27,20 @@
 </template>
 
 <script>
-import RecipesAsCards from '~/components/RecipesAsCards'
-import RecipeAsPromotedBanner from '~/components/RecipeAsPromotedBanner'
-import ButtonLink from '~/components/ButtonLink'
-import AppSection from '~/components/AppSection'
+import RecipesAsCards from '~/components/RecipesAsCards';
+import RecipeAsPromotedBanner from '~/components/RecipeAsPromotedBanner';
+import ButtonLink from '~/components/ButtonLink';
+import AppSection from '~/components/AppSection';
 export default {
-  components: { RecipesAsCards, ButtonLink, RecipeAsPromotedBanner, AppSection },
+  components: {
+    RecipesAsCards,
+    ButtonLink,
+    RecipeAsPromotedBanner,
+    AppSection,
+  },
   props: {
     recipePromoted: { type: Object, default: {} },
     recipesLatest: { type: Array, default: () => [] },
-    recipesByCategories: { type: Array, default: () => [] }
-  }
-}
-</script>
+    recipesByCategories: { type: Array, default: () => [] },
+  },
+};</script>
