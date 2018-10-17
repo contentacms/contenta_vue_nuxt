@@ -24,10 +24,10 @@
 <style scoped>
 .app-top-bar {
   padding: 0.5rem 0;
-  background: whitesmoke
+  background: whitesmoke;
 }
 
 .level-item {
-  padding: 0rem 0.75rem
+  padding: 0rem 0.75rem;
 }
 </style>

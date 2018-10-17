@@ -1,19 +1,19 @@
 // we can just use the exact same webpack config by requiring it
 // however, remember to delete the original entry since we don't
 // need it during tests
-var webpackConfig = require('./webpack.config.js')
-delete webpackConfig.entry
+var webpackConfig = require("./webpack.config.js");
+delete webpackConfig.entry;
 
 // karma.conf.js
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
-    browsers: ['Chrome'],
-    frameworks: ['jasmine'],
+    browsers: ["Chrome"],
+    frameworks: ["jasmine"],
     // this is the entry file for all our tests.
-    files: ['index.js'],
+    files: ["index.js"],
     // we will pass the entry file to webpack for bundling.
     preprocessors: {
-      'index.js': ['webpack']
+      "index.js": ["webpack"]
     },
     // use the webpack config
     webpack: webpackConfig,
@@ -22,5 +22,5 @@ module.exports = function (config) {
       noInfo: true
     },
     singleRun: true
-  })
-}
+  });
+};

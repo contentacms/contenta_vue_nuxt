@@ -3,16 +3,16 @@
 </template>
 
 <script>
-import { findAllLatestRecipes } from '~/lib/api'
-import PageRecipesLatest from '~/components/PageRecipesLatest'
+import { findAllLatestRecipes } from "~/lib/api";
+import PageRecipesLatest from "~/components/PageRecipesLatest";
 export default {
-  transition: 'page',
+  transition: "page",
   components: { PageRecipesLatest },
-  async asyncData ({ params }) {
-    const recipes = await findAllLatestRecipes(20)
+  async asyncData({ params }) {
+    const recipes = await findAllLatestRecipes(20);
     return {
       recipes
-    }
+    };
   }
-}
+};
 </script>

@@ -26,20 +26,20 @@ export default {
     items: { type: Array, default: [] }
   },
   computed: {
-    columnClasses () {
-      return 'column is-' + 12 / this.itemsByRow
+    columnClasses() {
+      return "column is-" + 12 / this.itemsByRow;
     },
-    columns () {
-      let columnIndex = 0
-      let columns = {}
+    columns() {
+      let columnIndex = 0;
+      let columns = {};
       for (const itemIndex in this.items) {
         if (itemIndex % this.itemsByRow === 0) {
-          columns[++columnIndex] = []
+          columns[++columnIndex] = [];
         }
-        columns[columnIndex].push(this.items[itemIndex])
+        columns[columnIndex].push(this.items[itemIndex]);
       }
-      return columns
+      return columns;
     }
   }
-}
+};
 </script>

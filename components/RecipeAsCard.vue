@@ -17,25 +17,24 @@
 </template>
 
 <script>
-import BulmaCard from '~/components/BulmaCard'
-import Difficulty from '~/components/Difficulty'
+import BulmaCard from "~/components/BulmaCard";
+import Difficulty from "~/components/Difficulty";
 export default {
   components: { BulmaCard, Difficulty },
   props: {
     recipe: { type: Object, default: () => [] }
   }
-}
+};
 </script>
 
 <style scoped>
-
 .thumbnail {
   max-height: 220px;
   overflow: hidden;
 }
 
 .image.is-square {
-  background-color:whitesmoke
+  background-color: whitesmoke;
 }
 
 .card:hover {
@@ -48,16 +47,15 @@ export default {
   height: 100%;
   position: relative;
   transition: all 0.3s ease-in-out;
-  top: 0
+  top: 0;
 }
 
 .card .description {
-  font-style: italic
+  font-style: italic;
 }
 
 .recipes .card .difficulty {
   margin-bottom: 10px;
 }
-
 </style>
 

@@ -18,7 +18,7 @@
 
 <style scoped>
 .socket {
-  padding:2rem 0;
+  padding: 2rem 0;
   background: whitesmoke;
 }
 </style>
