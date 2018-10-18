@@ -1,6 +1,0 @@
-# node_modules ignored by default
-
-# Ignore generated files
-__coverage__
-scratch
-frontend/.nuxt
