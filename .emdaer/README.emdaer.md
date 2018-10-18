@@ -68,6 +68,15 @@
     runEmdaer: false
 -->
 
+## Documentation
+
+<!--emdaer-p
+  - '@emdaer/plugin-documentation'
+  - sources:
+    - ./lib/api.js
+    - ./lib/jsonApiClient.js
+-->
+
 ## Contributors
 <!--emdaer-p
   - '@emdaer/plugin-contributors-details-github'
