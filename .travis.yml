@@ -12,7 +12,6 @@ addons:
     - google-chrome-stable
 cache:
   directories:
-  - node_modules
   - .tmp
 notifications:
   email:
