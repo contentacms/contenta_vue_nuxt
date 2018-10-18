@@ -20,7 +20,6 @@
   "dependencies": {
     "@emdaer/plugin-documentation": "^3.2.3",
     "isomorphic-fetch": "^2.2.1",
-    "jsonapi-parse": "1.2.0",
     "nuxt": "^2.2.0",
     "vue-lazyload": "^1.2.6"
   },
@@ -33,7 +32,7 @@
     "prepush": "npm run lint && npm test",
     "prepare": "npm run frontend:build",
     "frontend:dev": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt dev frontend",
-    "frontend:build": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt build frontend",
+    "frontend:build": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt build frontend --universal",
     "frontend:analyse": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt build frontend --analyse",
     "frontend:start": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt start frontend",
     "frontend:generate": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt generate frontend",

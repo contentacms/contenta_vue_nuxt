@@ -11,7 +11,6 @@
 import fetch from 'isomorphic-fetch';
 import { polyfill } from 'es6-promise';
 polyfill();
-import jsonapiParse from 'jsonapi-parse';
 import qs from 'qs';
 
 export default () => ({
@@ -20,12 +19,10 @@ export default () => ({
       process.env.jsonApiPrefix
     }/${uri}${id ? `/${id}` : ''}?${
       Object.keys(queryParams).length
-        ? `&${qs.stringify(queryParams, { indices: false })}`
+        ? qs.stringify(queryParams, { indices: false })
         : ''
     }`;
-    const response = await fetch(
-      `${process.env.jsonApiServer}/${process.env.jsonApiPrefix}/${url}`
-    );
-    return jsonapiParse.parse(response).data;
+    const response = await fetch(url);
+    return (await response.json()).data;
   },
 });
