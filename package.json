@@ -30,7 +30,7 @@
     "build": "npm run frontend:build",
     "precommit": "lint-staged && npm run documentation",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "prepush": "npm run lint && npm run flow && npm test",
+    "prepush": "npm run lint && npm test",
     "prepare": "npm run frontend:build",
     "frontend:dev": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt dev frontend",
     "frontend:build": "node $NODE_DEBUG_OPTION node_modules/.bin/nuxt build frontend",
