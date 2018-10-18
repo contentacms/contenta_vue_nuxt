@@ -1,0 +1,11 @@
+.babelrc.js
+.emdaer
+.eslintrc.js
+.eslintignore
+.nvmrc
+.travis.yml
+*.config.js
+.gitignore
+*.test.js
+test
+/frontend/.nuxt
