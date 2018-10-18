@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     columnClasses() {
-      return `column is-${  12 / this.itemsByRow}`;
+      return `column is-${12 / this.itemsByRow}`;
     },
     columns() {
       let columnIndex = 0;

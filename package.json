@@ -27,7 +27,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "start": "npm run frontend:start",
     "build": "npm run frontend:build",
-    "precommit": "npm run test",
+    "precommit": "lint-staged && npm run documentation",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "prepush": "npm run lint && npm run flow && npm test",
     "prepare": "npm run frontend:build",
