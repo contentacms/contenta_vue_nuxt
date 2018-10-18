@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import AppVersion from '~/components/AppVersion';
-import packageJson from '~/package.json';
+import packageJson from '~/../package.json';
 
 /**
  * An example unit test

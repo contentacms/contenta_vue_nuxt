@@ -5,6 +5,7 @@
 const resolve = require('path').resolve;
 // resolve to absolute path where "npm test" is running from
 const root = resolve('./frontend');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   resolve: {
@@ -43,4 +44,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new VueLoaderPlugin()],
 };
