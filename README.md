@@ -5,7 +5,7 @@
 -->
 
 <!--
-  emdaerHash:d7aa0a87b6d9c5171df427d8455baeb7
+  emdaerHash:715211a8b3140c4a1c4a518b89aa628c
 -->
 
 <h1 id="contenta-vue-nuxt-img-align-right-src-logo-svg-alt-contenta-logo-title-contenta-logo-width-100-">Contenta Vue Nuxt <img align="right" src="./logo.svg" alt="Contenta logo" title="Contenta logo" width="100"></h1>
@@ -27,7 +27,7 @@
 <li><a href="#license">License</a></li>
 </ul>
 <!-- tocstop -->
-<p><a href="https://travis-ci.org/contentacms/contenta_vue_nuxt/"><img src="https://img.shields.io/travis/contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="Travis"></a> <a href="https://coveralls.io/github/contentacms/contenta_vue_nuxt/"><img src="https://img.shields.io/coveralls/github/contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="Coverage"></a> <a href="https://david-dm.org/contentacms/contenta_vue_nuxt"><img src="https://img.shields.io/david/contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="David Dependency Management"></a> <a href="https://github.com/contentacms/contenta_vue_nuxt"><img src="https://img.shields.io/github/last-commit/contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="Last Commit"></a> <a href="http://npmjs.com/package/@contentacms/contenta_vue_nuxt"><img src="https://img.shields.io/node/v/@contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="Node"></a> <a href="https://github.com/emdaer/emdaer"><img src="https://img.shields.io/badge/📓-documented%20with%20emdaer-F06632.svg?style=flat-square" alt="Documented with emdaer"></a></p>
+<p><a href="https://travis-ci.org/contentacms/contenta_vue_nuxt/"><img src="https://img.shields.io/travis/contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="Travis"></a> <a href="https://david-dm.org/contentacms/contenta_vue_nuxt"><img src="https://img.shields.io/david/contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="David Dependency Management"></a> <a href="https://github.com/contentacms/contenta_vue_nuxt"><img src="https://img.shields.io/github/last-commit/contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="Last Commit"></a> <a href="http://npmjs.com/package/@contentacms/contenta_vue_nuxt"><img src="https://img.shields.io/node/v/@contentacms/contenta_vue_nuxt.svg?style=flat-square" alt="Node"></a> <a href="https://github.com/emdaer/emdaer"><img src="https://img.shields.io/badge/📓-documented%20with%20emdaer-F06632.svg?style=flat-square" alt="Documented with emdaer"></a></p>
 <h2 id="contributors-what-our-objectives-why-are-we-doing-this-">CONTRIBUTORS : WHAT OUR OBJECTIVES, WHY ARE WE DOING THIS ?</h2>
 <ol>
 <li>Helping developers to start quickly a Drupal 8 headless with JSON API module or Contenta CMS.</li>

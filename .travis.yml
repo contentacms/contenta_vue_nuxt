@@ -36,10 +36,6 @@ jobs:
     script:
     - npm run lint
     - npm run test-ci
-    - npm install --no-save coveralls
-    # Report coverage to coveralls.io
-    - cat ./__coverage__/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-    - rm -fr ./__coverage__
 
   - stage: deploy
     if: branch = master
