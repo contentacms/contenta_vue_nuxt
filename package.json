@@ -3,11 +3,31 @@
   "version": "2.0.0",
   "description": "Nuxt.js client for Contenta CMS",
   "author": "yann <yann@yineo.fr>",
+<<<<<<< HEAD
   "private": false,
   "license": "MIT",
   "dependencies": {
     "axios": "0.16.2",
     "jsonapi-parse": "1.2.0",
+=======
+  "contributors": [
+    {
+      "name": "Yann",
+      "email": "yann@yineo.fr",
+      "url": "https://yineo.fr"
+    },
+    {
+      "name": "Mateu Aguiló Bosch",
+      "email": "mateu.aguilo.bosch@gmail.com",
+      "url": "http://humanbits.es"
+    }
+  ],
+  "private": false,
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "jsonapi-parse": "^2.0.0",
+>>>>>>> dev
     "nuxt": "^2.2.0",
     "vue-lazyload": "1.0.6"
   },
@@ -23,8 +43,13 @@
     "prettier": "prettier --write './**/*.{js,vue}' && eslint './**/*.{js,vue}Difficulty.vue' --fix"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "babel-eslint": "^7.2.3",
     "cross-env": "^4.0.0",
+=======
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+>>>>>>> dev
     "eslint": "^3.19.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-config-standard": "^6.2.1",
@@ -35,7 +60,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "eslint-plugin-vue": "^4.7.1",
     "jasmine-core": "^2.6.4",
-    "karma": "^1.7.0",
+    "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
     "karma-webpack": "^2.0.4",

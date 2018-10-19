@@ -57,8 +57,19 @@ export default {
     HomeWidgets,
   },
   props: {
+<<<<<<< HEAD
     latestRecipes: { type: Array, default: [] },
     latestPromoted: { type: Array, default: [] },
+=======
+    latestRecipes: {
+      type: Array,
+      required: true,
+    },
+    latestPromoted: {
+      type: Array,
+      required: true,
+    },
+>>>>>>> dev
   },
 };
 </script>
