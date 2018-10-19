@@ -3,6 +3,18 @@
   "version": "2.0.0",
   "description": "Nuxt.js client for Contenta CMS",
   "author": "yann <yann@yineo.fr>",
+  "contributors": [
+    {
+      "name": "Yann",
+      "email": "yann@yineo.fr",
+      "url": "https://yineo.fr"
+    },
+    {
+      "name": "Mateu Aguiló Bosch",
+      "email": "mateu.aguilo.bosch@gmail.com",
+      "url": "http://humanbits.es"
+    }
+  ],
   "private": false,
   "license": "MIT",
   "dependencies": {
