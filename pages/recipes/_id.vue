@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import { findOneRecipeByUuid, findAllRecipesByCategoryName } from "~/lib/api";
-import PageRecipesId from "~/components/PageRecipesId";
+import { findOneRecipeByUuid, findAllRecipesByCategoryName } from '~/lib/api';
+import PageRecipesId from '~/components/PageRecipesId';
 export default {
-  transition: "page",
+  transition: 'page',
   components: { PageRecipesId },
   async asyncData({ params }) {
     const recipe = await findOneRecipeByUuid(params.id);
@@ -15,6 +15,6 @@ export default {
       4
     );
     return { recipe, recipesByCategory };
-  }
+  },
 };
 </script>

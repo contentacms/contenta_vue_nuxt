@@ -7,11 +7,11 @@ import {
   findAllRecipesByCategoryName,
   findAllRecipesByDifficultyName,
   findAllRecipesByMaxTotalTime,
-  findAllLatestRecipes
-} from "~/lib/api";
-import PageRecipesAll from "~/components/PageRecipesAll";
+  findAllLatestRecipes,
+} from '~/lib/api';
+import PageRecipesAll from '~/components/PageRecipesAll';
 export default {
-  transition: "page",
+  transition: 'page',
   components: { PageRecipesAll },
   async asyncData(params) {
     const filter = params.route.query.filter;
@@ -20,20 +20,20 @@ export default {
     // Cast as numeric
     const offset = params.route.query.page || 0;
     switch (filter) {
-      case "main-course":
+      case 'main-course':
         recipes = await findAllRecipesByCategoryName(
-          "Main course",
+          'Main course',
           limit,
           offset
         );
         break;
-      case "easy":
-        recipes = await findAllRecipesByDifficultyName("easy", limit, offset);
+      case 'easy':
+        recipes = await findAllRecipesByDifficultyName('easy', limit, offset);
         break;
-      case "dessert":
-        recipes = await findAllRecipesByCategoryName("Dessert", limit, offset);
+      case 'dessert':
+        recipes = await findAllRecipesByCategoryName('Dessert', limit, offset);
         break;
-      case "quick":
+      case 'quick':
         recipes = await findAllRecipesByMaxTotalTime(20, limit, offset);
         break;
       default:
@@ -41,8 +41,8 @@ export default {
     }
 
     return {
-      recipes
+      recipes,
     };
-  }
+  },
 };
 </script>

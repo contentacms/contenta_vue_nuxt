@@ -14,14 +14,14 @@
 </template>
 
 <script>
-import RecipeAsDetail from "~/components/RecipeAsDetail";
-import RecipesAsCards from "~/components/RecipesAsCards";
-import AppSection from "~/components/AppSection";
+import RecipeAsDetail from '~/components/RecipeAsDetail';
+import RecipesAsCards from '~/components/RecipesAsCards';
+import AppSection from '~/components/AppSection';
 export default {
   components: { RecipeAsDetail, RecipesAsCards, AppSection },
   props: {
     recipe: { type: Object, default: {} },
-    recipesByCategory: { type: Array, default: [] }
-  }
+    recipesByCategory: { type: Array, default: [] },
+  },
 };
 </script>

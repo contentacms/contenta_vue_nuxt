@@ -7,14 +7,14 @@
 <script>
 export default {
   props: {
-    buttonClass: { type: String, default: "is-primary" },
-    to: { type: String | Array, default: "/" }
+    buttonClass: { type: String, default: 'is-primary' },
+    to: { type: String | Array, default: '/' },
   },
   data() {
     return {
-      isLoading: false
+      isLoading: false,
     };
-  }
+  },
 };
 </script>
 

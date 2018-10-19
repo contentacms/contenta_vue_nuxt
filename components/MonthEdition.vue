@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import ButtonLink from "~/components/ButtonLink";
+import ButtonLink from '~/components/ButtonLink';
 export default {
-  components: { ButtonLink }
+  components: { ButtonLink },
 };
 </script>
 
