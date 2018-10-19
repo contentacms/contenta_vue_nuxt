@@ -3,13 +3,6 @@
   "version": "2.0.0",
   "description": "Nuxt.js client for Contenta CMS",
   "author": "yann <yann@yineo.fr>",
-<<<<<<< HEAD
-  "private": false,
-  "license": "MIT",
-  "dependencies": {
-    "axios": "0.16.2",
-    "jsonapi-parse": "1.2.0",
-=======
   "contributors": [
     {
       "name": "Yann",
@@ -27,7 +20,6 @@
   "dependencies": {
     "axios": "^0.18.0",
     "jsonapi-parse": "^2.0.0",
->>>>>>> dev
     "nuxt": "^2.2.0",
     "vue-lazyload": "1.0.6"
   },
@@ -43,13 +35,8 @@
     "prettier": "prettier --write './**/*.{js,vue}' && eslint './**/*.{js,vue}Difficulty.vue' --fix"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "babel-eslint": "^7.2.3",
     "cross-env": "^4.0.0",
-=======
-    "babel-eslint": "^10.0.1",
-    "cross-env": "^5.2.0",
->>>>>>> dev
     "eslint": "^3.19.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-config-standard": "^6.2.1",
