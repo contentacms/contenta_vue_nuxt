@@ -1,9 +1,10 @@
 {
   "name": "contenta_vue_nuxt",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Nuxt.js client for Contenta CMS",
   "author": "yann <yann@yineo.fr>",
-  "private": true,
+  "private": false,
+  "license": "MIT",
   "dependencies": {
     "axios": "0.16.2",
     "jsonapi-parse": "1.2.0",
