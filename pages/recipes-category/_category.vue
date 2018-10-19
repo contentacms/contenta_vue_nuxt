@@ -3,18 +3,18 @@
 </template>
 
 <script>
-import PageRecipesCategory from "~/components/PageRecipesCategory";
-import { findAllRecipesByCategoryName } from "~/lib/api";
+import PageRecipesCategory from '~/components/PageRecipesCategory';
+import { findAllRecipesByCategoryName } from '~/lib/api';
 
 export default {
-  transition: "page",
+  transition: 'page',
   components: { PageRecipesCategory },
   async asyncData({ params }) {
     const recipes = await findAllRecipesByCategoryName(params.category, 20);
     return {
       recipes,
-      categoryName: params.category
+      categoryName: params.category,
     };
-  }
+  },
 };
 </script>

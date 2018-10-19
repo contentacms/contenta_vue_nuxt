@@ -93,12 +93,12 @@
 </template>
 
 <script>
-import AppSection from "~/components/AppSection";
+import AppSection from '~/components/AppSection';
 export default {
   components: { AppSection },
   props: {
-    recipe: { type: Object, default: {} }
-  }
+    recipe: { type: Object, default: {} },
+  },
 };
 </script>
 
@@ -114,4 +114,3 @@ export default {
   padding: 1.25rem 2.5rem 1.25rem 1.5rem;
 }
 </style>
-

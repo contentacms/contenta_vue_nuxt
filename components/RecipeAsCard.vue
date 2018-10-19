@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import BulmaCard from "~/components/BulmaCard";
-import Difficulty from "~/components/Difficulty";
+import BulmaCard from '~/components/BulmaCard';
+import Difficulty from '~/components/Difficulty';
 export default {
   components: { BulmaCard, Difficulty },
   props: {
-    recipe: { type: Object, default: () => [] }
-  }
+    recipe: { type: Object, default: () => [] },
+  },
 };
 </script>
 
@@ -58,4 +58,3 @@ export default {
   margin-bottom: 10px;
 }
 </style>
-

@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import AppSection from "~/components/AppSection";
+import AppSection from '~/components/AppSection';
 export default {
-  components: { AppSection }
+  components: { AppSection },
 };
 </script>

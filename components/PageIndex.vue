@@ -40,12 +40,12 @@
 </template>
 
 <script>
-import RecipesAsCards from "~/components/RecipesAsCards";
-import ButtonLink from "~/components/ButtonLink";
-import MonthEdition from "~/components/MonthEdition";
-import AppSection from "~/components/AppSection";
-import HomePromotedNodes from "~/components/HomePromotedNodes";
-import HomeWidgets from "~/components/HomeWidgets";
+import RecipesAsCards from '~/components/RecipesAsCards';
+import ButtonLink from '~/components/ButtonLink';
+import MonthEdition from '~/components/MonthEdition';
+import AppSection from '~/components/AppSection';
+import HomePromotedNodes from '~/components/HomePromotedNodes';
+import HomeWidgets from '~/components/HomeWidgets';
 
 export default {
   components: {
@@ -54,11 +54,11 @@ export default {
     ButtonLink,
     AppSection,
     HomePromotedNodes,
-    HomeWidgets
+    HomeWidgets,
   },
   props: {
     latestRecipes: { type: Array, default: [] },
-    latestPromoted: { type: Array, default: [] }
-  }
+    latestPromoted: { type: Array, default: [] },
+  },
 };
 </script>

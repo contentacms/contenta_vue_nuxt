@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import PageRecipesIndex from "~/components/PageRecipesIndex";
+import PageRecipesIndex from '~/components/PageRecipesIndex';
 import {
   findAllPromotedRecipes,
   findAllLatestRecipes,
   findAllRecipesCategories,
-  findAllRecipesByCategoryName
-} from "~/lib/api";
+  findAllRecipesByCategoryName,
+} from '~/lib/api';
 export default {
-  transition: "page",
+  transition: 'page',
   components: { PageRecipesIndex },
   async asyncData() {
     let promises = [];
@@ -42,9 +42,9 @@ export default {
       return {
         recipesLatest: promisesResults[0],
         recipesByCategories: promisesResults[1],
-        recipePromoted: promisesResults[2]
+        recipePromoted: promisesResults[2],
       };
     });
-  }
+  },
 };
 </script>

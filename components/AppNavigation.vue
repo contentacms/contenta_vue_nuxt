@@ -33,17 +33,17 @@
 </template>
 
 <script>
-import AppVersion from "~/components/AppVersion";
+import AppVersion from '~/components/AppVersion';
 export default {
   components: { AppVersion },
   methods: {
     setMenuMobileIsOpened() {
       this.$store.commit(
-        "setMenuMobileIsOpened",
+        'setMenuMobileIsOpened',
         !this.$store.state.menuMobileIsOpened
       );
-    }
-  }
+    },
+  },
 };
 </script>
 

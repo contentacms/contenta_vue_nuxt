@@ -1,4 +1,4 @@
-import Vuex from "vuex";
+import Vuex from 'vuex';
 
 /**
  * This our global store state for our app.
@@ -6,13 +6,13 @@ import Vuex from "vuex";
 const createStore = () =>
   new Vuex.Store({
     state: {
-      menuMobileIsOpened: false
+      menuMobileIsOpened: false,
     },
     mutations: {
       setMenuMobileIsOpened(state, value) {
         state.menuMobileIsOpened = value;
-      }
-    }
+      },
+    },
   });
 
 export default createStore;

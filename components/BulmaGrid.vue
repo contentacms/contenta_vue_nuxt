@@ -22,12 +22,12 @@ USAGE :
 <script>
 export default {
   props: {
-    itemsByRow: { type: String, default: "4" },
-    items: { type: Array, default: [] }
+    itemsByRow: { type: String, default: '4' },
+    items: { type: Array, default: [] },
   },
   computed: {
     columnClasses() {
-      return "column is-" + 12 / this.itemsByRow;
+      return 'column is-' + 12 / this.itemsByRow;
     },
     columns() {
       let columnIndex = 0;
@@ -39,7 +39,7 @@ export default {
         columns[columnIndex].push(this.items[itemIndex]);
       }
       return columns;
-    }
-  }
+    },
+  },
 };
 </script>
