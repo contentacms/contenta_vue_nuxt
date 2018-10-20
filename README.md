@@ -73,8 +73,5 @@ Most important parts of the code resides inside **pages**, **components** & **la
 
 **Layouts** are some Vue components used as template wrappers for pages components, somehow like the "page.tpl.php" from Drupal.
 
-**lib** directory contains cross-components library or business logic, this is where resides our functions and class to fetch data from Contenta CMS public API.
+**lib** directory contains cross-components library or business logic, this is where resides our functions and class to fetch data from Contenta CMS public API. They might be called from components asyncData() methods or Vuex store.
 
-## DEV CONTRIBUTION GUIDELINES
-
-see https://github.com/contentacms/contenta_vue_nuxt/wiki
