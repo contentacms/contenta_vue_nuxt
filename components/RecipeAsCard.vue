@@ -3,7 +3,7 @@
     <BulmaCard>
       <div slot="image" v-if="recipe.image" class="">
         <figure class="image is-3by2">
-          <img class="lazy-img-fadein" v-lazy="recipe.image.thumbnail.url" />
+          <img class="lazy-img-fadein" v-lazy="`${serverBaseUrl}/${recipe.image.thumbnail.url}`" />
         </figure>
       </div>
       <div slot="content" class="has-text-centered">
@@ -23,6 +23,9 @@ export default {
   components: { BulmaCard, Difficulty },
   props: {
     recipe: { type: Object, default: () => [] },
+  },
+  computed: {
+    serverBaseUrl: () => process.env.serverBaseUrl,
   },
 };
 </script>

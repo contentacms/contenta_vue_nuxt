@@ -13,8 +13,8 @@
   
     <AppSection v-if="latestPromoted">
       <div class="container">
-        <h3 class="title is-3 has-text-centered">Latest promoted recipes and articles</h3>
-        <HomePromotedNodes :nodes="latestPromoted"></HomePromotedNodes>
+        <h3 class="title is-3 has-text-centered">Latest promoted recipes </h3>
+        <HomePromotedRecipes :nodes="latestPromoted"></HomePromotedRecipes>
       </div>
     </AppSection>
   
@@ -44,7 +44,7 @@ import RecipesAsCards from '~/components/RecipesAsCards';
 import ButtonLink from '~/components/ButtonLink';
 import MonthEdition from '~/components/MonthEdition';
 import AppSection from '~/components/AppSection';
-import HomePromotedNodes from '~/components/HomePromotedNodes';
+import HomePromotedRecipes from '~/components/HomePromotedRecipes';
 import HomeWidgets from '~/components/HomeWidgets';
 
 export default {
@@ -53,7 +53,7 @@ export default {
     MonthEdition,
     ButtonLink,
     AppSection,
-    HomePromotedNodes,
+    HomePromotedRecipes,
     HomeWidgets,
   },
   props: {

@@ -15,7 +15,7 @@
         <div class="columns">
           <div class="column">
             <figure class="image is-3by2">
-              <img v-lazy="recipe.image.thumbnail.url" />
+              <img v-lazy="`${serverBaseUrl}/${recipe.image.thumbnail.url}`" />
             </figure>
           </div>
           <div class="column">
@@ -78,9 +78,7 @@
 
             <div class="content method">
               <h3 class="title has-text-centered"> Method </h3>
-              <p>
-                {{recipe.instructions}}
-              </p>
+              <div v-html="recipe.instructions.value" />
             </div>
 
           </div>
@@ -98,6 +96,9 @@ export default {
   components: { AppSection },
   props: {
     recipe: { type: Object, default: {} },
+  },
+  computed: {
+    serverBaseUrl: () => process.env.serverBaseUrl,
   },
 };
 </script>

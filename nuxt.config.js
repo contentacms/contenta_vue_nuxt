@@ -1,8 +1,9 @@
+const serverBaseUrl = 'https://back-end.contentacms.io';
 export default {
   plugins: ['~plugins/vue-lazyload', '~plugins/app'],
   env: {
-    // your JSON API server URL :
-    jsonApiUrl: 'https://live-contentacms.pantheonsite.io/api',
+    serverBaseUrl: serverBaseUrl,
+    serverApiUrl: serverBaseUrl + '/api',
   },
   router: {
     // check if API server is up, to avoid ugly errors pages
