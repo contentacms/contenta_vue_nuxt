@@ -17,7 +17,6 @@ export default {
       findAllLatestRecipes(4),
       findHomePromotedArticlesAndRecipes(3),
     ]).then(values => {
-      console.log('values', values);
       return {
         latestRecipes: values[0],
         latestPromoted: values[1],
