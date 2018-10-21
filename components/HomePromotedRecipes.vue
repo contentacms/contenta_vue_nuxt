@@ -1,16 +1,16 @@
 <template>
   <div class="columns">
     <div class="column" :class="{'is-half': index == 0}" v-for="(node, index) in nodes" :key="node.id">
-      <RecipeAsCard :recipe="node" />
+      <RecipeCard :recipe="node" />
     </div>
   </div>
 </template>
 
 <script>
-import RecipeAsCard from '~/components/RecipeAsCard';
+import RecipeCard from '~/components/RecipeCard';
 
 export default {
-  components: { RecipeAsCard },
+  components: { RecipeCard },
   props: {
     nodes: {
       type: Array,

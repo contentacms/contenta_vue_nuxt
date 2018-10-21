@@ -32,7 +32,7 @@
       <div class="container">
         <h3 class="title is-3 has-text-centered">Recipes</h3>
         <h4 class="title is-4 has-text-centered">Explore recipes across every type of occasion, ingredient and skill level</h4>
-        <recipesAsCards :recipes="latestRecipes" cardsByRow="2"></recipesAsCards>
+        <RecipeCardList :recipes="latestRecipes" cardsByRow="2"></RecipeCardList>
       </div>
     </AppSection>
   
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import RecipesAsCards from '~/components/RecipesAsCards';
+import RecipeCardList from '~/components/RecipeCardList';
 import ButtonLink from '~/components/ButtonLink';
 import MonthEdition from '~/components/MonthEdition';
 import AppSection from '~/components/AppSection';
@@ -49,7 +49,7 @@ import HomeWidgets from '~/components/HomeWidgets';
 
 export default {
   components: {
-    RecipesAsCards,
+    RecipeCardList,
     MonthEdition,
     ButtonLink,
     AppSection,

@@ -1,13 +1,13 @@
 <template>
   <div>
 
-    <RecipeAsPromotedBanner v-if="recipePromoted" :recipe="recipePromoted"></RecipeAsPromotedBanner>
+    <RecipePromotedBanner v-if="recipePromoted" :recipe="recipePromoted"></RecipePromotedBanner>
     
     <div class="container">
   
       <AppSection v-if="recipesLatest">
         <h3 class="title is-3 has-text-centered"> Latest recipes </h3>
-        <RecipesAsCards :recipes="recipesLatest" more-link="/recipes-latest"></RecipesAsCards>
+        <RecipeCardList :recipes="recipesLatest" more-link="/recipes-latest"></RecipeCardList>
         <div class="has-text-centered">
           <ButtonLink to="/recipes-latest">View more</ButtonLink>
         </div>
@@ -15,7 +15,7 @@
   
       <AppSection v-if="recipesByCategories" v-for="(category, categoryIndex) in recipesByCategories" :key="categoryIndex">
         <h3 class="title is-3 has-text-centered">{{ category.name }}</h3>
-        <RecipesAsCards title="Recipes" :recipes="category.recipes"></RecipesAsCards>
+        <RecipeCardList title="Recipes" :recipes="category.recipes"></RecipeCardList>
         <div class="has-text-centered">
           <ButtonLink :to="'/recipes-category/' + category.name">View more</ButtonLink>
         </div>
@@ -27,15 +27,15 @@
 </template>
 
 <script>
-import RecipesAsCards from '~/components/RecipesAsCards';
-import RecipeAsPromotedBanner from '~/components/RecipeAsPromotedBanner';
+import RecipeCardList from '~/components/RecipeCardList';
+import RecipePromotedBanner from '~/components/RecipePromotedBanner';
 import ButtonLink from '~/components/ButtonLink';
 import AppSection from '~/components/AppSection';
 export default {
   components: {
-    RecipesAsCards,
+    RecipeCardList,
     ButtonLink,
-    RecipeAsPromotedBanner,
+    RecipePromotedBanner,
     AppSection,
   },
   props: {
