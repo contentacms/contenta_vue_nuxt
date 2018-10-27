@@ -4,6 +4,7 @@
 
 <script>
 import PageServerUnreachable from '~/components/PageServerUnreachable';
+
 export default {
   components: { PageServerUnreachable },
 };
