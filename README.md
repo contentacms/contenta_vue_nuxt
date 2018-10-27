@@ -1,24 +1,22 @@
-# Drupal 8 headless example with Contenta CMS / JSON API and Vue.js
+# A Drupal 8 headless starter for beginners with Nuxt.js and JSON API module or Contenta CMS
 
-[![Build Status](https://travis-ci.org/contentacms/contenta_vue_nuxt.svg?branch=master)](https://travis-ci.org/contentacms/contenta_vue_nuxt)
+> démo : https://contentanuxt.now.sh/
 
-_Contenta Vue Nuxt_ is a [Vue.JS](https://vuejs.org) front-end consumer example for [Contenta CMS](http://www.contentacms.org/), pulling data from its [Contenta public API example](https://live-contentacms.pantheonsite.io/api) to build a fictive recipes site. You can see it live here : https://contentanuxt.now.sh/
+This project is a simple example to let you start quickly a SEO-friendly headless Drupal 8 with JSON API and Vue.js.
 
-This project helps you to start a decoupled Drupal 8 website with JSON API and Vue.js, with a concrete and simple example.
+This is aimed at beginners in headless Drupal : we focused on keeping things as simple as possible and keeping a very **low barrier to entry** to Nuxt.js + JSON API stack: No over-engineering, no complex edges cases, no complex directory structure.
 
-**We strongly believe than a good headless Drupal has to be SEO-friendly and fast**. That's why we are using the awesome [Nuxt.js](https://nuxtjs.org/) : Nuxt.js is just Vue.js with automatic Server Side Rendering and Code Splitting, so you don't have to deal yourself with all that stuff; and just enjoy your SEO-friendly site built with your Vue.js components.
+_Contenta Vue Nuxt_ is consuming [Contenta CMS](http://www.contentacms.org/) example public API to build a fictive recipes site.
 
-![vue image](/static/images/icon-vue.jpg?raw=true)
-![nuxt image](/static/images/icon-nuxt.png?raw=true)
+## Why Nuxt.js and not just Vue.js ?
 
-_(vue drawing by https://twitter.com/hashedrock )_
+**We believe a headless Drupal has to be SEO-friendly and fast**. That's why we are using the awesome [Nuxt.js](https://nuxtjs.org/) : This is _Vue.js_ with automatic _Server Side Rendering_ and _Code Splitting_, so you don't have to deal yourself with all that stuff: just enjoy your SEO-friendly site built with your _Vue.js_ components.
 
-## CONTRIBUTORS : WHAT OUR OBJECTIVES, WHY ARE WE DOING THIS ?
+|                                                    |                                                      |
+| :------------------------------------------------: | :--------------------------------------------------: |
+| ![vue image](/static/images/icon-vue.jpg?raw=true) | ![nuxt image](/static/images/icon-nuxt.png?raw=true) |
 
-1. Helping developers to start quickly a Drupal 8 headless with JSON API module or Contenta CMS.
-2. Mirror Vue.js values : un-opinionated, easy to read and learn. That's why we should avoid **over-engineering** to focus on keeping a **low barrier to entry** to Vue.js + Nuxt.js stack.
-3. This application MUST be SEO-friendly, because this is why **Nuxt.js** is used.
-4. Let's try to do something than can be easily forked to start your own D8 headless site.
+> _( Vue drawing by https://twitter.com/hashedrock )_
 
 ## GETTING STARTED
 
@@ -34,7 +32,6 @@ _(vue drawing by https://twitter.com/hashedrock )_
 $ npm install
 
 # serve with hot reload at localhost:3000
-# service worker is disabled in dev
 $ npm run dev
 ```
 
@@ -67,11 +64,7 @@ $ npm run start
 
 Most important parts of the code resides inside **pages**, **components** & **layouts** directories, this is where our _Vue components_ resides.
 
-**Components** are classic Vue.js single-file components.
-
-**Pages** are special Nuxt.js components : they are automatically rendered on server side and are accessible automatically via an url. For example "pages/recipes.vue" can be accessed going to "/recipes" uri. They use a special "asyncData" method which is used for server side rendering.
-
-**Layouts** are some Vue components used as template wrappers for pages components, somehow like the "page.tpl.php" from Drupal.
-
-**lib** directory contains cross-components library or business logic, this is where resides our functions and class to fetch data from Contenta CMS public API. They might be called from components asyncData() methods or Vuex store.
-
+- **Components** are normal Vue.js single-file components.
+- **Pages** are special Nuxt.js components : they are triggering server side rendering and are accessible automatically via an url. For example "pages/recipes.vue" can be accessed going to "/recipes" uri. They use a special `asyncData()` method which is used by the server side rendering.
+- **Layouts** are some Vue components used as template wrappers for pages components, somehow like the `page.tpl.php` from Drupal.
+- **lib** directory contains cross-components library or business logic, this is where resides our functions and class to fetch data from Contenta CMS public API. They might be called from components asyncData() methods or Vuex store.

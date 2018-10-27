@@ -1,8 +1,7 @@
-// Check if server is up before loading page
+// if we can't reach the server, redirect to a special page.
 import axios from 'axios';
 export default function(context) {
-  const apiUrl = process.env.serverApiUrl;
-  return axios.get(apiUrl).catch(e => {
+  return axios.get(process.env.serverApiUrl).catch(e => {
     if (context.route.path != '/server-unreachable') {
       context.redirect('/server-unreachable');
     }

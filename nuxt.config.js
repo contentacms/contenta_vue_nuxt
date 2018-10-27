@@ -1,4 +1,6 @@
+// change this to your own server.
 const serverBaseUrl = 'https://back-end.contentacms.io';
+
 export default {
   plugins: ['~plugins/vue-lazyload', '~plugins/app'],
   env: {
@@ -6,8 +8,7 @@ export default {
     serverApiUrl: serverBaseUrl + '/api',
   },
   router: {
-    // check if API server is up, to avoid ugly errors pages
-    // when its down or when there is no internet connection
+    // redirect to a special page if we can't reach the API server
     middleware: 'server-api-available',
   },
   head: {
@@ -19,8 +20,6 @@ export default {
       { rel: 'stylesheet', type: 'text/css', href: '/css/app.css' },
     ],
   },
-  /*
-  ** Customize the progress-bar color
-  */
+  // page loading progress bar color
   loading: { color: '#3B8070' },
 };
