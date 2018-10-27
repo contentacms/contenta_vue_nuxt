@@ -8,7 +8,7 @@
           <AppVersion />
         </span>
   
-        <div @click="setMenuMobileIsOpened" :class="{'is-active': this.$store.state.menuMobileIsOpened}" class="navbar-burger" data-target="app-menu">
+        <div @click="mobileMenuIsOpen = !mobileMenuIsOpen" :class="{'is-active': mobileMenuIsOpen}" class="navbar-burger" data-target="app-menu">
           <span></span>
           <span></span>
           <span></span>
@@ -18,7 +18,7 @@
   
       <!-- This "nav-menu" is hidden on mobile -->
       <!-- Add the modifier "is-active" to display it on mobile -->
-      <div id="app-menu" class="navbar-menu" :class="{'is-active': this.$store.state.menuMobileIsOpened}">
+      <div id="app-menu" class="navbar-menu" :class="{'is-active': mobileMenuIsOpen}">
         <div class="navbar-end">
           <nuxt-link to="/" class="navbar-item"> Home </nuxt-link>
           <nuxt-link to="/recipes" class="navbar-item"> Recipes </nuxt-link>
@@ -35,13 +35,16 @@
 <script>
 import AppVersion from '~/components/AppVersion';
 export default {
+  data() {
+    return {
+      mobileMenuIsOpen: false,
+    };
+  },
   components: { AppVersion },
-  methods: {
-    setMenuMobileIsOpened() {
-      this.$store.commit(
-        'setMenuMobileIsOpened',
-        !this.$store.state.menuMobileIsOpened
-      );
+  watch: {
+    // close the mobile menu when route changed.
+    $route: function() {
+      this.mobileMenuIsOpen = false;
     },
   },
 };

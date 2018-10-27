@@ -2,7 +2,7 @@
 const serverBaseUrl = 'https://back-end.contentacms.io';
 
 export default {
-  plugins: ['~plugins/vue-lazyload', '~plugins/app'],
+  plugins: ['~plugins/vue-lazyload'],
   env: {
     serverBaseUrl,
     serverApiUrl: serverBaseUrl + '/api',
