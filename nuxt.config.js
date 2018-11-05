@@ -1,13 +1,13 @@
 // change this to your own server.
 const serverBaseUrl = 'https://back-end.contentacms.io';
-const serverImagesUrl = 'https://back-end.contentacms.io';
+const serverFilesUrl = 'https://back-end.contentacms.io';
 
 export default {
   plugins: ['~plugins/vue-lazyload'],
   env: {
     serverBaseUrl,
     serverApiUrl: serverBaseUrl + '/api',
-    serverImagesUrl,
+    serverFilesUrl,
   },
   head: {
     meta: [
