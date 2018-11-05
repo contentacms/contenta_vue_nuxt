@@ -15,7 +15,7 @@
         <div class="columns">
           <div class="column">
             <figure class="image is-3by2">
-              <img v-lazy="`${serverBaseUrl}/${recipe.image.thumbnail.url}`" />
+              <img v-lazy="`${serverFilesUrl}/${recipe.image.thumbnail.url}`" />
             </figure>
           </div>
           <div class="column">
@@ -99,6 +99,7 @@ export default {
   },
   computed: {
     serverBaseUrl: () => process.env.serverBaseUrl,
+    serverFilesUrl: () => process.env.serverFilesUrl,
   },
 };
 </script>
