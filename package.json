@@ -25,34 +25,14 @@
     "vue-lazyload": "1.0.6"
   },
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "analyse": "nuxt build --analyse",
-    "start": "nuxt start",
+    "dev": "node_modules/.bin/nuxt",
+    "build": "node_modules/.bin/nuxt build",
+    "analyse": "node_modules/.bin/nuxt build --analyse",
+    "start": "node_modules/.bin/nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "karma start test/unit/karma.conf.js",
-    "precommit": "npm run lint && npm run test",
-    "prettier": "prettier --write './**/*.{js,vue}' && eslint './**/*.{js,vue}Difficulty.vue' --fix"
+    "prettier": "prettier --write './**/*.{js,vue}' --fix"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "cross-env": "^4.0.0",
-    "eslint": "^3.19.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^2.0.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-promise": "^3.4.1",
-    "eslint-plugin-standard": "^2.0.1",
-    "eslint-plugin-vue": "^4.7.1",
-    "jasmine-core": "^2.6.4",
-    "karma": "^3.0.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-webpack": "^2.0.4",
-    "prettier": "^1.14.3",
-    "push-dir": "^0.4.1"
+    "prettier": "^1.14.3"
   }
 }
