@@ -1,6 +1,7 @@
 {
   "name": "contenta_vue_nuxt",
   "version": "2.0.1",
+  "repository": "https://github.com/contentacms/contenta_vue_nuxt",
   "description": "Nuxt.js client for Contenta CMS",
   "author": "yann <yann@yineo.fr>",
   "contributors": [
