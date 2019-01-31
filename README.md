@@ -1,5 +1,7 @@
 # A Drupal 8 headless starter for beginners with Nuxt.js and JSON API module or Contenta CMS
 
+!!! LOOKING FOR A NEW MAINTAINER !!! my interests have changed and i'm not working with Contenta anymore today. Please let m know if you are interested to maintain this project :)
+
 > démo : https://contentanuxt.now.sh/
 
 This project is a simple example to let you start quickly a SEO-friendly headless Drupal 8 with JSON API and Vue.js.
