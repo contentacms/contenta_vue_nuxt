@@ -15,7 +15,7 @@
         <div class="columns">
           <div class="column">
             <figure class="image is-3by2">
-              <img v-lazy="`${serverFilesUrl}/${recipe.image.thumbnail.url}`" />
+              <img v-lazy="`${serverFilesUrl}/${recipe.image.thumbnail.uri.url}`" />
             </figure>
           </div>
           <div class="column">
