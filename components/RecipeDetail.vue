@@ -32,7 +32,7 @@
                   <img class="icons" src="~assets/icons/clock.svg" />
                 </div>
                 Cooking time :
-                <strong> {{recipe.totalTime }} min</strong>
+                <strong> {{recipe.cookingTime }} min</strong>
               </div>
             </div>
 
