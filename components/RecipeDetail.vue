@@ -42,7 +42,7 @@
                   <img class="icons" src="~assets/icons/serves.svg" />
                 </div>
                 Serves :
-                <strong>{{recipe.numberOfServices}} persons </strong>
+                <strong>{{recipe.numberOfservings}} persons </strong>
               </div>
               <div class="column has-text-centered">
                 <div>
