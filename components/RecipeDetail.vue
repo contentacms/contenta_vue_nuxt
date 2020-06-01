@@ -32,7 +32,7 @@
                   <img class="icons" src="~assets/icons/clock.svg" />
                 </div>
                 Cooking time :
-                <strong> {{recipe.totalTime }} min</strong>
+                <strong> {{recipe.cookingTime }} min</strong>
               </div>
             </div>
 
@@ -42,7 +42,7 @@
                   <img class="icons" src="~assets/icons/serves.svg" />
                 </div>
                 Serves :
-                <strong>{{recipe.numberOfServices}} persons </strong>
+                <strong>{{recipe.numberOfservings}} persons </strong>
               </div>
               <div class="column has-text-centered">
                 <div>
@@ -78,7 +78,7 @@
 
             <div class="content method">
               <h3 class="title has-text-centered"> Method </h3>
-              <div v-html="recipe.instructions.value" />
+              <div v-html="recipe.instructions" />
             </div>
 
           </div>
