@@ -21,7 +21,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "jsonapi-parse": "^2.0.0",
-    "nuxt": "^2.2.0",
+    "nuxt": "^2.15.8",
     "vue-lazyload": "1.0.6"
   },
   "scripts": {
@@ -41,7 +41,7 @@
     "eslint": "^3.19.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-config-standard": "^6.2.1",
-    "eslint-loader": "^1.9.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-promise": "^3.4.1",
@@ -51,7 +51,7 @@
     "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
-    "karma-webpack": "^2.0.4",
+    "karma-webpack": "^5.0.0",
     "prettier": "^1.14.3",
     "push-dir": "^0.4.1"
   }
