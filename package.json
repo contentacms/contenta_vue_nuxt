@@ -21,7 +21,7 @@
   "dependencies": {
     "axios": "^0.21.2",
     "jsonapi-parse": "^2.0.0",
-    "nuxt": "^3.0.0",
+    "nuxt": "^3.4.3",
     "vue-lazyload": "1.0.6"
   },
   "scripts": {
